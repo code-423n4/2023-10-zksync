@@ -1,46 +1,50 @@
-# ✨ So you want to run an audit
+# **zkSync Protocol Overview & Documentation**
 
-This `README.md` contains a set of checklists for our audit collaboration.
+ZkSync is a fully-fledged Layer-2 scaling solution, combining a set of system contracts on Ethereum mainnet, zkRollup smart contracts for scaling, and zkEVM for enabling Ethereum virtual machine-compatible smart contract execution.
 
-Your audit will use two repos: 
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
+This repository contains comprehensive documentation and code related to the Smart Contracts, Circuits, and VM sections of the zkSync Protocol. Below is a high-level summary of each section along with relevant documentation links. Please refer to these before and during the audit for a thorough understanding of the protocol.
 
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
+## **📁 Sections**
 
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
+### **1. Smart Contract Section**
 
----
-# Repo setup
+The Smart Contract section encompasses system contracts and bootloader for VM v1.4.0, fee models, and L1→L2 operations handling on zkSync. Here are the relevant documents:
 
-## ⭐️ Sponsor: Add code to this repo
+- **[System Contracts/Bootloader Description (VM v1.4.0)](https://www.notion.so/System-contracts-bootloader-description-VM-v1-4-0-bdec3d4153ed4f6e8c0e32fb63ca4372?pvs=21)**
+- **[zkSync Fee Model](https://www.notion.so/zkSync-fee-model-26826247ada840c29994e6998295ad26?pvs=21)**
+- **[Handling L1→L2 Ops on zkSync](https://www.notion.so/Handling-L1-L2-ops-on-zkSync-d5fb904c80be43e4b6a3dbe967336e47?pvs=21)**
+- **[Elliptic Curve Precompiles](https://www.notion.so/Elliptic-curve-precompiles-a5a67fc85fb2468da2f1062a1c02bddc?pvs=21)**
 
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
+### **2. Circuits Section**
 
+The Circuits section deals with the batches & L2 blocks on zkSync, handling of pubdata in Boojum, and Code4rena circuit documentation.
 
----
+- **[Batches & L2 Blocks on zkSync](https://www.notion.so/Batches-L2-blocks-on-zkSync-4a3208dc25b8431cb514f4076b4f3224?pvs=21)**
+- **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
+- **[Code4rena Circuit Docs](https://www.notion.so/Code4rena-Circuit-Docs-7cb46e196da645efb983cee97d409bd2?pvs=21)**
 
-## ⭐️ Sponsor: Edit this `README.md` file
+### **3. VM Section**
 
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
+The VM section is related to the zkSync Era Virtual Machine and contains elliptic curve precompiles and an extensive primer on zkSync EVM.
 
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
+- **[ZkSync Era Virtual Machine Primer](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
+    - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of zkSync EVM, serving as an essential guide for those seeking to explore the zkSync EVM environment.
+- **[spec.pdf](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/spec.pdf)**
+    - This document is a highly technical and detailed specification, providing an in-depth exploration of the zkSync protocol and its underlying architecture. It’s a comprehensive resource for those who desire a deeper and more formal understanding of the protocol's design and functionalities. While it’s not a required read for understanding the basic structure and operations of the protocol, it is an invaluable resource for those wishing to delve into the finer details and theoretical underpinnings of zkSync.
 
----
+## **🚨 Audit & Code Freeze**
 
+Be advised that a code freeze will be in effect for the duration of the audit to ensure a level playing field. All participants are required to review and adhere to the final versions of contracts and documentation added in this repository at least 48 business hours prior to the audit start time.
+
+## **🚀 Getting Started for Auditors**
+
+- Ensure to go through each section and related documents thoroughly.
+- Keep in mind the overall working of the zkSync protocol while reviewing individual components.
+- Review the code and documentation with a focus on security, correctness, and optimization, particularly concerning gas consumption.
+
+## **📢 Communication**
+
+For any clarifications, doubts, or discussion, please contact Code4rena staff, and we will address your concerns promptly.
 # zkSync Era audit details
 - $1,100,000 total maximum award pot, including **$##,###** gas optimizations pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
