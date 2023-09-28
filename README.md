@@ -19,8 +19,6 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 *Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
-
 
 # Overview
 
