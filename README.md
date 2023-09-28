@@ -38,14 +38,24 @@ The Smart Contract section encompasses system contracts and bootloader for VM v1
 - **[zkSync Fee Model](https://www.notion.so/zkSync-fee-model-26826247ada840c29994e6998295ad26?pvs=21)**
 - **[Handling L1→L2 Ops on zkSync](https://www.notion.so/Handling-L1-L2-ops-on-zkSync-d5fb904c80be43e4b6a3dbe967336e47?pvs=21)**
 - **[Elliptic Curve Precompiles](https://www.notion.so/Elliptic-curve-precompiles-a5a67fc85fb2468da2f1062a1c02bddc?pvs=21)**
+- **[Batches & L2 Blocks on zkSync](https://www.notion.so/Batches-L2-blocks-on-zkSync-4a3208dc25b8431cb514f4076b4f3224?pvs=21)**
 
 ### **2. Circuits Section**
 
 The Circuits section deals with the batches & L2 blocks on zkSync, handling of pubdata in Boojum, and Code4rena circuit documentation.
 
-- **[Batches & L2 Blocks on zkSync](https://www.notion.so/Batches-L2-blocks-on-zkSync-4a3208dc25b8431cb514f4076b4f3224?pvs=21)**
+- **How does ZK work? (high level)**
+   - [Intro to zkSync’s ZK](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Intro%20to%20zkSync%E2%80%99s%20ZK.md)
+   - [ZK Terminology](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/ZK%20Terminology.md)
+   - [Getting Started](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Getting%20Started.md)
+- **Testing**
+   - [Circuit example: Ecrecover test](https://www.notion.so/Circuit-example-Ecrecover-test-4c86cb5d14f9441988f53b0f624c44cc?pvs=21)
+   - [Circuit test explained](https://www.notion.so/Circuit-test-explained-152bb55992484051b0711b7e8df919ef?pvs=21)
+  
+- **[Boojum gadgets](https://www.notion.so/Boojum-gadgets-265047bfa31a4f56b640cb34a732a078?pvs=21)**
+- **[Circuits](https://www.notion.so/Circuits-c2e39db21b4446aa8f06318ae404d34f?pvs=21)**
+- **[CS implementations](https://www.notion.so/CS-implementations-a288039100034cf489e3bbc417c5e2cf?pvs=21)**
 - **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
-- **[Code4rena Circuit Docs](https://www.notion.so/Code4rena-Circuit-Docs-7cb46e196da645efb983cee97d409bd2?pvs=21)**
 
 ### **3. VM Section**
 
