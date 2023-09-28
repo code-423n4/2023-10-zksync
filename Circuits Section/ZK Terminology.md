@@ -1,0 +1,21 @@
+# ZK Terminology
+
+- Arithmetization: Arithmetization transforms code into an intermediate form that can be handled by cryptographic proving systems. zkSync takes EVM opcodes written in Rust and uses arithmetization to turn that code into circuits understood by Boojum, our prover.
+- Builder:
+- Circuit: A circuit describes the code that will be proved. Each step in a circuit is described by a constraint, which enforces that the computation is done correctly.
+- Constraint: A constraint is a rule or restriction that a specific operation or set of operations must follow. zkSync uses constraints to verify the validity of certain operations, and in the generation of proofs. Constraints can be missing, causing bugs, or there could be too many constraints, leading to restricted operations.
+- Constraint degree: A constraint degree is related to the use of gates in circuits. The constraint degree sets an upper limit on the allowed complexity of the gate. At zkSync, we allow gates with degree 8 or lower.
+- Constraint system:A constraint system is an entity where each of the constraints are stored.  Imagine it as a list of "placeholders" called Variables. Then we add gates to the variables which enforce a specific constraint. The Witness represents a specific assignment of values to these Variables, ensuring that the rules still hold true.
+- Geometry: The geometry defines the number of rows and columns in the constraint system. As part of PLONK arithmetization, the witness data is arranged into a grid, where each row defines a gate (or a few gates), and the columns are as long as needed to hold all of the witness data. At zkSync, we have ~164 base witness columns.
+- Gate: Gate is a synonym for constraint
+- Log: We use the word “log” in the sense of a database log: a log stores a list of changes.
+- Lookup table: A lookup table is an efficient way for the prover to quickly check if a value exists in a certain table. For example, if you want to prove a certain number is between 0 and 2^8, it is common to use a lookup table.
+- Proof: A proof can refer generally to the entire proving process, or a proof can refer specifically to the data sent from the prover to the verifier.
+- Prover: In our zkSync zk-rollup context, the prover is used to process a set of transactions executing smart contracts in a succinct and efficient manner. It computes proofs that all the transactions are correct and ensures a valid transition from one state to another. The proof will be sent to a Verifier smart contract on Ethereum. At zkSync, we prove state diffs of a block of transactions, in order to prove the new state root state is valid.
+- Satisfiable: In the context of ZK, satisfiability refers to whether the witness passes - or “satisfies” - all of the constraints in a circuit.
+- State Diffs: State Diffs, or State Differentials, are the differences in accounts before and after processing transactions contained in a block. For example, if my ETH Balance changes from 5 ETH to 6 ETH, then the state diff for my account is +1 ETH.
+- Trace: A trace refers to the sequential steps taken for the completion of a transaction or process. Each Ethereum transaction touches multiple EVM opcodes or references multiple contracts. As such, it can vary in length based on the complexities involved. Provers use traces to understand which circuits are required to validate a batch of transactions.
+- Variables: Variables are placeholders in the constraint system until we know the specific witness data. The reason we would want placeholders is because we might want to fill in which constraints we need, before knowing the actual input data. For example, we might know we need to add two numbers and constrain the sum, before we know exactly which two numbers will be in the witness.
+- Verifier: The Verifier is a smart contract on Ethereum. It will receive a proof, check to make sure the proof is valid, and then update the state root.
+- Witness: The witness is the input to the circuit. When we have a circuit, the valid “witness” is the input that meets all the constraints and satisfies everything.
+- Worker: A worker refers to our multi-threaded proving system. Proving may be “worked” in parallel, meaning that we can prove multiple circuits simultaneously
