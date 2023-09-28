@@ -44,7 +44,7 @@ is not optimizing them out and is not emitting compilation errors.
 
 To see the list of available instructions, visit this page:
 
-[zkSync Era Extension Simulation (call)](./simulations/call.md)
+[zkSync Era Extension Simulation (call)](./extensions/call.md)
 
 ### The Yul Mode
 
@@ -53,4 +53,4 @@ To have better compatibility, they are implemented as `verbatim` instructions wi
 
 To see the list of available instructions, visit this page:
 
-[zkSync Era Extension Simulation (verbatim)](./simulations/verbatim.md)
+[zkSync Era Extension Simulation (verbatim)](./extensions/verbatim.md)
