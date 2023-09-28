@@ -1,0 +1,8 @@
+/build
+/artifacts
+/artifacts-zk
+/cache
+/cache-zk
+/typechain
+node_modules
+./contracts/DS_Store
