@@ -83,7 +83,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 - **Documentation:** https://era.zksync.io/docs/
 - **Website:** https://zksync.io/
-- **Twitter:** https://twitter.com/zksync
+- **Twitter:** [https://twitter.com/zksync](https://twitter.com/the_matter_labs)
 - **Discord:** https://join.zksync.dev/
 
 
