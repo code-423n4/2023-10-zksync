@@ -1,3 +1,27 @@
+# zkSync Era audit details
+- $1,100,000 total maximum award pot, including **$##,###** gas optimizations pot
+- Join [C4 Discord](https://discord.gg/code4rena) to register
+- Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
+- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+- Starts October 2, 2023 20:00 UTC 
+- Ends October 20:00 UTC 
+
+**IMPORTANT NOTE**: Unlike most public Code4rena contests, prior to receiving payment from this contest you MUST become a Certified Warden (successfully complete KYC and pass screening for OFAC sanctions). You do not have to complete this process before competing or submitting bugs.
+
+How the &#36;1,100,000 maximum pot works:
+- Contest minimum pot is &#36;330,000 (including **&#36;##k** gas optimization pot).
+- If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
+- If ANY valid high severity issue is found, contest pot increases to &#36;1,100,000.
+
+## Automated Findings / Publicly Known Issues
+
+Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-zksync/bot-report.md) within 24 hours of audit opening.
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+
+# Overview
+
 # **zkSync Protocol Overview & Documentation**
 
 ZkSync is a fully-fledged Layer-2 scaling solution, combining a set of system contracts on Ethereum mainnet, zkRollup smart contracts for scaling, and zkEVM for enabling Ethereum virtual machine-compatible smart contract execution.
@@ -45,33 +69,6 @@ Be advised that a code freeze will be in effect for the duration of the audit to
 ## **📢 Communication**
 
 For any clarifications, doubts, or discussion, please contact Code4rena staff, and we will address your concerns promptly.
-# zkSync Era audit details
-- $1,100,000 total maximum award pot, including **$##,###** gas optimizations pot
-- Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
-- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts October 2, 2023 20:00 UTC 
-- Ends October 20:00 UTC 
-
-**IMPORTANT NOTE**: Unlike most public Code4rena contests, prior to receiving payment from this contest you MUST become a Certified Warden (successfully complete KYC and pass screening for OFAC sanctions). You do not have to complete this process before competing or submitting bugs.
-
-How the &#36;1,100,000 maximum pot works:
-- Contest minimum pot is &#36;330,000 (including **&#36;##k** gas optimization pot).
-- If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
-- If ANY valid high severity issue is found, contest pot increases to &#36;1,100,000.
-
-## Automated Findings / Publicly Known Issues
-
-Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-zksync/bot-report.md) within 24 hours of audit opening.
-
-*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
-
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
-
-
-# Overview
-
-[ ⭐️ SPONSORS: add info here ]
 
 ## Links
 
