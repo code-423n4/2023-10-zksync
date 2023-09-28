@@ -84,11 +84,10 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ## Links
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+- **Documentation:** https://era.zksync.io/docs/
+- **Website:** https://zksync.io/
+- **Twitter:** https://twitter.com/zksync
+- **Discord:** https://join.zksync.dev/
 
 
 # Scope
