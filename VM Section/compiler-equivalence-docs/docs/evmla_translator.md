@@ -11,7 +11,7 @@ written to memory or storage and then loaded and called. Recursion is another ca
 skipped for now, as there is another stack frame allocated on every iteration, preventing
 the static analyzer from resolving the jumps.
 
-Both issues are being worked on in [our fork of the Solidity compiler](https://github.com/matter-labs/era-solidity), where
+Both issues are being worked on in our fork of the Solidity compiler, where
 we are changing the codegen to remove the dynamic jumps and add the necessary metadata.
 
 Below you can see a minimal example of a Solidity contract and its EVM legacy assembly
