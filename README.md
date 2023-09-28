@@ -22,9 +22,9 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 # **zkSync Protocol Overview & Documentation**
 
-ZkSync is a fully-fledged Layer-2 scaling solution, combining a set of system contracts on Ethereum mainnet, zkRollup smart contracts for scaling, and zkEVM for enabling Ethereum virtual machine-compatible smart contract execution.
+zkSync Era is a fully-fledged Layer-2 scaling solution, combining a set of smart contracts on Ethereum mainnet and zkEVM for enabling Ethereum virtual machine-compatible smart contract execution.
 
-This repository contains comprehensive documentation and code related to the Smart Contracts, Circuits, and VM sections of the zkSync Protocol. Below is a high-level summary of each section along with relevant documentation links. Please refer to these before and during the audit for a thorough understanding of the protocol.
+This repository contains comprehensive documentation and code related to the Smart Contracts, VM, and zk-circuits sections of the zkSync Era Protocol. Below is a high-level summary of each section along with relevant documentation links. Please refer to these before and during the audit for a thorough understanding of the protocol.
 
 ## **📁 Sections**
 
