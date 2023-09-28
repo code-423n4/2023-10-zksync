@@ -6,8 +6,6 @@
 - Starts October 2, 2023 20:00 UTC 
 - Ends October 20:00 UTC 
 
-**IMPORTANT NOTE**: Unlike most public Code4rena contests, prior to receiving payment from this contest you MUST become a Certified Warden (successfully complete KYC and pass screening for OFAC sanctions). You do not have to complete this process before competing or submitting bugs.
-
 How the &#36;1,100,000 maximum pot works:
 - Contest minimum pot is &#36;330,000 (including **&#36;##k** gas optimization pot).
 - If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
