@@ -32,7 +32,7 @@ This repository contains comprehensive documentation and code related to the Sma
 
 ### **1. Smart Contract Section**
 
-Here are the relevant documents:
+Relevant Documentation:
 
 - **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
 - **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/zkSync%20fee%20model.md)**
@@ -43,13 +43,13 @@ Here are the relevant documents:
 
 ### **2. Circuits Section**
 
-The Circuits section deals with circuit documentation:
+Circuit Documentation:
 
 - **How does ZK work? (high level)**
    - [Intro to zkSync’s ZK](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Intro%20to%20zkSync%E2%80%99s%20ZK.md)
    - [ZK Terminology](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/ZK%20Terminology.md)
    - [Getting Started](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Getting%20Started.md)
-- **Testing**
+- **Examples and Tests**
    - [Circuit example: Ecrecover test](https://www.notion.so/Circuit-example-Ecrecover-test-4c86cb5d14f9441988f53b0f624c44cc?pvs=21)
    - [Circuit test explained](https://www.notion.so/Circuit-test-explained-152bb55992484051b0711b7e8df919ef?pvs=21)
   
