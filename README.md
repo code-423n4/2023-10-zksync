@@ -178,27 +178,23 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [zksync/contracts/ForceDeployUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/ForceDeployUpgrader.sol) | 7 | |
 | [zksync/contracts/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/Dependencies.sol) | 2 | |
 
-## Out of scope
-
-| Contract | SLOC | Libraries used |  
+## ZK Circuits
+| Contract | SLOC | Purpose |
 | ----------- | ----------- | ----------- |
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [era-zkevm_circuits/src/base_structures](era-zkevm_circuits/src/base_structures) | 1971 | Structures for circuits | |
-| [era-zkevm_circuits/src/code_unpacker_sha256](era-zkevm_circuits/src/code_unpacker_sha256) | 704 | Unpacks code into memory | |
-| [era-zkevm_circuits/src/demux_log_queue](era-zkevm_circuits/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits | |
-| [era-zkevm_circuits/src/ecrecover](era-zkevm_circuits/src/ecrecover) | 1342 | Ecrecover precompile | |
-| [era-zkevm_circuits/src/fsm_input_output](era-zkevm_circuits/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next | |
-| [era-zkevm_circuits/src/keccak_round_function](era-zkevm_circuits/src/keccak_round_function) | 531 | Keccak hash function | |
-| [era-zkevm_circuits/src/linear_hasher](era-zkevm_circuits/src/linear_hasher) | 224 | Creates commitment using Keccak | |
-| [era-zkevm_circuits/src/log_sorter](era-zkevm_circuits/src/log_sorter) | 798 | Sorts logs by timestamp | |
-| [era-zkevm_circuits/src/main_vm](era-zkevm_circuits/src/main_vm) | 7673 | Main VM circuit | |
-| [era-zkevm_circuits/src/ram_permutation](era-zkevm_circuits/src/ram_permutation) | 657 | Circuit for RAM reads+writes | |
-| [era-zkevm_circuits/src/sort_decommitment_requests](era-zkevm_circuits/src/sort_decommitment_requests) | 1358 | Sort code decommitments | |
-| [era-zkevm_circuits/src/storage_application](era-zkevm_circuits/src/storage_application) | 686 | Circuit related to storage | |
-| [era-zkevm_circuits/src/storage_validity_by_grand_product](era-zkevm_circuits/src/storage_validity_by_grand_product) | 1670 | Sort storage access | |
-| [era-zkevm_circuits/src/tables](era-zkevm_circuits/src/tables) | 206 | Lookup Tables | |
+| [era-zkevm_circuits/src/base_structures](era-zkevm_circuits/src/base_structures) | 1971 | Structures for circuits |
+| [era-zkevm_circuits/src/code_unpacker_sha256](era-zkevm_circuits/src/code_unpacker_sha256) | 704 | Unpacks code into memory |
+| [era-zkevm_circuits/src/demux_log_queue](era-zkevm_circuits/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits |
+| [era-zkevm_circuits/src/ecrecover](era-zkevm_circuits/src/ecrecover) | 1342 | Ecrecover precompile |
+| [era-zkevm_circuits/src/fsm_input_output](era-zkevm_circuits/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
+| [era-zkevm_circuits/src/keccak_round_function](era-zkevm_circuits/src/keccak_round_function) | 531 | Keccak hash function |
+| [era-zkevm_circuits/src/linear_hasher](era-zkevm_circuits/src/linear_hasher) | 224 | Creates commitment using Keccak |
+| [era-zkevm_circuits/src/log_sorter](era-zkevm_circuits/src/log_sorter) | 798 | Sorts logs by timestamp |
+| [era-zkevm_circuits/src/main_vm](era-zkevm_circuits/src/main_vm) | 7673 | Main VM circuit |
+| [era-zkevm_circuits/src/ram_permutation](era-zkevm_circuits/src/ram_permutation) | 657 | Circuit for RAM reads+writes |
+| [era-zkevm_circuits/src/sort_decommitment_requests](era-zkevm_circuits/src/sort_decommitment_requests) | 1358 | Sort code decommitments |
+| [era-zkevm_circuits/src/storage_application](era-zkevm_circuits/src/storage_application) | 686 | Circuit related to storage |
+| [era-zkevm_circuits/src/storage_validity_by_grand_product](era-zkevm_circuits/src/storage_validity_by_grand_product) | 1670 | Sort storage access |
+| [era-zkevm_circuits/src/tables](era-zkevm_circuits/src/tables) | 206 | Lookup Tables |
 
 ## Out of scope
 
