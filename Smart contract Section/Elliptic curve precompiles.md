@@ -79,14 +79,12 @@ By choosing $R = 2^{256}$ we avoided 2 modulo operations and one division from t
 
 Addition and subtraction in Montgomery form are the same as ordinary modular addition and subtraction because of the distributive law
 
-$$
 \begin{gather*}
 \begin{align*}
 aR+bR=(a+b)R,\\
 aR-bR=(a-b)R.
 \end{align*}
 \end{gather*}
-$$
 
 ```solidity
 /// @notice Computes the Montgomery addition.
