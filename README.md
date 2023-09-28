@@ -34,11 +34,12 @@ This repository contains comprehensive documentation and code related to the Sma
 
 The Smart Contract section encompasses system contracts and bootloader for VM v1.4.0, fee models, and L1→L2 operations handling on zkSync. Here are the relevant documents:
 
-- **[System Contracts/Bootloader Description (VM v1.4.0)](https://www.notion.so/System-contracts-bootloader-description-VM-v1-4-0-bdec3d4153ed4f6e8c0e32fb63ca4372?pvs=21)**
-- **[zkSync Fee Model](https://www.notion.so/zkSync-fee-model-26826247ada840c29994e6998295ad26?pvs=21)**
-- **[Handling L1→L2 Ops on zkSync](https://www.notion.so/Handling-L1-L2-ops-on-zkSync-d5fb904c80be43e4b6a3dbe967336e47?pvs=21)**
-- **[Elliptic Curve Precompiles](https://www.notion.so/Elliptic-curve-precompiles-a5a67fc85fb2468da2f1062a1c02bddc?pvs=21)**
-- **[Batches & L2 Blocks on zkSync](https://www.notion.so/Batches-L2-blocks-on-zkSync-4a3208dc25b8431cb514f4076b4f3224?pvs=21)**
+- **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
+- **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
+- **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Batches%20%26%20L2%20blocks%20on%20zkSync.md)**
+- **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
 
 ### **2. Circuits Section**
 
@@ -55,7 +56,6 @@ The Circuits section deals with the batches & L2 blocks on zkSync, handling of p
 - **[Boojum gadgets](https://www.notion.so/Boojum-gadgets-265047bfa31a4f56b640cb34a732a078?pvs=21)**
 - **[Circuits](https://www.notion.so/Circuits-c2e39db21b4446aa8f06318ae404d34f?pvs=21)**
 - **[CS implementations](https://www.notion.so/CS-implementations-a288039100034cf489e3bbc417c5e2cf?pvs=21)**
-- **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
 
 ### **3. VM Section**
 
@@ -63,6 +63,7 @@ The VM section is related to the zkSync Era Virtual Machine and contains ellipti
 
 - **[ZkSync Era Virtual Machine Primer](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
     - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of zkSync EVM, serving as an essential guide for those seeking to explore the zkSync EVM environment.
+- **[zkSync Era: The Equivalence Compiler Documentation](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/compiler-equivalence-docs/zkSync%20Era%20-%20The%20Equivalence%20Compiler%20Documentation.md)**
 - **[spec.pdf](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/spec.pdf)**
     - This document is a highly technical and detailed specification, providing an in-depth exploration of the zkSync protocol and its underlying architecture. It’s a comprehensive resource for those who desire a deeper and more formal understanding of the protocol's design and functionalities. While it’s not a required read for understanding the basic structure and operations of the protocol, it is an invaluable resource for those wishing to delve into the finer details and theoretical underpinnings of zkSync.
 
