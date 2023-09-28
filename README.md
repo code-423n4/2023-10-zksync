@@ -157,26 +157,26 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 | [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2ERC20Bridge.sol) | 101 | |
-| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2StandardERC20.sol) 78 | |
-| [zksync/contracts/bridge/L2WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2WethBridge.sol) 66 | | 
-| [zksync/contracts/bridge/L2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2Weth.sol) 55 | |
-| [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Bridge.sol) 30 | |
-| [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL1Bridge.sol) 10 | |
-| [zksync/contracts/bridge/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2StandardToken.sol) 10 | |
-| [zksync/contracts/bridge/interfaces/IL2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Weth.sol) 8 | |
+| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2StandardERC20.sol) | 78 | |
+| [zksync/contracts/bridge/L2WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2WethBridge.sol) | 66 | | 
+| [zksync/contracts/bridge/L2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2Weth.sol) | 55 | |
+| [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Bridge.sol) | 30 | |
+| [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL1Bridge.sol) | 10 | |
+| [zksync/contracts/bridge/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2StandardToken.sol) | 10 | |
+| [zksync/contracts/bridge/interfaces/IL2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Weth.sol) | 8 | |
 
 ### Other
 
 | Contract | SLOC | Libraries used |
 | ----------- | ----------- | ----------- |
-| [zksync/contracts/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/SystemContractsCaller.sol) 108 | |
-| [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/L2ContractHelper.sol) 64 | |
-| [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) 51 | |
-| [zksync/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymaster.sol) 22 | |
-| [zksync/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/vendor/AddressAliasHelper.sol]) 14 | |
-| [zksync/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymasterFlow.sol) 9 | |
-| [zksync/contracts/ForceDeployUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/ForceDeployUpgrader.sol) 7 | |
-| [zksync/contracts/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/Dependencies.sol) 2 | |
+| [zksync/contracts/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/SystemContractsCaller.sol) | 108 | |
+| [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/L2ContractHelper.sol) | 64 | |
+| [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) | 51 | |
+| [zksync/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymaster.sol) | 22 | |
+| [zksync/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/vendor/AddressAliasHelper.sol]) | 14 | |
+| [zksync/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymasterFlow.sol) | 9 | |
+| [zksync/contracts/ForceDeployUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/ForceDeployUpgrader.sol) | 7 | |
+| [zksync/contracts/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/Dependencies.sol) | 2 | |
 
 ## Out of scope
 
