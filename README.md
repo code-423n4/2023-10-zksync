@@ -45,9 +45,9 @@ The Smart Contract section encompasses system contracts and bootloader for VM v1
 The Circuits section deals with the batches & L2 blocks on zkSync, handling of pubdata in Boojum, and Code4rena circuit documentation.
 
 - **How does ZK work? (high level)**
-   - [Intro to zkSync’s ZK](https://www.notion.so/Intro-to-zkSync-s-ZK-2e6ed7c250a840e3ace5368e5348d254?pvs=21)
-   - [ZK Terminology](https://www.notion.so/ZK-Terminology-1edb07c0b61b4792907879b905378704?pvs=21)
-   - [Getting Started](https://www.notion.so/Getting-Started-368401a6d97e4c5bb0b9fc0a0f13f224?pvs=21)
+   - [Intro to zkSync’s ZK](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Intro%20to%20zkSync%E2%80%99s%20ZK.md)
+   - [ZK Terminology](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/ZK%20Terminology.md)
+   - [Getting Started](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Getting%20Started.md)
 - **Testing**
    - [Circuit example: Ecrecover test](https://www.notion.so/Circuit-example-Ecrecover-test-4c86cb5d14f9441988f53b0f624c44cc?pvs=21)
    - [Circuit test explained](https://www.notion.so/Circuit-test-explained-152bb55992484051b0711b7e8df919ef?pvs=21)
