@@ -32,7 +32,7 @@ This repository contains comprehensive documentation and code related to the Sma
 
 ### **1. Smart Contract Section**
 
-The Smart Contract section encompasses system contracts and bootloader for VM v1.4.0, fee models, and L1→L2 operations handling on zkSync. Here are the relevant documents:
+Relevant Documentation:
 
 - **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
 - **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/zkSync%20fee%20model.md)**
@@ -43,13 +43,13 @@ The Smart Contract section encompasses system contracts and bootloader for VM v1
 
 ### **2. Circuits Section**
 
-The Circuits section deals with the batches & L2 blocks on zkSync, handling of pubdata in Boojum, and Code4rena circuit documentation.
+Circuit Documentation:
 
 - **How does ZK work? (high level)**
    - [Intro to zkSync’s ZK](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Intro%20to%20zkSync%E2%80%99s%20ZK.md)
    - [ZK Terminology](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/ZK%20Terminology.md)
    - [Getting Started](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Getting%20Started.md)
-- **Testing**
+- **Examples and Tests**
    - [Circuit example: Ecrecover test](https://www.notion.so/Circuit-example-Ecrecover-test-4c86cb5d14f9441988f53b0f624c44cc?pvs=21)
    - [Circuit test explained](https://www.notion.so/Circuit-test-explained-152bb55992484051b0711b7e8df919ef?pvs=21)
   
@@ -59,11 +59,12 @@ The Circuits section deals with the batches & L2 blocks on zkSync, handling of p
 
 ### **3. VM Section**
 
-The VM section is related to the zkSync Era Virtual Machine and contains elliptic curve precompiles and an extensive primer on zkSync EVM.
+The VM section is related to the zkSync Era Virtual Machine.
 
 - **[ZkSync Era Virtual Machine Primer](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
     - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of zkSync EVM, serving as an essential guide for those seeking to explore the zkSync EVM environment.
 - **[zkSync Era: The Equivalence Compiler Documentation](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/compiler-equivalence-docs/zkSync%20Era%20-%20The%20Equivalence%20Compiler%20Documentation.md)**
+    - zkSync Era is a layer 2 rollup that uses zero-knowledge proofs to scale Ethereum without compromising on security or decentralization. As it's EVM-compatible (with Solidity/Vyper), 99% of Ethereum projects can redeploy without needing to refactor or re-audit any code. zkSync Era also uses an LLVM-based compiler that will eventually enable developers to write smart contracts in popular languages such as C++ and Rust.
 - **[spec.pdf](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/spec.pdf)**
     - This document is a highly technical and detailed specification, providing an in-depth exploration of the zkSync protocol and its underlying architecture. It’s a comprehensive resource for those who desire a deeper and more formal understanding of the protocol's design and functionalities. While it’s not a required read for understanding the basic structure and operations of the protocol, it is an invaluable resource for those wishing to delve into the finer details and theoretical underpinnings of zkSync.
 
@@ -83,11 +84,10 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ## Links
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+- **Documentation:** https://era.zksync.io/docs/
+- **Website:** https://zksync.io/
+- **Twitter:** https://twitter.com/zksync
+- **Discord:** https://join.zksync.dev/
 
 
 # Scope
@@ -109,23 +109,9 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 *List any files/contracts that are out of scope for this audit.*
 
-# Additional Context
-
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
-
 ## Attack ideas (Where to look for bugs)
 *List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
 
-## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
 
 ## Scoping Details 
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]
