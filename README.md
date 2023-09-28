@@ -54,7 +54,7 @@ Circuit Documentation:
 - **Advanced**
    - [Boojum gadgets](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Boojum%20gadgets.md)
    - [Circuits](https://www.notion.so/Circuits-c2e39db21b4446aa8f06318ae404d34f?pvs=21)
-   - [CS implementations](https://www.notion.so/CS-implementations-a288039100034cf489e3bbc417c5e2cf?pvs=21)
+   - [Boojum function: check_if_satisfied](https://github.com/code-423n4/2023-10-zksync/blob/sampkaML/Circuits%20Section/Boojum%20function%20check_if_satisfied.md)
 
 ### **3. VM Section**
 
