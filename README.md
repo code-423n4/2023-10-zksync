@@ -32,7 +32,7 @@ This repository contains comprehensive documentation and code related to the Sma
 
 ### **1. Smart Contract Section**
 
-The Smart Contract section encompasses system contracts and bootloader for VM v1.4.0, fee models, and L1→L2 operations handling on zkSync. Here are the relevant documents:
+Here are the relevant documents:
 
 - **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
 - **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/zkSync%20fee%20model.md)**
@@ -43,7 +43,7 @@ The Smart Contract section encompasses system contracts and bootloader for VM v1
 
 ### **2. Circuits Section**
 
-The Circuits section deals with the batches & L2 blocks on zkSync, handling of pubdata in Boojum, and Code4rena circuit documentation.
+The Circuits section deals with circuit documentation:
 
 - **How does ZK work? (high level)**
    - [Intro to zkSync’s ZK](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Intro%20to%20zkSync%E2%80%99s%20ZK.md)
@@ -59,7 +59,7 @@ The Circuits section deals with the batches & L2 blocks on zkSync, handling of p
 
 ### **3. VM Section**
 
-The VM section is related to the zkSync Era Virtual Machine and contains elliptic curve precompiles and an extensive primer on zkSync EVM.
+The VM section is related to the zkSync Era Virtual Machine.
 
 - **[ZkSync Era Virtual Machine Primer](https://github.com/code-423n4/2023-10-zksync/blob/main/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
     - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of zkSync EVM, serving as an essential guide for those seeking to explore the zkSync EVM environment.
