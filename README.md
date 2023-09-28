@@ -50,8 +50,7 @@ Circuit Documentation:
    - [ZK Terminology](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/ZK%20Terminology.md)
    - [Getting Started](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Getting%20Started.md)
 - **Examples and Tests**
-   - [Circuit example: Ecrecover test](https://www.notion.so/Circuit-example-Ecrecover-test-4c86cb5d14f9441988f53b0f624c44cc?pvs=21)
-   - [Circuit test explained](https://www.notion.so/Circuit-test-explained-152bb55992484051b0711b7e8df919ef?pvs=21)
+   - [Circuit Testing](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Circuit%20testing.md)
   
 - **[Boojum gadgets](https://www.notion.so/Boojum-gadgets-265047bfa31a4f56b640cb34a732a078?pvs=21)**
 - **[Circuits](https://www.notion.so/Circuits-c2e39db21b4446aa8f06318ae404d34f?pvs=21)**
