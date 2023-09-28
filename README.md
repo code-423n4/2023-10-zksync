@@ -28,15 +28,15 @@ This repository contains comprehensive documentation and code related to the Sma
 
 ## **📁 Sections**
 
-### **1. Smart Contract Section**
+### **1. Smart Contracts Section**
 
 Relevant Documentation:
 
-- **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
-- **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[System Contracts/Bootloader Description](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
+- **[zkSync Era Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
 - **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md)**
-- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
 - **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Batches%20%26%20L2%20blocks%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
 - **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
 
 ### **2. VM Section**
@@ -44,10 +44,10 @@ Relevant Documentation:
 The VM section is related to the zkSync Era Virtual Machine.
 
 - **[ZkSync Era Virtual Machine Primer](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
-    - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of zkSync EVM, serving as an essential guide for those seeking to explore the zkSync EVM environment.
+    - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of EraVM, serving as an essential guide for those seeking to explore the zkSync EraVM environment.
 - **[zkSync Era: The Equivalence Compiler Documentation](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/compiler-equivalence-docs/zkSync%20Era%20-%20The%20Equivalence%20Compiler%20Documentation.md)**
-    - zkSync Era is a layer 2 rollup that uses zero-knowledge proofs to scale Ethereum without compromising on security or decentralization. As it's EVM-compatible (with Solidity/Vyper), 99% of Ethereum projects can redeploy without needing to refactor or re-audit any code. zkSync Era also uses an LLVM-based compiler that will eventually enable developers to write smart contracts in popular languages such as C++ and Rust.
-- **[spec.pdf](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/spec.pdf)**
+    - The document describes how zkSync Solidity compiler represents high-level programming language constructions into low-level EraVM instruction set, how to use unique features without extending Solidity language with new syntax and why system contracts are needed.
+- **[EraVM Formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/spec.pdf)**
     - This document is a highly technical and detailed specification, providing an in-depth exploration of the zkSync protocol and its underlying architecture. It’s a comprehensive resource for those who desire a deeper and more formal understanding of the protocol's design and functionalities. While it’s not a required read for understanding the basic structure and operations of the protocol, it is an invaluable resource for those wishing to delve into the finer details and theoretical underpinnings of zkSync.
 
 ### **3. Circuits Section**
@@ -114,23 +114,23 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
-- If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:
-- Is this an upgrade of an existing system?:
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): 
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
-- Please describe required context:   
-- Does it use an oracle?:  
-- Describe any novel or unique curve logic or mathematical models your code uses: 
-- Is this either a fork of or an alternate implementation of another project?:   
-- Does it use a side-chain?:
-- Describe any specific areas you would like addressed:
+- If you have a public code repo, please share it here:  N/A
+- How many contracts are in scope?:   TODO
+- Total SLoC for these contracts?:  TODO
+- How many external imports are there?:  TODO
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  TODO
+- Does most of your code generally use composition or inheritance?:   Yes
+- How many external calls?:   TODO
+- What is the overall line coverage percentage provided by your tests?: TODO
+- Is this an upgrade of an existing system?: Yes
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): timelock, rollups, zk circuits
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   No
+- Please describe required context:   ZK rollup
+- Does it use an oracle?:  No
+- Describe any novel or unique curve logic or mathematical models your code uses: No
+- Is this either a fork of or an alternate implementation of another project?: No
+- Does it use a side-chain?: No
+- Describe any specific areas you would like addressed: Missing constraints, logical errors, malicious input for zk circuit or bootloader
 ```
 
 # Tests

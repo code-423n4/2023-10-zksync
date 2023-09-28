@@ -8,7 +8,7 @@ This document describes EraVM assembly language, then the aspects of VM related 
 
 The native type for EraVM is a 256-bits wide unsigned integer, we call it a *word*.
 
-Contracts are sequences of instructions . To support the execution of contracts, VM provides the following transient state:
+Contracts are sequences of instructions. To support the execution of contracts, VM provides the following transient state:
 
 - **registers**: 16 general-purpose registers: `r0`, `r1`, …, `r15`.  
 `r0` is a special constant register: reading it yields 0, storing to it is ignored.
