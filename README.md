@@ -34,11 +34,11 @@ This repository contains comprehensive documentation and code related to the Sma
 
 The Smart Contract section encompasses system contracts and bootloader for VM v1.4.0, fee models, and L1→L2 operations handling on zkSync. Here are the relevant documents:
 
-- **[System Contracts/Bootloader Description (VM v1.4.0)](https://www.notion.so/System-contracts-bootloader-description-VM-v1-4-0-bdec3d4153ed4f6e8c0e32fb63ca4372?pvs=21)**
-- **[zkSync Fee Model](https://www.notion.so/zkSync-fee-model-26826247ada840c29994e6998295ad26?pvs=21)**
-- **[Handling L1→L2 Ops on zkSync](https://www.notion.so/Handling-L1-L2-ops-on-zkSync-d5fb904c80be43e4b6a3dbe967336e47?pvs=21)**
-- **[Elliptic Curve Precompiles](https://www.notion.so/Elliptic-curve-precompiles-a5a67fc85fb2468da2f1062a1c02bddc?pvs=21)**
-- **[Batches & L2 Blocks on zkSync](https://www.notion.so/Batches-L2-blocks-on-zkSync-4a3208dc25b8431cb514f4076b4f3224?pvs=21)**
+- **[System Contracts/Bootloader Description (VM v1.4.0)](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
+- **[zkSync Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
+- **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/Smart%20contract%20Section/Batches%20%26%20L2%20blocks%20on%20zkSync.md)**
 - **[Handling Pubdata in Boojum](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21)**
 
 ### **2. Circuits Section**
