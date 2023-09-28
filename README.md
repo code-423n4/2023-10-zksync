@@ -89,18 +89,99 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+## L1 contracts
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
+### zkSync
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+|  | | |
+| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/Verifier.sol) | 1123 | |
+| [ethereum/contracts/zksync/facets/Executor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Executor.sol) | 326 | |  
+| [ethereum/contracts/zksync/facets/Mailbox.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Mailbox.sol) | 273 | |
+| [ethereum/contracts/zksync/libraries/Diamond.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/Diamond.sol) | 185 | |
+| [ethereum/contracts/zksync/facets/Getters.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Getters.sol) | 132 | |
+| [ethereum/contracts/zksync/interfaces/IMailbox.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IMailbox.sol) | 88 | |
+| [ethereum/contracts/zksync/libraries/TransactionValidator.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/TransactionValidator.sol) | 88 | |
+| [ethereum/contracts/zksync/ValidatorTimelock.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/ValidatorTimelock.sol) | 84 | |
+| [ethereum/contracts/zksync/facets/Admin.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Admin.sol) | 67 | |
+| [ethereum/contracts/zksync/Storage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/Storage.sol) | 64 | |
+| [ethereum/contracts/zksync/interfaces/IExecutor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IExecutor.sol) | 56 | | 
+| [ethereum/contracts/zksync/DiamondInit.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/DiamondInit.sol) | 53 | |
+| [ethereum/contracts/zksync/libraries/PriorityQueue.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/PriorityQueue.sol) | 42 | |
+| [ethereum/contracts/zksync/Config.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/Config.sol) | 40 | |
+| [ethereum/contracts/zksync/interfaces/IGetters.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IGetters.sol) | 39 | |
+| [ethereum/contracts/zksync/DiamondProxy.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/DiamondProxy.sol) | 30 | |
+| [ethereum/contracts/zksync/libraries/Merkle.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/Merkle.sol) | 30 | |
+| [ethereum/contracts/zksync/libraries/LibMap.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/LibMap.sol) | 27 | |
+| [ethereum/contracts/zksync/interfaces/IAdmin.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IAdmin.sol]) | 25 | |
+| [ethereum/contracts/zksync/facets/Base.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Base.sol) | 20 | |
+| [ethereum/contracts/zksync/interfaces/ILegacyGetters.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/ILegacyGetters.sol) | 10 | |
+| [ethereum/contracts/zksync/interfaces/IVerifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IVerifier.sol) | 9 | |
+| [ethereum/contracts/zksync/interfaces/IZkSync.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IZkSync.sol) | 6 | |
+| [ethereum/contracts/zksync/interfaces/IBase.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IBase.sol) | 4 | |
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+### Bridges
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 204 | |
+| [ethereum/contracts/bridge/L1WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/L1WethBridge.sol) | 175 | |
+| [ethereum/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL1Bridge.sol) | 39 | |
+| [ethereum/contracts/bridge/libraries/BridgeInitializationHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/contracts/bridge/libraries/BridgeInitializationHelper.sol) | 37 | |
+| [ethereum/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2Bridge.sol) | 18 | |
+| [ethereum/contracts/bridge/interfaces/IL1BridgeLegacy.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL1BridgeLegacy.sol) | 10 | |
+| [ethereum/contracts/bridge/interfaces/IL2ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2ERC20Bridge.sol) | 8 | |
+| [ethereum/contracts/bridge/interfaces/IL2WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2WethBridge.sol) | 8 | |
+| [ethereum/contracts/bridge/interfaces/IWETH9.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IWETH9.sol) | 5 | |
+
+### Other
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [ethereum/contracts/common/AllowList.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/AllowList.sol) | 72 | |
+| [ethereum/contracts/common/interfaces/IAllowList.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/interfaces/IAllowList.sol) | 45 | |
+| [ethereum/contracts/common/libraries/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/libraries/L2ContractHelper.sol) | 33 | |
+| [ethereum/contracts/common/ReentrancyGuard.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/ReentrancyGuard.sol) | 32 | |
+| [ethereum/contracts/common/libraries/UnsafeBytes.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/libraries/UnsafeBytes.sol) | 27 | |
+| [ethereum/contracts/common/interfaces/IL2ContractDeployer.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/interfaces/IL2ContractDeployer.sol) | 16 | |
+| [ethereum/contracts/common/libraries/UncheckedMath.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/libraries/UncheckedMath.sol) | 13 | |
+| [ethereum/contracts/common/AllowListed.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/AllowListed.sol) | 10 | |
+| [ethereum/contracts/common/L2ContractAddresses.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/L2ContractAddresses.sol) | 9 | |
+| [ethereum/contracts/common/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/Dependencies.sol) | 2 | |
+
+## L2 contracts
+
+### Bridges
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2ERC20Bridge.sol) | 101 | |
+| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2StandardERC20.sol) 78 | |
+| [zksync/contracts/bridge/L2WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2WethBridge.sol) 66 | | 
+| [zksync/contracts/bridge/L2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/L2Weth.sol) 55 | |
+| [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Bridge.sol) 30 | |
+| [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL1Bridge.sol) 10 | |
+| [zksync/contracts/bridge/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2StandardToken.sol) 10 | |
+| [zksync/contracts/bridge/interfaces/IL2Weth.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/bridge/interfaces/IL2Weth.sol) 8 | |
+
+### Other
+
+| Contract | SLOC | Libraries used |
+| ----------- | ----------- | ----------- |
+| [zksync/contracts/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/SystemContractsCaller.sol) 108 | |
+| [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/L2ContractHelper.sol) 64 | |
+| [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) 51 | |
+| [zksync/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymaster.sol) 22 | |
+| [zksync/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/vendor/AddressAliasHelper.sol]) 14 | |
+| [zksync/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymasterFlow.sol) 9 | |
+| [zksync/contracts/ForceDeployUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/ForceDeployUpgrader.sol) 7 | |
+| [zksync/contracts/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/Dependencies.sol) 2 | |
+
+## Out of scope
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
 
 ## Out of scope
 
