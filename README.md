@@ -4,7 +4,7 @@
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts October 2, 2023 20:00 UTC 
-- Ends October 20:00 UTC 
+- Ends October 23, 2023 20:00 UTC 
 
 How the &#36;1,100,000 maximum pot works:
 - Contest minimum pot is &#36;330,000 (including **&#36;25k** gas optimization pot). Please note, only L1 contracts included into gas optimization pod. 
