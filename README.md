@@ -150,6 +150,59 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ## L2 contracts
 
+### System Contracts
+
+| Contract | SLOC | Libraries used |
+| ----------- | ----------- | ----------- |
+| [system-contracts/contracts/libraries/TransactionHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/TransactionHelper.sol) | 258 | |
+| [system-contracts/contracts/BootloaderUtilities.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/BootloaderUtilities.sol) | 233 | |
+| [system-contracts/contracts/SystemContext.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/SystemContext.sol) | 232 | |
+| [system-contracts/contracts/L1Messenger.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/L1Messenger.sol) | 219 | |
+| [system-contracts/contracts/ContractDeployer.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/ContractDeployer.sol) | 204 | |
+| [system-contracts/contracts/libraries/SystemContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/SystemContractHelper.sol) | 200 | |
+| [system-contracts/contracts/openzeppelin/utils/Address.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/utils/Address.sol) | 160 | |
+| [system-contracts/contracts/libraries/EfficientCall.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/EfficientCall.sol) | 151 | |
+| [system-contracts/contracts/libraries/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/) | 144 | |
+| [system-contracts/contracts/Compressor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/Compressor.sol) | 139 | |
+| [system-contracts/contracts/DefaultAccount.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/DefaultAccount.sol) | 115 | |
+| [system-contracts/contracts/test-contracts/TestSystemContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContract.sol) | 110 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol) | 109 | |
+| [system-contracts/contracts/NonceHolder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/NonceHolder.sol) | 82 | |
+| [system-contracts/contracts/libraries/RLPEncoder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/RLPEncoder.sol) | 75 | |
+| [system-contracts/contracts/L2EthToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/L2EthToken.sol) | 71 | |
+| [system-contracts/contracts/test-contracts/TestSystemContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContractHelper.sol) | 69 | |
+| [system-contracts/contracts/Constants.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/Constants.sol) | 65 | |
+| [system-contracts/contracts/AccountCodeStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/AccountCodeStorage.sol) | 62 | |
+| [system-contracts/contracts/interfaces/IContractDeployer.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IContractDeployer.sol) | 54 | |
+| [system-contracts/contracts/libraries/Utils.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/Utils.sol) | 51 | |
+| [system-contracts/contracts/KnownCodesStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/KnownCodesStorage.sol) | 45 | |
+| [system-contracts/contracts/MsgValueSimulator.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/MsgValueSimulator.sol) | 31 | |
+| [system-contracts/contracts/libraries/UnsafeBytesCalldata.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/UnsafeBytesCalldata.sol) | 31 | |
+| [system-contracts/contracts/interfaces/ISystemContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ISystemContract.sol) | 27 | |
+| [system-contracts/contracts/interfaces/IAccount.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IAccount.sol) | 26 | |
+| [system-contracts/contracts/interfaces/ISystemContext.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ISystemContext.sol) | 25 | |
+| [system-contracts/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IPaymaster.sol) | 22 | |
+| [system-contracts/contracts/interfaces/IEthToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IEthToken.sol) | 21 | |
+| [system-contracts/contracts/ImmutableSimulator.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/ImmutableSimulator.sol) | 20 | |
+| [system-contracts/contracts/interfaces/IL1Messenger.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IL1Messenger.sol) | 20 | |
+| [system-contracts/contracts/interfaces/ICompressor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ICompressor.sol) | 16 | |
+| [system-contracts/contracts/ComplexUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/ComplexUpgrader.sol) | 15 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol) | 15 | |
+| [system-contracts/contracts/interfaces/INonceHolder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/INonceHolder.sol) | 14 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol) | 14 | |
+| [system-contracts/contracts/test-contracts/MockKnownCodesStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/MockKnownCodesStorage.sol) | 11 | |
+| [system-contracts/contracts/interfaces/IMailbox.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IMailbox.sol) | 10 | |
+| [system-contracts/contracts/interfaces/IAccountCodeStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IAccountCodeStorage.sol) | 9 | |
+| [system-contracts/contracts/interfaces/IImmutableSimulator.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IImmutableSimulator.sol) | 9 | |
+| [system-contracts/contracts/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IL2StandardToken.sol) | 9 | |
+| [system-contracts/contracts/interfaces/IBootloaderUtilities.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IBootloaderUtilities.sol) | 7 | |
+| [system-contracts/contracts/interfaces/IKnownCodesStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IKnownCodesStorage.sol]) | 7 | |
+| [system-contracts/contracts/test-contracts/DummyUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/DummyUpgrade.sol) | 7 | |
+| [system-contracts/contracts/interfaces/ISystemContextDeprecated.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ISystemContextDeprecated.sol) | 6 | |
+| [system-contracts/contracts/EmptyContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EmptyContract.sol) | 5 | |
+| [system-contracts/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IPaymasterFlow.sol) | 5 | |
+| [system-contracts/contracts/interfaces/IComplexUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IComplexUpgrader.sol) | 4 | |
+
 ### Bridges
 
 | Contract | SLOC | Libraries used |  
