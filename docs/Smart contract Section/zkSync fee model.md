@@ -6,8 +6,6 @@ On Ethereum, all the computational, as well as storage costs, are represented vi
 
 zkSync as well as other L2s have the issue which does not allow to adopt the same model as the one for Ethereum so easily: the main reason is the requirement for publishing of the pubdata on Ethereum. This means that prices for L2 transactions will depend on the volatile L1 gas prices and can not be simply hardcoded.
 
-TODO: Disclaimer that the fee model in the current state is mostly for the previous proof system.
-
 # High-level description
 
 zkSync, being a zkRollup is required to prove every operation with zero knowledge proofs. That comes with a few nuances.
@@ -62,7 +60,7 @@ This does not actually matter a lot for normal transactions, since most of the c
 
 While it was mentioned above that the `MAX_TRANSACTION_GAS_LIMIT` is needed to protect the operator from users stalling the state keeper by using too much computation, in case the users may need to use a lot of pubdata (for instance to publish the bytecode of a new contract), the required gasLimit may go way beyond the `MAX_TRANSACTION_GAS_LIMIT` (since the contracts can be 10s of kilobytes in size). All the new contracts to be published are included as part of the factory dependencies field of the transaction and so the operator already knows how much pubdata will have to published & how much gas will have to spent on it.
 
-That’s why, to provide the better UX for users, the operator may provide the trusted gas limit (TODO: link in the bootloader code), i.e. the limit which exceeds `MAX_TRANSACTION_GAS_LIMIT` assuming that the operator knows what he is doing (e.g. he is sure that the excess gas will be spent on the pubdata).
+That’s why, to provide the better UX for users, the operator may provide the [trusted gas limit](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/system-contracts/bootloader/bootloader.yul#L1137), i.e. the limit which exceeds `MAX_TRANSACTION_GAS_LIMIT` assuming that the operator knows what he is doing (e.g. he is sure that the excess gas will be spent on the pubdata).
 
 ## High-level: conclusion
 
@@ -89,15 +87,13 @@ These constants are to be hardcoded and can only be changed via either system co
 
 `BATCH_OVERHEAD_L2_GAS` (*EO*)— The constant overhead denominated in gas. This overhead is created to cover the amortized costs of proving.
 
-`BLOCK_GAS_LIMIT` (*B*) — The maximum number of computation gas per batch. This is the maximal number of gas that can be spent within a batch. This constant is rather arbitrary and is needed to prevent transactions from taking too much time from the state keeper. It can not be larger than the hard limit of 232 of gas for VM. TODO: delete?
+`BLOCK_GAS_LIMIT` (*B*) — The maximum number of computation gas per batch. This is the maximal number of gas that can be spent within a batch. This constant is rather arbitrary and is needed to prevent transactions from taking too much time from the state keeper. It can not be larger than the hard limit of 2^32 of gas for VM.
 
 `MAX_TRANSACTION_GAS_LIMIT` (*TM*) — The maximal transaction gas limit. For *i*-th single instance circuit, the price of each of its units is $SC_i = \lceil \frac{T_M}{CC_i} \rceil$ to ensure that no transaction can run out of these single instance circuits.
 
 `MAX_TRANSACTIONS_IN_BATCH` (*TXM*) — The maximum number of transactions per batch. A constant in bootloader. Can contain almost any arbitrary value depending on the capacity of batch that we want to have.
 
 `BOOTLOADER_MEMORY_FOR_TXS` (*BM*) — The size of the bootloader memory that is used for transaction encoding (i.e. excluding the constant space, preallocated for other purposes).
-
-`MAX_PUBDATA_PER_TX` (*PM*) — The maximum number of pubdata that can be sent within zkSync batch. TODO: delete?
 
 `GUARANTEED_PUBDATA_PER_TX` (*PG*) — The guaranteed number of pubdata that should be possible to pay for in one zkSync batch. This is a number that should be enough for most reasonable cases.
 
@@ -135,16 +131,14 @@ $$
 
 There are now two situations that can be observed:
 
-1. *EP* > *EP*
-    
-    *f*
-    
-    *Max*
-    
+1. 
+$$
+EP_f > EP_{Max}
+$$
 
 This means that the L1 gas price is so high that if we treated all the prices fairly, then the number of gas required to publish guaranteed pubdata is too high, i.e. allowing at least *PG* pubdata bytes per transaction would mean that we would to support *tx*.*gasLimit* greater that the maximum gas per transaction *TM*, allowing to run out of other finite resources.
 
-If *EPf* > *EPmax*, then the user needs to artificially increase the provided *Ef* to bring the needed *tx*.*gasPerPubdataByte* to *EPmax*
+If $EP_f > EP_{Max}$, then the user needs to artificially increase the provided *Ef* to bring the needed *tx*.*gasPerPubdataByte* to *EPmax*
 
 In this case we set the EIP1559 `baseFee` (*Base*):
 
@@ -154,10 +148,7 @@ $$
 
 Only transactions that have at least this high gasPrice will be allowed into the batch.
 
-1. Otherwise, we keep *Base* = *E*.
-    
-    *f*
-    
+2. Otherwise, we keep $Base* = E_f$
 
 Note, that both cases are covered with the formula in case (1), i.e.:
 
@@ -167,54 +158,20 @@ $$
 
 This is the base fee that will be always returned from the API via `eth_gasGasPrice`.
 
-### Inclusion of a transaction
-
-Let’s define:
-
-*BU* — the number of computational gas already spent in a batch (i.e. gas spend on either multiinstance or single instance circuits).
-
-*PU* — the amount of public data already spent in a batch.
-
-*overhead*_*gas*(*tx*) — a function that returns the amount of the batch overhead in gas the transaction should pay upfront. (It will be defined later)
-
-A transaction will be included in a batch if all of the following are true:
-
-- *tx*.*maxFeePerErg* ≥ *Base* (the EIP1559 property)
-- *tx*.*gasLimit* − *overhead*_*gas*(*tx*) ≤ *min*(*B* − *B*, *T*) (transaction does not exceed the gasLimit for transactions or the one left for batch)
-    
-    *U*
-    
-    *M*
-    
-- *tx*.*gasLimit*/*tx*.*gasPerPubdataByte* ≤ *P* − *P* (transaction cannot exceed the limit for pubdata).
-    
-    *M*
-    
-    *U*
-    
-- *Base* * *tx*.*gasPerPubdataByte* ≥ *L*1 * *L*1 (the transaction does compensate for all published public data).
-    
-    *PUB*
-    
-    *P*
-    
-
-This way the operator knows the transaction will definitely fit into the batch.
-
-These calculations are done offchain and are used by the operator only.
-
-### The current approach by the server
-
-While the approach above is in principle possible, right now our server uses a simplified approach, where it accepts any transaction with acceptable gasPrice and tries to insert as many transactions into a batch as possible.
-
 ### Calculating overhead for a transaction
 
 Let’s define by *tx*.*actualGasLimit* as the actual gasLimit that is to be used for processing of the transaction (including the intrinsic costs). In this case, we will use the following formulas for calculating the upfront payment for the overhead:
 
 $$
-S_O = 1/TX_M \\
-M_O(tx) = encLen(tx) / B_M \\
-E_{AO}(tx) = tx.actualGasLimit / T_M \\
+S_O = 1/TX_M
+$$
+$$
+M_O(tx) = encLen(tx) / B_M
+$$
+$$
+E_{AO}(tx) = tx.actualGasLimit / T_M
+$$
+$$
 O(tx) = max(S_O, M_O(tx), E_O(tx))
 $$
 
@@ -259,7 +216,7 @@ For the ease of integer calculation, we will use the following formulas to deriv
 
 $B_O(tx) = E_O + tx.gasPerPubdataByte \cdot \lfloor \frac{L1_O}{L1_{PUB}} \rfloor$
 
-*BO* denotes the overhead for batch in gas that the transaction would have to pay if it consumed the resources for entire batch.
+$B_O$ denotes the overhead for batch in gas that the transaction would have to pay if it consumed the resources for entire batch.
 
 Then, *overhead*_*gas*(*tx*) is the maximum of the following expressions:
 
@@ -273,9 +230,11 @@ The task that the operator needs to do is the following:
 
 Given the tx.gasLimit, it should find the maximal `overhead_gas(tx)`, such that the bootloader will accept such transaction, that is, if we denote by *Oop* the overhead proposed by the operator, the following equation should hold:
 
-*Oop* ≤ *overhead*_*gas*(*tx*)
+$$
+O_{op} ≤ overhead_gas(tx)
+$$
 
-for the *tx*.*bodyGasLimit* we use the *tx*.*bodyGasLimit* = *tx*.*gasLimit* − *Oop*.
+for the $tx.bodyGasLimit$ we use the $tx.bodyGasLimit$ = $tx.gasLimit − O_{op}$.
 
 There are a few approaches that could be taken here:
 
@@ -284,77 +243,79 @@ There are a few approaches that could be taken here:
 
 Let’s rewrite the formula above the following way:
 
-*Oop* ≤ *max*(*SO*, *MO*(*tx*), *EO*(*tx*))
+$$
+O_{op} ≤ max(SO, MO(tx), EO(tx))
+$$
 
-So we need to find the maximal *Oop*, such that *Oop* ≤ *max*(*SO*, *MO*(*tx*), *EO*(*tx*)) ⋅ *BO*. Note, that it means ensuring that at least one of the following is true:
+So we need to find the maximal $O_{op}$, such that $O_{op} ≤ max(S_O, M_O(tx), E_O(tx))$. Note, that it means ensuring that at least one of the following is true:
 
-1. *O* ≤ *S*
+1. $O_{op} ≤ S_O$
     
-    *op*
+2. $O_{op} ≤ M_O(tx)$
     
-    *O*
-    
-2. *O* ≤ *M*(*tx*)
-    
-    *op*
-    
-    *O*
-    
-3. *O* ≤ *E*(*tx*)
-    
-    *op*
-    
-    *O*
-    
+3. $O_{op} ≤ E_O(tx)$
 
 So let’s find the largest *Oop* for each of these and select the maximum one.
 
 - Solving for (1)
     
-    $$
-      O_{op} = \lceil \frac{B_O}{TX_M} \rceil
-      $$
+$$
+O_{op} = \lceil \frac{B_O}{TX_M} \rceil
+$$
     
 - Solving for (2)
     
-    $$
-      O_{op} = \lceil \frac{encLen(tx) \cdot B_O}{B_M} \rceil 
-      $$
+$$
+O_{op} = \lceil \frac{encLen(tx) \cdot B_O}{B_M} \rceil 
+$$
     
 - Solving for (3)
     
-    This one is somewhat harder than the previous ones. We need to find the largest *Oop*, such that:
+This one is somewhat harder than the previous ones. We need to find the largest *O_{op}*, such that:
     
-    $$ O_{op}  \
+$$ 
+O_{op} \le \lceil \frac{tx.actualErgsLimit \cdot B_O}{T_M} \rceil   \\
+$$
+
+$$
+O_{op} \le \lceil \frac{(tx.ergsLimit - O_{op}) \cdot B_O}{T_M} \rceil   \\
+$$
+
+$$
+O_{op}  ≤ \lceil \frac{B_O \cdot (tx.ergsLimit - O_{op})}{T_M} \rceil
+$$
     
-    O_{op}  \
-    
-    $$
-    
-    Note, that all numbers here are integers, so we can use the following substitution:
-    
-    $$ O_{op} -1  \
-    
-    (O_{op} -1)T_M (tx.ergsLimit - O_{op}) B_O \
-    
-    O_{op} T_M + O_{op} B_O tx.ergsLimit B_O + T_M \
-    
-    O_{op}  \
-    
-    $$
-    
-    Meaning, in other words:
-    
-    $$
-      O_{op} = \lfloor \frac{tx.ergsLimit \cdot B_O + T_M - 1}{B_O + T_M} \rfloor
-      $$
+Note, that all numbers here are integers, so we can use the following substitution:
+
+$$
+O_{op} -1 \lt \frac{(tx.ergsLimit - O_{op}) \cdot B_O}{T_M}    \\
+$$
+
+$$
+(O_{op} -1)T_M \lt (tx.ergsLimit - O_{op}) \cdot B_O    \\
+$$
+
+$$
+O_{op} T_M + O_{op} B_O \lt tx.ergsLimit \cdot B_O + T_M    \\
+$$
+
+$$
+O_{op} \lt \frac{tx.ergsLimit \cdot B_O + T_M}{B_O + T_M}    \\
+$$
+
+
+Meaning, in other words:
+
+$$
+O_{op} = \lfloor \frac{tx.ergsLimit \cdot B_O + T_M - 1}{B_O + T_M} \rfloor
+$$
     
 
 Then, the operator can safely choose the largest one.
 
 ### Discounts by the operator
 
-It is important to note that the formulas provided above are to withstand the worst-case scenario and these are the formulas used for L1->L2 transactions (since these are forced to be processed by the operator). However, in reality, the operator typically would want to reduce the overhead for users whenever it is possible. For instance, in the server, we underestimate the maximal potential `MAX_GAS_PER_TRANSACTION`, since usually the batches are closed because of either the pubdata limit or the transactions’ slots limit. For this reason, the operator also provides the operator’s proposed overhead. The only thing that the bootloader checks is that this overhead is not *larger* than the maximal required one. But the operator is allowed to provide a lower overhead.
+It is important to note that the formulas provided above are to withstand the worst-case scenario and these are the formulas used for L1->L2 transactions (since these are forced to be processed by the operator). However, in reality, the operator typically would want to reduce the overhead for users whenever it is possible. For instance, in the server, we underestimate the maximal potential `MAX_GAS_PER_TRANSACTION`, since usually the batches are closed because of either the pubdata limit or the transactions’ slots limit. For this reason, the operator also provides the operator’s proposed overhead. The only thing that the bootloader checks is that this overhead is *not larger* than the maximal required one. But the operator is allowed to provide a lower overhead.
 
 ### Refunds
 
@@ -368,21 +329,27 @@ To compensate users for this, we will provide refunds for users. For all of the 
 
 The fair price for a transaction is
 
-*FairFee* = *Ef* * *tx*.*computationalGas* + *EPf* * *pubdataused*.
+$$
+FairFee = E_f \cdot tx.computationalGas + EP_f \cdot pubdataused
+$$
 
-We can derive *tx*.*computationalGas* = *gasspent* − *pubdataused* * *tx*.*gasPricePerPubdata*, where *gasspent* is the number of gas spent for the transaction (can be trivially fetched in Solidity).
+We can derive $tx.computationalGas = gasspent − pubdataused \cdot tx.gasPricePerPubdata$, where *gasspent* is the number of gas spent for the transaction (can be trivially fetched in Solidity).
 
 Also, the *FairFee* will include the actual overhead for batch that the users should pay for.
 
 The fee that the user has actually spent is:
 
-*ActualFee* = *gasspent* * *gasPrice*
+$$
+ActualFee = gasspent \cdot gasPrice
+$$
 
 So we can derive the overpay as
 
-*ActualFee* − *FairFee*
+$$
+ActualFee − FairFee
+$$
 
-In order to keep the invariant of *gasUsed* * *gasPrice* = *fee* , we will formally refund $\frac{ActualFee - FairFee}{gasPrice}$$\frac{ActualFee - FairFee}{Base}$ gas.
+In order to keep the invariant of $gasUsed \cdot gasPrice = fee$ , we will formally refund $\frac{ActualFee - FairFee}{Base}$ gas.
 
 At the moment, this counter is not accessible within the VM and so the operator is free to provide any refund it wishes (as long as it is greater than or equal to the actual amount of gasLeft after the transaction execution).
 
@@ -394,7 +361,7 @@ zkSync Era is a statediff-based rollup, i.e. the pubdata is published not for t
 - Depending on the `value` written into a slot, various compression optimizations could be used and so we should reflect that too.
 - Maybe the slot has been already written to in this batch and so we don’t to charge anything for it.
 
-You can read more about how we treat the pubdata here: TODO link to pubdata doc.
+You can read more about how we treat the pubdata [here](./Handling%20pubdata%20in%20Boojum.md).
 
 The important part here is that while such refunds are inlined (i.e. unlike the refunds for overhead they happen in-place during execution and not after the whole transaction has been processed), they are enforced by the operator. Right now, the operator is the one that decides what refund to provide.
 
@@ -410,7 +377,7 @@ This means that formula `tx.gasLimit * L1_GAS_PRICE * C` becomes *quadratic* to 
 
 ## `gasUsed` depends to `gasLimit`
 
-While in general it shouldn’t be the case (assuming the correct implementation refunds (todo: link to the refunds)), in practice it turned out that the formulas above, while robust, charge for the worst case. In order to improve the UX and reduce the overhead, the operator charges less for the execution overhead. However, as a compensation for the risk, it does not fully refund for it.
+While in general it shouldn’t be the case assuming the correct implementation of [refunds](#refunds), in practice it turned out that the formulas above, while robust, estimate for the worst case which can be very difference from the average one. In order to improve the UX and reduce the overhead, the operator charges less for the execution overhead. However, as a compensation for the risk, it does not fully refund for it.
 
 ## L1->L2 transactions do not pay for their execution on L1
 

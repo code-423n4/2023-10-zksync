@@ -32,12 +32,12 @@ This repository contains comprehensive documentation and code related to the Sma
 
 Relevant Documentation:
 
-- **[System Contracts/Bootloader Description](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
-- **[zkSync Era Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
-- **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md)**
-- **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Batches%20%26%20L2%20blocks%20on%20zkSync.md)**
-- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
-- **[Handling Pubdata in Boojum](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
+- **[System Contracts/Bootloader Description](./docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
+- **[zkSync Era Fee Model](./docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[Handling L1→L2 Ops on zkSync](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
+- **[Batches & L2 Blocks on zkSync](./docs/Smart%20contract%20Section/Batches%20&%20L2%20blocks%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](./docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
+- **[Handling Pubdata in Boojum](./docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
 
 ### **2. VM Section**
 
@@ -245,12 +245,12 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [era-zkevm_circuits/src/demux_log_queue](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits |
 | [era-zkevm_circuits/src/ecrecover](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ecrecover) | 1342 | Ecrecover precompile |
 | [era-zkevm_circuits/src/fsm_input_output](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
-| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/keccak_round_function) | 531 | Keccak hash function |
+| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/keccak256_round_function) | 531 | Keccak hash function |
 | [era-zkevm_circuits/src/linear_hasher](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/linear_hasher) | 224 | Creates commitment using Keccak |
 | [era-zkevm_circuits/src/log_sorter](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/log_sorter) | 798 | Sorts logs by timestamp |
 | [era-zkevm_circuits/src/main_vm](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/main_vm) | 7673 | Main VM circuit |
 | [era-zkevm_circuits/src/ram_permutation](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ram_permutation) | 657 | Circuit for RAM reads+writes |
-| [era-zkevm_circuits/src/sort_decommitment_requests](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/sort_decommitment_requests) | 1358 | Sort code decommitments |
+| [era-zkevm_circuits/src/sort_decommitment_requests](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/sort_decommittment_requests) | 1358 | Sort code decommitments |
 | [era-zkevm_circuits/src/storage_application](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/storage_application) | 686 | Circuit related to storage |
 | [era-zkevm_circuits/src/storage_validity_by_grand_product](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/storage_validity_by_grand_product) | 1670 | Sort storage access |
 | [era-zkevm_circuits/src/tables](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/tables) | 206 | Lookup Tables |
@@ -309,8 +309,29 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 
 ## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
 
+### Access control and permissions
+
+It is important to examine access control and persmissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circuimvent the limitations imposed on them.
+
+Especial scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md#security-considerations) of such an issue, which was detected & resolved by the team before the contest. 
+
+### Data availability issues 
+
+Another important invariant is that the state of the rollup can be restored based on the pubdata sent to L1. Make sure that for a block that gets executed regardless of what a potentially malicious operator does:
+
+- Users can always get preimages for all the bytecodes that were deployed to the system.
+- Users can always recover the leaves of the Merkle tree of L2->L1 logs.
+- Users can always recover the storage merkle tree.
+
+In general, there should be always a possibility to have a new operator that fully recovers the state available solely from L1 and is able to execute transactions successfully.
+
+### EVM compatibility attacks
+
+Make sure that access to any dangerous logic is well-constrained. For instance:
+
+- Access to potentially dangerous system contracts' methods is protected by the `isSystemCall` flag, permitting only the contracts that are aware of the zkSync-specific features to call it.
+- Using innocent Solidity code without zkSync-specific features should not lead to unexpected behaviour. An [example](https://code4rena.com/reports/2023-03-zksync#h-01-the-call-to-msgvaluesimulator-with-non-zero-msgvalue-will-call-to-sender-itself-which-will-bypass-the-onlyself-check) of a relevant finding.
 
 ## Scoping Details 
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]

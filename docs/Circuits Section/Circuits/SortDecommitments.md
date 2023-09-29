@@ -40,4 +40,4 @@ pub struct CodeDecommittmentsDeduplicatorFSMInputOutput<F: SmallField> {
 
 This circuit handles the sorting and deduplication of code cancellation requests. Before starting, during the pre-start phase, the first decommiter queue is generated. To decommiter a code, the input will receive the hash root of the code, the length of the code, the code hash of the opcode, the number of opcodes and the code of the page. Next, it sorts the queue and, in the process, identifies and removes identical requests, serving as a filtering mechanism in case the same contract is called several times.
 
-[Sorting and deduplicating](SortDecommitments%208b6c67c18d4b456a835ddbe87fd0175e/Sorting%20and%20deduplicating%2068cc6e7170ef4d44aa1b1c33ff037d32.md)
+[Sorting and deduplicating](./SortDecommitments/Sorting%20and%20deduplicating.md)

@@ -2,7 +2,7 @@
 
 # Main instrument: L2→L1 log
 
-The only “provable” part of the communication from L2 to L1 are native L2→L1 logs emitted by VM. These can be emitted by the `to_l1` opcode (TODO: link). Each log consists of the following fields:
+The only “provable” part of the communication from L2 to L1 are native L2→L1 logs emitted by VM. These can be emitted by the `to_l1` [opcode](../System%20contracts%20bootloader%20description.md#zksync-specific-opcodes). Each log consists of the following fields:
 
 ```solidity
 struct L2Log {
@@ -19,15 +19,15 @@ Where:
 
 - `l2ShardId` is the id of the shard the opcode was called (it is currently always 0).
 - `isService` a boolean flag that is not used right now
-- `txNumberInBatch` the number of the transaction in the batch where the log has happened. This number is taken from the internal counter which is incremented each time the `increment_tx_counter` is called (TODO: link).
+- `txNumberInBatch` the number of the transaction in the batch where the log has happened. This number is taken from the internal counter which is incremented each time the `increment_tx_counter` is [called]((../System%20contracts%20bootloader%20description.md#zksync-specific-opcodes)).
 - `sender` is the value of `this` in the frame where the L2→L1 log was emitted.
 - `key` and `value` are just two 32-byte values that could be used to carry some data with the log.
 
-The hashed array of these opcodes is then included into the block commitment: (TODO: link). Because of that we know that if the proof verifies, then the L2→L1 logs provided by the operator were correct, so we can use that fact to produce more complex structures. Before Boojum such logs were also Merklized within the circuits and so the Merkle tree’s root hash was included into the block commitment: (TODO link).
+The hashed array of these opcodes is then included into the [block commitment](https://github.com/matter-labs/era-contracts/blob/f06a58360a2b8e7129f64413998767ac169d1efd/ethereum/contracts/zksync/facets/Executor.sol#L493). Because of that we know that if the proof verifies, then the L2→L1 logs provided by the operator were correct, so we can use that fact to produce more complex structures. Before Boojum such logs were also Merklized within the circuits and so the Merkle tree’s root hash was included into the block commitment also.
 
 ## Important system values
 
-Two `key` and `value` fields are enough for a lot of system-related use-cases, such as sending timestamp of the batch, previous batch hash, etc. (TODO: links to block processing).  
+Two `key` and `value` fields are enough for a lot of system-related use-cases, such as sending timestamp of the batch, previous batch hash, etc. They were and are used [used](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/system-contracts/contracts/SystemContext.sol#L438) to verify the correctness of the batch's timestamps and hashes. You can read more about block processing [here](../Batches%20&%20L2%20blocks%20on%20zkSync.md).
 
 ## Long L2→L1 messages & bytecodes
 
@@ -46,4 +46,4 @@ Note, however, that whenever someone wants to prove that a certain message was p
 
 Also, for each priority operation, we would send its hash and it status via an L2→L1 log. On L1 we would then reconstruct the rolling hash of the processed priority transactions, allowing to correctly verify during the `executeBatches` method that indeed the batch contained the correct priority operations.
 
-Importantly, the fact that both hash and status were sent, it made it possible to prove that the L2 part of a deposit has failed and ask the bridge to release funds: (TODO link).
+Importantly, the fact that both hash and status were sent, it made it possible to [prove](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/contracts/ethereum/contracts/bridge/L1ERC20Bridge.sol#L255) that the L2 part of a deposit has failed and ask the bridge to release funds.

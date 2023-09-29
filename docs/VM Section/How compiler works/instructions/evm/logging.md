@@ -15,7 +15,7 @@ Each write operation can contain some subsequent data from its next step. If onl
 
 ### System Contract
 
-This information is requested a System Contract called [EventWriter](https://github.com/matter-labs/system-contracts/blob/main/contracts/EventWriter.sol).
+This information is requested a System Contract called [EventWriter](../../../../../code/system-contracts/contracts/EventWriter.yul).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#event-handler).
 

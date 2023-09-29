@@ -12,7 +12,7 @@ This value is fetched with a native EraVM instruction.
 
 ### System Contract
 
-This information is requested a System Contract called [L2EthToken](https://github.com/matter-labs/system-contracts/blob/main/contracts/L2EthToken.sol).
+This information is requested a System Contract called [L2EthToken](../../../../../code/system-contracts/contracts/L2EthToken.sol).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
 
@@ -28,7 +28,7 @@ The request to the System Contract is done via the [SystemRequest](https://githu
 
 ### System Contract
 
-This information is requested a System Contract called [SystemContext](https://github.com/matter-labs/system-contracts/blob/main/contracts/SystemContext.sol).
+This information is requested a System Contract called [SystemContext](../../../../../code/system-contracts/contracts/SystemContext.sol).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
 
@@ -177,7 +177,7 @@ See [the EraVM docs](https://era.zksync.io/docs/reference/architecture/differenc
 
 ### System Contract
 
-This information is requested a System Contract called [SystemContext](https://github.com/matter-labs/system-contracts/blob/main/contracts/SystemContext.sol).
+This information is requested a System Contract called [SystemContext](../../../../../code/system-contracts/contracts/SystemContext.sol).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
 
@@ -193,7 +193,7 @@ The request to the System Contract is done via the [SystemRequest](https://githu
 
 ### System Contract
 
-This information is requested a System Contract called [AccountCodeStorage](https://github.com/matter-labs/system-contracts/blob/main/contracts/AccountCodeStorage.sol).
+This information is requested a System Contract called [AccountCodeStorage](../../../../../code/system-contracts/contracts/AccountCodeStorage.sol).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
 
@@ -279,7 +279,7 @@ call void @llvm.memcpy.p1.p3.i256(ptr addrspace(1) align 1 inttoptr (i256 128 to
 
 ### System Contract
 
-This information is requested a System Contract called [AccountCodeStorage](https://github.com/matter-labs/system-contracts/blob/main/contracts/AccountCodeStorage.sol).
+This information is requested a System Contract called [AccountCodeStorage](../../../../../code/system-contracts/contracts/AccountCodeStorage.sol).
 
 On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
 
