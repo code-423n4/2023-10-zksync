@@ -295,6 +295,20 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+## (Hardhat) L1 contracts one liner
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+```
+rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10-zksync.git && cd 2023-10-zksync/code/contracts/ethereum && yarn --ignore-engines && yarn test
+```
+
+## (Foundry) L1 contracts one liner
+
+```
+rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10-zksync.git && cd 2023-10-zksync/code/contracts/ethereum && yarn --ignore-engines && yarn test:foundry
+```
+
+## (Hardhat) L2 System contracts one liner
+
+```
+rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10-zksync.git && cd 2023-10-zksync/code/system-contracts/scripts && yarn --ignore-engines && bash quick-setup.sh
+```
