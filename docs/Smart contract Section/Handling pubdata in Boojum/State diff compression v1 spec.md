@@ -11,7 +11,7 @@ This compression strategy will utilize a similar idea for treating keys and valu
 
 Keys will be packed in the same way as they were before. The only change is that we’ll avoid using the 8-byte enumeration index and will pack it to the minimal necessary number of bytes. This number will be part of the pubdata. Once a key has been used, it can already use the 4 or 5 byte enumeration index and it is very hard to have something cheaper for keys that has been used already. The opportunity comes when remembering the ids for accounts to spare some bytes on nonce/balance key, but ultimately the complexity may not be worth it. 
 
-There is some room for the keys that are being written for the first time, however, these are rather more complex and achieve only a one-time effect (when the key is published for the first time), so they may be in scope of the future upgrades.
+There is some room for optimization of the keys that are being written for the first time, however, optimizing those is more complex and achieves only a one-time effect (when the key is published for the first time), so they may be in scope of the future upgrades.
 
 ## Values
 
@@ -36,7 +36,7 @@ So the format of the pubdata is the following:
 
 **Part 2. Initial writes.**
 
-- `<num_of_initial_writes = 2 bytes>`  (since each initial write publishes at least 32 bytes for key, then `2^16 * 32 = 2097152` will be enough for a lot of time (right now with the limit of 120kb it will take more than 15 L1 txs to use up all the space there).
+- `<num_of_initial_writes = 2 bytes>` - the number of initial writes. Since each initial write publishes at least 32 bytes for key, then `2^16 * 32 = 2097152` will be enough for a lot of time (right now with the limit of 120kb it will take more than 15 L1 txs to use up all the space there).
 - Then for each `<key, value>` pair for each initial write:
     - print key as 32-byte derived key.
     - packing type as a 1 byte value, which consists of 5 bits to denote the length of the packing and 3 bits to denote the type of the packing (either `Add`, `Sub`, `Transform` or `NoCompression`). 
@@ -53,7 +53,7 @@ Note, that there is no need to write the number of repeated writes, since we kno
 
 ## Impact
 
-This setup allows us to achieve nearly 75% packing for values, and 50% gains overall in terms of the storage logs.
+This setup allows us to achieve nearly 75% packing for values, and 50% gains overall in terms of the storage logs based on historical data.
 
 ## Encoding of packing type
 
@@ -84,4 +84,4 @@ There are two reasons for it:
 
 All this means that we are not allowed to change the order of “first writes” above, so indexes for them are directly recoverable from their order, and so we can not permute them. If we were to reorder keys without supplying the new enumeration indeces for them, the state would be unrecoverable. Always supplying the new enum index may add additional 5 bytes for each key, which might negate the compression benefits in a lot of cases. Even if the compression will still be beneficial, the added complexity may not be worth it.
 
-That being said, we could **rearange those for *repeated* writes, but for now we stick to the same value compression format for simplicity.
+That being said, we *could* rearange those for *repeated* writes, but for now we stick to the same value compression format for simplicity.
