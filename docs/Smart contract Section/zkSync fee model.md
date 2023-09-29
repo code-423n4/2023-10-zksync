@@ -274,32 +274,40 @@ $$
 This one is somewhat harder than the previous ones. We need to find the largest *O_{op}*, such that:
     
 $$ 
-O_{op}  ≤ \lceil \frac{B_O \cdot tx.actualErgsLimit}{T_M} \rceil
+O_{op} \le \lceil \frac{tx.actualErgsLimit \cdot B_O}{T_M} \rceil   \\
+$$
+
+$$
+O_{op} \le \lceil \frac{(tx.ergsLimit - O_{op}) \cdot B_O}{T_M} \rceil   \\
 $$
 
 $$
 O_{op}  ≤ \lceil \frac{B_O \cdot (tx.ergsLimit - O_{op})}{T_M} \rceil
 $$
     
-    Note, that all numbers here are integers, so we can use the following substitution:
+Note, that all numbers here are integers, so we can use the following substitution:
+
 $$
 O_{op} -1 \lt \frac{(tx.ergsLimit - O_{op}) \cdot B_O}{T_M}    \\
+$$
 
+$$
 (O_{op} -1)T_M \lt (tx.ergsLimit - O_{op}) \cdot B_O    \\
+$$
 
+$$
 O_{op} T_M + O_{op} B_O \lt tx.ergsLimit \cdot B_O + T_M    \\
+$$
 
+$$
 O_{op} \lt \frac{tx.ergsLimit \cdot B_O + T_M}{B_O + T_M}    \\
-
 $$
 
 
-    Meaning, in other words:
+Meaning, in other words:
 
 $$
-
 O_{op} = \lfloor \frac{tx.ergsLimit \cdot B_O + T_M - 1}{B_O + T_M} \rfloor
-
 $$
     
 
