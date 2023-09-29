@@ -63,7 +63,7 @@ Circuit Documentation:
 - **Advanced**
    - [Boojum gadgets](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Boojum%20gadgets.md)
    - [Circuits](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits.md)
-   - [Boojum function: check_if_satisfied](https://github.com/code-423n4/2023-10-zksync/blob/sampkaML/Circuits%20Section/Boojum%20function%20check_if_satisfied.md)
+   - [Boojum function: check_if_satisfied](https://github.com/code-423n4/2023-10-zksync/blob/main/Circuits%20Section/Boojum%20function%20check_if_satisfied.md)
 
 ## **🚨 Audit & Code Freeze**
 
