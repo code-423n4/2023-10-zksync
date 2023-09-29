@@ -7,7 +7,7 @@
 - Ends October 20:00 UTC 
 
 How the &#36;1,100,000 maximum pot works:
-- Contest minimum pot is &#36;330,000 (including **&#36;##k** gas optimization pot).
+- Contest minimum pot is &#36;330,000 (including **&#36;25k** gas optimization pot). Please note, only L1 contracts included into gas optimization pod. 
 - If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
 - If ANY valid high severity issue is found, contest pot increases to &#36;1,100,000.
 
