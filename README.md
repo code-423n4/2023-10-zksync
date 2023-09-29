@@ -225,19 +225,19 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | Contract | SLOC | Purpose |
 | ----------- | ----------- | ----------- |
 | [era-zkevm_circuits/src/base_structures](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/base_structures) | 1971 | Structures for circuits |
-| [era-zkevm_circuits/src/code_unpacker_sha256](https://github.com/matter-labs/era-zkevm_circuits/src/code_unpacker_sha256) | 704 | Unpacks code into memory |
-| [era-zkevm_circuits/src/demux_log_queue](https://github.com/matter-labs/era-zkevm_circuits/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits |
-| [era-zkevm_circuits/src/ecrecover](https://github.com/matter-labs/era-zkevm_circuits/src/ecrecover) | 1342 | Ecrecover precompile |
-| [era-zkevm_circuits/src/fsm_input_output](https://github.com/matter-labs/era-zkevm_circuits/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
-| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/src/keccak_round_function) | 531 | Keccak hash function |
-| [era-zkevm_circuits/src/linear_hasher](https://github.com/matter-labs/era-zkevm_circuits/src/linear_hasher) | 224 | Creates commitment using Keccak |
-| [era-zkevm_circuits/src/log_sorter](https://github.com/matter-labs/era-zkevm_circuits/src/log_sorter) | 798 | Sorts logs by timestamp |
-| [era-zkevm_circuits/src/main_vm](https://github.com/matter-labs/era-zkevm_circuits/src/main_vm) | 7673 | Main VM circuit |
-| [era-zkevm_circuits/src/ram_permutation](https://github.com/matter-labs/era-zkevm_circuits/src/ram_permutation) | 657 | Circuit for RAM reads+writes |
-| [era-zkevm_circuits/src/sort_decommitment_requests](https://github.com/matter-labs/era-zkevm_circuits/src/sort_decommitment_requests) | 1358 | Sort code decommitments |
-| [era-zkevm_circuits/src/storage_application](https://github.com/matter-labs/era-zkevm_circuits/src/storage_application) | 686 | Circuit related to storage |
-| [era-zkevm_circuits/src/storage_validity_by_grand_product](https://github.com/matter-labs/era-zkevm_circuits/src/storage_validity_by_grand_product) | 1670 | Sort storage access |
-| [era-zkevm_circuits/src/tables](https://github.com/matter-labs/era-zkevm_circuits/src/tables) | 206 | Lookup Tables |
+| [era-zkevm_circuits/src/code_unpacker_sha256](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/code_unpacker_sha256) | 704 | Unpacks code into memory |
+| [era-zkevm_circuits/src/demux_log_queue](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits |
+| [era-zkevm_circuits/src/ecrecover](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ecrecover) | 1342 | Ecrecover precompile |
+| [era-zkevm_circuits/src/fsm_input_output](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
+| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/keccak_round_function) | 531 | Keccak hash function |
+| [era-zkevm_circuits/src/linear_hasher](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/linear_hasher) | 224 | Creates commitment using Keccak |
+| [era-zkevm_circuits/src/log_sorter](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/log_sorter) | 798 | Sorts logs by timestamp |
+| [era-zkevm_circuits/src/main_vm](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/main_vm) | 7673 | Main VM circuit |
+| [era-zkevm_circuits/src/ram_permutation](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ram_permutation) | 657 | Circuit for RAM reads+writes |
+| [era-zkevm_circuits/src/sort_decommitment_requests](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/sort_decommitment_requests) | 1358 | Sort code decommitments |
+| [era-zkevm_circuits/src/storage_application](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/storage_application) | 686 | Circuit related to storage |
+| [era-zkevm_circuits/src/storage_validity_by_grand_product](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/storage_validity_by_grand_product) | 1670 | Sort storage access |
+| [era-zkevm_circuits/src/tables](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/tables) | 206 | Lookup Tables |
 
 ## Out of scope
 
@@ -262,8 +262,8 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 |  | | |
-| [era-zkevm_circuits/src/recursion](https://github.com/matter-labs/era-zkevm_circuits/src/recursion) | 876 | |
-| [era-zkevm_circuits/src/scheduler](https://github.com/matter-labs/era-zkevm_circuits/src/scheduler) | 1333 | |
+| [era-zkevm_circuits/src/recursion](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/recursion) | 876 | |
+| [era-zkevm_circuits/src/scheduler](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/scheduler) | 1333 | |
 
 
 ## Attack ideas (Where to look for bugs)
