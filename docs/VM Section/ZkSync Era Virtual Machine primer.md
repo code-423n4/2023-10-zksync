@@ -110,7 +110,7 @@ The instruction `sub` is implemented so that it sets `EQ` if the result is zero 
 sub! r1, r2, r3 ; r3 <- (r1 - r2); EQ = 1
 ```
 
-TODO(add reference) The instruction reference elaborates precisely how different instructions affect flags.
+You can learn more in the [formal specification](./EraVM%20Formal%20specification.pdf).
 
 ### Predicates
 
@@ -143,7 +143,7 @@ Here is a full list of available predicates:
 - `if_not_eq`
 - `if_gt_or_eq`
 
-See the instruction reference (TODO add reference) for the meaning of the flags for each instruction.
+You can learn more in the [formal specification](./EraVM%20Formal%20specification.pdf).
 
 ### Swap
 
@@ -592,7 +592,7 @@ In fact, we can do that for *any* instruction! The modifiers for conditionally e
 - if_not_eq
 - if_gt_or_eq
 
-GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the instruction reference (TODO) for the meaning of the flags for each instruction.
+GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the [instruction reference](./EraVM%20Formal%20specification.pdf) for the meaning of the flags for each instruction.
 
 ```nasm
 sub! r1, r2, r0
