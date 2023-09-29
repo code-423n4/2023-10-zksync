@@ -1,1 +1,0 @@
-# L2→L1 Merkle tree as system contract
