@@ -85,6 +85,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 - **Website:** https://zksync.io/
 - **Twitter:** https://twitter.com/zksync
 - **Discord:** https://join.zksync.dev/
+- **Previous Audits:** https://era.zksync.io/docs/reference/troubleshooting/audit-bug-bounty.html
 
 
 # Scope
