@@ -133,6 +133,20 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/bridge/interfaces/IL2WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2WethBridge.sol) | 8 | |
 | [ethereum/contracts/bridge/interfaces/IWETH9.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IWETH9.sol) | 5 | |
 
+### Governance
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [ethereum/contracts/governance/Governance.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/governance/Governance.sol) | 120 | |
+| [ethereum/contracts/governance/IGovernance.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/governance/IGovernance.sol) | 38 | |
+
+### Upgrades
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [ethereum/contracts/upgrades/BaseZkSyncUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/upgrades/BaseZkSyncUpgrade.sol) | 135 | |
+| [ethereum/contracts/upgrades/DefaultUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/upgrades/DefaultUpgrade.sol) | 24 | |
+
 ### Other
 
 | Contract | SLOC | Libraries used |  
@@ -146,6 +160,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/common/libraries/UncheckedMath.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/libraries/UncheckedMath.sol) | 13 | |
 | [ethereum/contracts/common/AllowListed.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/AllowListed.sol) | 10 | |
 | [ethereum/contracts/common/L2ContractAddresses.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/L2ContractAddresses.sol) | 9 | |
+| [ethereum/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/vendor/AddressAliasHelper.sol) | 14 | |
 
 
 ## L2 contracts
@@ -256,6 +271,32 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol) | 15 | |
 | [system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol) | 14 | |
 | [system-contracts/contracts/test-contracts/DummyUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/DummyUpgrade.sol) | 7 | |
+| [ethereum/contracts/dev-contracts/Multicall3.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/Multicall3.sol) | 149 | |
+| [ethereum/contracts/dev-contracts/test/DummyExecutor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/DummyExecutor.sol) | 87 | |
+| [ethereum/contracts/dev-contracts/test/VerifierRecursiveTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/VerifierRecursiveTest.sol) | 49 | |
+| [ethereum/contracts/dev-contracts/test/VerifierTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/VerifierTest.sol) | 49 | |
+| [ethereum/contracts/dev-contracts/WETH9.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/WETH9.sol) | 47 | |
+| [ethereum/contracts/dev-contracts/Multicall.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/Multicall.sol) | 37 | |
+| [ethereum/contracts/dev-contracts/test/CustomUpgradeTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/CustomUpgradeTest.sol) | 27 | |
+| [ethereum/contracts/dev-contracts/test/PriorityQueueTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/PriorityQueueTest.sol) | 27 | |
+| [ethereum/contracts/dev-contracts/test/UnsafeBytesTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/UnsafeBytesTest.sol) | 26 | |
+| [ethereum/contracts/dev-contracts/test/AdminFacetTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/AdminFacetTest.sol) | 22 | |
+| [ethereum/contracts/dev-contracts/RevertTransferERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/RevertTransferERC20.sol) | 16 | |
+| [ethereum/contracts/dev-contracts/TestnetERC20Token.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/TestnetERC20Token.sol) | 15 | |
+| [ethereum/contracts/dev-contracts/test/TransactionValidatorTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/TransactionValidatorTest.sol) | 14 | |
+| [ethereum/contracts/dev-contracts/RevertReceiveAccount.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/RevertReceiveAccount.sol) | 13 | |
+| [ethereum/contracts/dev-contracts/test/DummyERC20BytesTransferReturnValue.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/DummyERC20BytesTransferReturnValue.sol) | 12 | |
+| [ethereum/contracts/dev-contracts/test/L1ERC20BridgeTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/L1ERC20BridgeTest.sol) | 11 | |
+| [ethereum/contracts/dev-contracts/test/MerkleTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/MerkleTest.sol) | 11 | |
+| [ethereum/contracts/dev-contracts/test/DiamondProxyTest.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/DiamondProxyTest.sol) | 10 | |
+| [ethereum/contracts/dev-contracts/Forwarder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/Forwarder.sol) | 8 | |
+| [ethereum/contracts/dev-contracts/ReturnSomething.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/ReturnSomething.sol) | 8 | |
+| [ethereum/contracts/dev-contracts/SingletonFactory.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/SingletonFactory.sol) | 8 | |
+| [ethereum/contracts/dev-contracts/test/DiamondCutTestContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/DiamondCutTestContract.sol) | 8 | |
+| [ethereum/contracts/dev-contracts/test/MockExecutor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/MockExecutor.sol) | 8 | |
+| [ethereum/contracts/dev-contracts/ConstructorForwarder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/dev-contracts/ConstructorForwarder.sol) | 7 | |
+| [ethereum/contracts/dev-contracts/RevertFallback.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/RevertFallback.sol) | 6 | |
+| [ethereum/contracts/dev-contracts/test/DummyERC20NoTransferReturnValue.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/dev-contracts/test/DummyERC20NoTransferReturnValue.sol) | 4 | |
 
 ### Circuits
 
