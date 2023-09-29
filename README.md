@@ -165,12 +165,9 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [system-contracts/contracts/libraries/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/) | 144 | |
 | [system-contracts/contracts/Compressor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/Compressor.sol) | 139 | |
 | [system-contracts/contracts/DefaultAccount.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/DefaultAccount.sol) | 115 | |
-| [system-contracts/contracts/test-contracts/TestSystemContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContract.sol) | 110 | |
-| [system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol) | 109 | |
 | [system-contracts/contracts/NonceHolder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/NonceHolder.sol) | 82 | |
 | [system-contracts/contracts/libraries/RLPEncoder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/libraries/RLPEncoder.sol) | 75 | |
 | [system-contracts/contracts/L2EthToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/L2EthToken.sol) | 71 | |
-| [system-contracts/contracts/test-contracts/TestSystemContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContractHelper.sol) | 69 | |
 | [system-contracts/contracts/Constants.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/Constants.sol) | 65 | |
 | [system-contracts/contracts/AccountCodeStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/AccountCodeStorage.sol) | 62 | |
 | [system-contracts/contracts/interfaces/IContractDeployer.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IContractDeployer.sol) | 54 | |
@@ -187,9 +184,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [system-contracts/contracts/interfaces/IL1Messenger.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IL1Messenger.sol) | 20 | |
 | [system-contracts/contracts/interfaces/ICompressor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ICompressor.sol) | 16 | |
 | [system-contracts/contracts/ComplexUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/ComplexUpgrader.sol) | 15 | |
-| [system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol) | 15 | |
 | [system-contracts/contracts/interfaces/INonceHolder.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/INonceHolder.sol) | 14 | |
-| [system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol) | 14 | |
 | [system-contracts/contracts/test-contracts/MockKnownCodesStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/MockKnownCodesStorage.sol) | 11 | |
 | [system-contracts/contracts/interfaces/IMailbox.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IMailbox.sol) | 10 | |
 | [system-contracts/contracts/interfaces/IAccountCodeStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IAccountCodeStorage.sol) | 9 | |
@@ -197,12 +192,10 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [system-contracts/contracts/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IL2StandardToken.sol) | 9 | |
 | [system-contracts/contracts/interfaces/IBootloaderUtilities.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IBootloaderUtilities.sol) | 7 | |
 | [system-contracts/contracts/interfaces/IKnownCodesStorage.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IKnownCodesStorage.sol]) | 7 | |
-| [system-contracts/contracts/test-contracts/DummyUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/DummyUpgrade.sol) | 7 | |
 | [system-contracts/contracts/interfaces/ISystemContextDeprecated.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/ISystemContextDeprecated.sol) | 6 | |
 | [system-contracts/contracts/EmptyContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EmptyContract.sol) | 5 | |
 | [system-contracts/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IPaymasterFlow.sol) | 5 | |
 | [system-contracts/contracts/interfaces/IComplexUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IComplexUpgrader.sol) | 4 | |
-
 ### Bridges
 
 | Contract | SLOC | Libraries used |  
@@ -222,7 +215,6 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | ----------- | ----------- | ----------- |
 | [zksync/contracts/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/SystemContractsCaller.sol) | 108 | |
 | [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/L2ContractHelper.sol) | 64 | |
-
 | [zksync/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymaster.sol) | 22 | |
 | [zksync/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/vendor/AddressAliasHelper.sol]) | 14 | |
 | [zksync/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymasterFlow.sol) | 9 | |
@@ -258,6 +250,12 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/zksync/interfaces/IVerifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IVerifier.sol) | 9 | |
 | [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) | 51 | |
 | [ethereum/contracts/common/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/Dependencies.sol) | 2 | |
+| [system-contracts/contracts/test-contracts/TestSystemContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContract.sol) | 110 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol) | 109 | |
+| [system-contracts/contracts/test-contracts/TestSystemContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/TestSystemContractHelper.sol) | 69 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/IERC20.sol) | 15 | |
+| [system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/openzeppelin/token/ERC20/extensions/IERC20Permit.sol) | 14 | |
+| [system-contracts/contracts/test-contracts/DummyUpgrade.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/test-contracts/DummyUpgrade.sol) | 7 | |
 
 ### Circuits
 
