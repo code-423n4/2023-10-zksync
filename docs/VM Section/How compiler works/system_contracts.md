@@ -83,7 +83,7 @@ For reference, see LLVM IR codegen for [instructions for immutables](https://git
 
 ### Event Handler
 
-Event payloads are sent to a special System Contract called [EventWriter](https://github.com/matter-labs/system-contracts/blob/main/contracts/EventWriter.yul). Like on EVM, the payload consists of topics and data:
+Event payloads are sent to a special System Contract called [EventWriter](../../../code/system-contracts/contracts/EventWriter.yul). Like on EVM, the payload consists of topics and data:
 
 1. The topics with a length-prefix are passed via ABI using registers.
 2. The data is passed via the default heap, like on EVM.

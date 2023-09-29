@@ -55,7 +55,7 @@ Notice that register `r0` is used to feed constant zero values to instructions; 
 
 Commonly, instructions accept two inputs and one output operands, following the schema:
 
-![arithmetic opcode.png](ZkSync%20Era%20Virtual%20Machine%20primer/arithmetic_opcode.png)
+![arithmetic opcode.png](./zkSync%20Era%20VM%20primer/arithmetic_opcode.png)
 
 The first operand can be taken from:
 
@@ -463,7 +463,7 @@ System contracts implement contract deployment, extensions such as keccak256, de
 
 Decommitter is a module external to EraVM allowing accessing deployed code by its hash. 
 
-![arch-overview.png](ZkSync%20Era%20Virtual%20Machine%20primer/arch-overview.png)
+![arch-overview.png](./zkSync%20Era%20VM%20primer/arch-overview.png)
 
 The system contracts at the address $2^{15}+2$  , called Deployer, keeps hashes of code of each contract in its storage. Far calls to a contract with address $C$ perform as follows:
 
@@ -477,7 +477,7 @@ If decommitter does not have the code for the requested hash, one of two things 
 
 ## Server
 
-The VM is controlled by a *server.* When the server needs to build a new batch, it starts an instance of EraVM and feeds the transactions to the [Bootloader](https://www.notion.so/ZkSync-Era-Virtual-Machine-primer-ffc6577724ff47eaba762116d9a58114?pvs=21).
+The VM is controlled by a *server.* When the server needs to build a new batch, it starts an instance of EraVM and feeds the transactions to the [Bootloader](#bootloader).
 
 EraVM accepts three parameters:
 

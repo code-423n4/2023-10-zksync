@@ -7,7 +7,7 @@ the target bytecode.
 
 # [datasize](https://docs.soliditylang.org/en/latest/yul.html#datasize-dataoffset-datacopy)
 
-Unlike on EVM, on EraVM target this instruction returns the size of the header part of the calldata sent to the [ContractDeployer](././system_contracts.md#contract-deployer).
+Unlike on EVM, on EraVM target this instruction returns the size of the header part of the calldata sent to the [ContractDeployer](../system_contracts.md#contract-deployer).
 For more information, see [CREATE](./evm/create.md).
 
 LLVM IR codegen references:

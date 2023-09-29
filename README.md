@@ -32,12 +32,12 @@ This repository contains comprehensive documentation and code related to the Sma
 
 Relevant Documentation:
 
-- **[System Contracts/Bootloader Description](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description%20(VM%20v1%204%200).md)**
-- **[zkSync Era Fee Model](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
-- **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md)**
-- **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Batches%20%26%20L2%20blocks%20on%20zkSync.md)**
-- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
-- **[Handling Pubdata in Boojum](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
+- **[System Contracts/Bootloader Description](./docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
+- **[zkSync Era Fee Model](./docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[Handling L1→L2 Ops on zkSync](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
+- **[Batches & L2 Blocks on zkSync](./docs/Smart%20contract%20Section/Batches%20&%20L2%20blocks%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](./docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
+- **[Handling Pubdata in Boojum](./docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
 
 ### **2. VM Section**
 
@@ -244,7 +244,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [era-zkevm_circuits/src/demux_log_queue](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/demux_log_queue) | 868 | Demultiplexes logs into their appropriate circuits |
 | [era-zkevm_circuits/src/ecrecover](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ecrecover) | 1342 | Ecrecover precompile |
 | [era-zkevm_circuits/src/fsm_input_output](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
-| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/keccak_round_function) | 531 | Keccak hash function |
+| [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/) | 531 | Keccak hash function |
 | [era-zkevm_circuits/src/linear_hasher](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/linear_hasher) | 224 | Creates commitment using Keccak |
 | [era-zkevm_circuits/src/log_sorter](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/log_sorter) | 798 | Sorts logs by timestamp |
 | [era-zkevm_circuits/src/main_vm](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/main_vm) | 7673 | Main VM circuit |

@@ -344,7 +344,7 @@ To avoid additional copying of transactions for calls for the account abstractio
 
 - `[252189..523261]`
 
-Starting from the 487312 word, the actual descriptions of the transactions start. (The struct can be found by this [link](https://github.com/matter-labs/system-contracts/blob/b1a3e353f77204ce5b274a9db6145d2d70cc0757/contracts/libraries/TransactionHelper.sol#L25)). The bootloader enforces that:
+Starting from the 487312 word, the actual descriptions of the transactions start. (The struct can be found by this [link](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/system-contracts/contracts/libraries/TransactionHelper.sol#L25)). The bootloader enforces that:
 
 - They are correctly ABI encoded representations of the struct above.
 - They are located without any gaps in memory (the first transaction starts at word 653 and each transaction goes right after the next one).

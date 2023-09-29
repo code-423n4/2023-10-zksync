@@ -7,7 +7,7 @@ The transactions on zkSync can be initiated not only on L2, but also on L1. Ther
 
 ## Prerequisites
 
-Please read the full article on the general system contracts / bootloader structure: [https://www.notion.so/matterlabs/System-contracts-bootloader-description-VM-v1-4-0-bdec3d4153ed4f6e8c0e32fb63ca4372](https://www.notion.so/System-contracts-bootloader-description-VM-v1-4-0-bdec3d4153ed4f6e8c0e32fb63ca4372?pvs=21) as well as the pubdata structure with Boojum system to understand the difference between system and user logs: [https://www.notion.so/matterlabs/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e](https://www.notion.so/Handling-pubdata-in-Boojum-07dd1bd2ec9041faab21898acd24334e?pvs=21).
+Please read the full [article](./System%20contracts%20bootloader%20description.md) on the general system contracts / bootloader structure as well as the pubdata structure with Boojum system to understand [the difference](./Handling%20pubdata%20in%20Boojum.md) between system and user logs.
 
 # Priority operations
 
