@@ -1,5 +1,5 @@
 # zkSync Era audit details
-- $1,100,000 total maximum award pot, including **$25,000** gas optimizations pot
+- $1,100,000 total maximum award pot, including **$7,500** gas optimizations pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -7,7 +7,7 @@
 - Ends October 23, 2023 20:00 UTC 
 
 How the &#36;1,100,000 maximum pot works:
-- Contest minimum pot is &#36;330,000 (including **&#36;25k** gas optimization pot). Please note, only L1 contracts included into gas optimization pod. 
+- Contest minimum pot is &#36;330,000 (including **&#36;7.5k** gas optimization pot). Please note, only L1 contracts included into gas optimization pod. 
 - If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
 - If ANY valid high severity issue is found, contest pot increases to &#36;1,100,000.
 
