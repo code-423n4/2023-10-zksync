@@ -73,7 +73,9 @@ Returns the address the contract is deployed to.
 
 # PUSHSIZE
 
-Returns 0.
+Can be only found in deploy code. On EVM, returns the total size of the runtime code and constructor arguments.
+
+On EraVM, it is always 0, since EraVM does not operate on runtime code in deploy code.
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/yul/parser/statement/expression/function_call/mod.rs#L907).
 
