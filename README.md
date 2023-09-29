@@ -1,5 +1,5 @@
 # zkSync Era audit details
-- $1,100,000 total maximum award pot, including **$##,###** gas optimizations pot
+- $1,100,000 total maximum award pot, including **$25,000** gas optimizations pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -47,7 +47,7 @@ The VM section is related to the zkSync Era Virtual Machine.
     - This primer is designed to provide auditors with a foundational understanding of the zkSync Era Virtual Machine. It offers insights into the operational mechanics and integral components of EraVM, serving as an essential guide for those seeking to explore the zkSync EraVM environment.
 - **[zkSync Era: The Equivalence Compiler Documentation](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/overview.md)**
     - The document describes how zkSync Solidity compiler represents high-level programming language constructions into low-level EraVM instruction set, how to use unique features without extending Solidity language with new syntax and why system contracts are needed.
-- **[EraVM Formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/spec.pdf)**
+- **[EraVM Formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer.md)**
     - This document is a highly technical and detailed specification, providing an in-depth exploration of the zkSync protocol and its underlying architecture. It’s a comprehensive resource for those who desire a deeper and more formal understanding of the protocol's design and functionalities. While it’s not a required read for understanding the basic structure and operations of the protocol, it is an invaluable resource for those wishing to delve into the finer details and theoretical underpinnings of zkSync.
 
 ### **3. Circuits Section**
