@@ -313,7 +313,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 It is important to examine access control and persmissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circuimvent the limitations imposed on them.
 
-Especial scrunity should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md#security-considerations) of such an issue, which was detected & resolved by the team before the contest. 
+Especial scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md#security-considerations) of such an issue, which was detected & resolved by the team before the contest. 
 
 ### Data availability issues 
 
