@@ -96,7 +96,6 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 |  | | |
-| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/Verifier.sol) | 1123 | |
 | [ethereum/contracts/zksync/facets/Executor.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Executor.sol) | 326 | |  
 | [ethereum/contracts/zksync/facets/Mailbox.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Mailbox.sol) | 273 | |
 | [ethereum/contracts/zksync/libraries/Diamond.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/Diamond.sol) | 185 | |
@@ -117,7 +116,6 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/zksync/interfaces/IAdmin.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IAdmin.sol]) | 25 | |
 | [ethereum/contracts/zksync/facets/Base.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Base.sol) | 20 | |
 | [ethereum/contracts/zksync/interfaces/ILegacyGetters.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/ILegacyGetters.sol) | 10 | |
-| [ethereum/contracts/zksync/interfaces/IVerifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IVerifier.sol) | 9 | |
 | [ethereum/contracts/zksync/interfaces/IZkSync.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IZkSync.sol) | 6 | |
 | [ethereum/contracts/zksync/interfaces/IBase.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IBase.sol) | 4 | |
 
@@ -148,7 +146,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/common/libraries/UncheckedMath.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/libraries/UncheckedMath.sol) | 13 | |
 | [ethereum/contracts/common/AllowListed.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/AllowListed.sol) | 10 | |
 | [ethereum/contracts/common/L2ContractAddresses.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/L2ContractAddresses.sol) | 9 | |
-| [ethereum/contracts/common/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/Dependencies.sol) | 2 | |
+
 
 ## L2 contracts
 
@@ -171,7 +169,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | ----------- | ----------- | ----------- |
 | [zksync/contracts/SystemContractsCaller.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/SystemContractsCaller.sol) | 108 | |
 | [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/L2ContractHelper.sol) | 64 | |
-| [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) | 51 | |
+
 | [zksync/contracts/interfaces/IPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymaster.sol) | 22 | |
 | [zksync/contracts/vendor/AddressAliasHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/vendor/AddressAliasHelper.sol]) | 14 | |
 | [zksync/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/interfaces/IPaymasterFlow.sol) | 9 | |
@@ -198,10 +196,24 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+### contracts
 
-- era-zkevm_circuits/src/recursion
-- era-zkevm_circuits/src/scheduler
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+|  | | |
+| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/Verifier.sol) | 1123 | |
+| [ethereum/contracts/zksync/interfaces/IVerifier.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IVerifier.sol) | 9 | |
+| [zksync/contracts/TestnetPaymaster.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/zksync/contracts/TestnetPaymaster.sol) | 51 | |
+| [ethereum/contracts/common/Dependencies.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/common/Dependencies.sol) | 2 | |
+
+### Circuits
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+|  | | |
+| [era-zkevm_circuits/src/recursion](era-zkevm_circuits/src/recursion) | TODO | |
+| [era-zkevm_circuits/src/scheduler](era-zkevm_circuits/src/scheduler) | TODO | |
+
 
 ## Attack ideas (Where to look for bugs)
 *List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
