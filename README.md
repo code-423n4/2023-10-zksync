@@ -308,8 +308,29 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 
 ## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
 
+### Access control and permissions
+
+It is important to examine access control and persmissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circuimvent the limitations imposed on them.
+
+Especial scrunity should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md#security-considerations) of such an issue, which was detected & resolved by the team before the contest. 
+
+### Data availability issues 
+
+Another important invariant is that the state of the rollup can be restored based on the pubdata sent to L1. Make sure that for a block that gets executed regardless of what a potentially malicious operator does:
+
+- Users can always get preimages for all the bytecodes that were deployed to the system.
+- Users can always recover the leaves of the Merkle tree of L2->L1 logs.
+- Users can always recover the storage merkle tree.
+
+In general, there should be always a possibility to have a new operator that fully recovers the state available solely from L1 and is able to execute transactions successfully.
+
+### EVM compatibility attacks
+
+Make sure that access to any dangerous logic is well-constrained. For instance:
+
+- Access to potentially dangerous system contracts' methods is protected by the `isSystemCall` flag, permitting only the contracts that are aware of the zkSync-specific features to call it.
+- Using innocent Solidity code without zkSync-specific features should not lead to unexpected behaviour. An [example](https://code4rena.com/reports/2023-03-zksync#h-01-the-call-to-msgvaluesimulator-with-non-zero-msgvalue-will-call-to-sender-itself-which-will-bypass-the-onlyself-check) of a relevant finding.
 
 ## Scoping Details 
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]
