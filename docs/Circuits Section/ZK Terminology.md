@@ -1,7 +1,7 @@
 # ZK Terminology
 
 - Arithmetization: Arithmetization transforms code into an intermediate form that can be handled by cryptographic proving systems. zkSync takes EVM opcodes written in Rust and uses arithmetization to turn that code into circuits understood by Boojum, our prover.
-- Builder:
+- Builder: The builder helps set up the constraint system. The builder knows the placement strategy for each gate, as well as the geometry and other information needed for building the constraint system.
 - Circuit: A circuit describes the code that will be proved. Each step in a circuit is described by a constraint, which enforces that the computation is done correctly.
 - Constraint: A constraint is a rule or restriction that a specific operation or set of operations must follow. zkSync uses constraints to verify the validity of certain operations, and in the generation of proofs. Constraints can be missing, causing bugs, or there could be too many constraints, leading to restricted operations.
 - Constraint degree: A constraint degree is related to the use of gates in circuits. The constraint degree sets an upper limit on the allowed complexity of the gate. At zkSync, we allow gates with degree 8 or lower.
