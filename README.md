@@ -1,5 +1,5 @@
-# zkSync Era audit details
-- $1,100,000 total maximum award pot, including **$7,500** gas optimizations pot
+# zkSync audit details
+- $1,100,000 total maximum prize pool
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -7,16 +7,23 @@
 - Ends October 23, 2023 20:00 UTC 
 
 How the &#36;1,100,000 maximum pot works:
-- Contest minimum pot is &#36;330,000 (including **&#36;7.5k** gas optimization pot). Please note, only L1 contracts included into gas optimization pod. 
-- If ANY valid medium severity issue is found, contest pot increases to &#36;770,000.
-- If ANY valid high severity issue is found, contest pot increases to &#36;1,100,000.
+- Audit minimum pot is &#36;330,000 (including **&#36;7.5k** gas optimization pot). ❗️Please note, only L1 contracts are included in gas optimization pool.
+  - HM awards: $250,000 USDC
+  - Analysis awards: $15,000 USDC
+  - QA awards: $7,500 USDC
+  - Bot Race awards: $20,000 USDC
+  - Gas awards: $7,500 USDC
+  - Judge awards: $18,000 USDC
+  - Lookout awards: $12,000 USDC
+  - Scout awards: $500 USDC
+- If ANY valid Medium severity issue is found, audit pot increases to &#36;770,000.
+- If ANY valid High severity issue is found, audit pot increases to &#36;1,100,000.
 
 ## Automated Findings / Publicly Known Issues
 
 Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/main/bot-report.md) within 24 hours of audit opening.
 
 *Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
-
 
 # Overview
 
