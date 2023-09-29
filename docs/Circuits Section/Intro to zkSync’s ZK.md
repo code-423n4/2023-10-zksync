@@ -31,7 +31,7 @@ It is very important that every step is actually “constrained”. The prover m
 
 ### What do zkSync’s circuits prove?
 
-The main goal of our circuits is to prove correct execution of our VM. This includes proving each opcode run within the VM, as well as other components such as precompiles, storage, and circuits that connect everything else together. This is described in more detail in [Circuits](https://www.notion.so/Circuits-c2e39db21b4446aa8f06318ae404d34f?pvs=21) 
+The main goal of our circuits is to prove correct execution of our VM. This includes proving each opcode run within the VM, as well as other components such as precompiles, storage, and circuits that connect everything else together. This is described in more detail in [Circuits](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits.md) 
 
 ### More details
 
