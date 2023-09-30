@@ -1,4 +1,4 @@
-# zkSync audit details
+# zkSync Era audit details
 - $1,100,000 total maximum prize pool
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-zksync/submit)
