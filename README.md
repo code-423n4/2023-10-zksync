@@ -121,7 +121,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/zksync/DiamondProxy.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/DiamondProxy.sol) | 30 | |
 | [ethereum/contracts/zksync/libraries/Merkle.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/Merkle.sol) | 30 | |
 | [ethereum/contracts/zksync/libraries/LibMap.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/libraries/LibMap.sol) | 27 | |
-| [ethereum/contracts/zksync/interfaces/IAdmin.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IAdmin.sol]) | 25 | |
+| [ethereum/contracts/zksync/interfaces/IAdmin.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IAdmin.sol) | 25 | |
 | [ethereum/contracts/zksync/facets/Base.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/facets/Base.sol) | 20 | |
 | [ethereum/contracts/zksync/interfaces/ILegacyGetters.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/ILegacyGetters.sol) | 10 | |
 | [ethereum/contracts/zksync/interfaces/IZkSync.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/zksync/interfaces/IZkSync.sol) | 6 | |
@@ -173,6 +173,12 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ## L2 contracts
 
+### Bootloader
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [system-contracts/bootloader/bootloader.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/bootloader/bootloader.yul) | 3825 | |
+
 ### System Contracts
 
 | Contract | SLOC | Libraries used |
@@ -219,6 +225,13 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [system-contracts/contracts/EmptyContract.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EmptyContract.sol) | 5 | |
 | [system-contracts/contracts/interfaces/IPaymasterFlow.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IPaymasterFlow.sol) | 5 | |
 | [system-contracts/contracts/interfaces/IComplexUpgrader.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/interfaces/IComplexUpgrader.sol) | 4 | |
+| [system-contracts/contracts/EventWriter.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EventWriter.yul) | 168 | |
+| [system-contracts/contracts/precompiles/EcAdd.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/precompiles/EcAdd.yul) | 439 | |
+| [system-contracts/contracts/precompiles/EcMul.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/precompiles/EcMul.yul) | 493 | |
+| [system-contracts/contracts/precompiles/Ecrecover.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/precompiles/Ecrecover.yul) | 98 | |
+| [system-contracts/contracts/precompiles/Keccak256.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/precompiles/Keccak256.yul) | 126 | |
+| [system-contracts/contracts/precompiles/SHA256.yul](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/precompiles/SHA256.yul) | 101 | |
+
 ### Bridges
 
 | Contract | SLOC | Libraries used |  
@@ -345,13 +358,11 @@ Make sure that access to any dangerous logic is well-constrained. For instance:
 
 ```
 - If you have a public code repo, please share it here:  N/A
-- How many contracts are in scope?:   TODO
-- Total SLoC for these contracts?:  TODO
-- How many external imports are there?:  TODO
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  TODO
+- How many contracts are in scope?:   39
+- Total SLoC for these contracts?:  6011
+- How many external imports are there?:  13
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  94
 - Does most of your code generally use composition or inheritance?:   Yes
-- How many external calls?:   TODO
-- What is the overall line coverage percentage provided by your tests?: TODO
 - Is this an upgrade of an existing system?: Yes
 - Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): timelock, rollups, zk circuits
 - Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   No
