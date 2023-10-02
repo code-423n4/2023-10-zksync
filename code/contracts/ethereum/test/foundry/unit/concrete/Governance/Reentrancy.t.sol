@@ -44,7 +44,6 @@ contract ReentrancyTest is GovernanceTest {
     function test_ExecuteInstantOperationWithReentrancy() public {
         // Set governance owner & security council to be equal to the forwarder contract.
         stdstore.target(address(governance)).sig(governance.owner.selector).checked_write(address(forwarder));
-        vm.startPrank(address(forwarder));
         stdstore.target(address(governance)).sig(governance.securityCouncil.selector).checked_write(address(forwarder));
         vm.startPrank(address(forwarder));
 
