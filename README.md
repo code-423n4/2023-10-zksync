@@ -25,6 +25,14 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 *Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
 
+### DefaultAccount does not always return successfully
+
+[DefaultAccount](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/DefaultAccount.sol), while it should always behave as an EOA (i.e. any call to it should return `success(0,0)`), if called with a selector of one of its methods and incorrect ABI-encoding of its parameters, will fail with empty error. This happens due to the fact that the ABI decoding fails before the modifier is triggered.
+
+### Known differences from Ethereum
+
+More known differences from Ethereum can be found in our [documentation](https://era.zksync.io/docs/reference/architecture/differences-with-ethereum.html).
+
 # Overview
 
 # **zkSync Protocol Overview & Documentation**
