@@ -2,10 +2,10 @@
 
 In this specification, instructions are grouped by their relevance to the EVM instruction set:
 
-- [Native EVM instructions](./evm/overview.md).
-- [Yul auxiliary instructions](./yul.md).
-- [EVM legacy assembly auxiliary instructions](./evmla.md).
-- [zkSync Era extensions](./extensions/overview.md).
+- [Native EVM instructions](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/extensions/overview.md).
+- [Yul auxiliary instructions](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/yul.md).
+- [EVM legacy assembly auxiliary instructions](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/evmla.md).
+- [zkSync Era extensions](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/extensions/overview.md).
 
 Most of the EVM native instructions are represented in both Yul and EVM legacy assembly IRs. If they are not,
 it is stated explicitly in the description of each instruction.
@@ -44,7 +44,7 @@ is not optimizing them out and is not emitting compilation errors.
 
 To see the list of available instructions, visit this page:
 
-[zkSync Era Extension Simulation (call)](./extensions/call.md)
+[zkSync Era Extension Simulation (call)](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/extensions/call.md)
 
 ### The Yul Mode
 
@@ -53,4 +53,4 @@ To have better compatibility, they are implemented as `verbatim` instructions wi
 
 To see the list of available instructions, visit this page:
 
-[zkSync Era Extension Simulation (verbatim)](./extensions/verbatim.md)
+[zkSync Era Extension Simulation (verbatim)](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/extensions/verbatim.md)
