@@ -15,8 +15,8 @@ Each write operation can contain some subsequent data from its next step. If onl
 
 ### System Contract
 
-This information is requested a System Contract called [EventWriter](../../../../../code/system-contracts/contracts/EventWriter.yul).
+This information is requested a System Contract called [EventWriter](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EventWriter.yul).
 
-On how the System Contract is called, see [this section](../../system_contracts.md#event-handler).
+On how the System Contract is called, see [this section](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/system_contracts.md).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-llvm-context/blob/main/src/eravm/evm/event.rs#L20) is common for Yul and EVMLA representations.
