@@ -55,7 +55,7 @@ Notice that register `r0` is used to feed constant zero values to instructions; 
 
 Commonly, instructions accept two inputs and one output operands, following the schema:
 
-![arithmetic opcode.png](./zkSync%20Era%20VM%20primer/arithmetic_opcode.png)
+![arithmetic opcode.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/zkSync%20Era%20VM%20primer/arithmetic_opcode.png)
 
 The first operand can be taken from:
 
@@ -110,7 +110,7 @@ The instruction `sub` is implemented so that it sets `EQ` if the result is zero 
 sub! r1, r2, r3 ; r3 <- (r1 - r2); EQ = 1
 ```
 
-You can learn more in the [formal specification](./EraVM%20Formal%20specification.pdf).
+You can learn more in the [formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/EraVM%20Formal%20specification.pdf).
 
 ### Predicates
 
@@ -592,7 +592,7 @@ In fact, we can do that for *any* instruction! The modifiers for conditionally e
 - if_not_eq
 - if_gt_or_eq
 
-GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the [instruction reference](./EraVM%20Formal%20specification.pdf) for the meaning of the flags for each instruction.
+GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the [instruction reference](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/EraVM%20Formal%20specification.pdf) for the meaning of the flags for each instruction.
 
 ```nasm
 sub! r1, r2, r0
