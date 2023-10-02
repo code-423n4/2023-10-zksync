@@ -1,6 +1,6 @@
 # Circuit testing
 
-This page explains unit tests for circuits. Specifically, it goes through a unit test of [ecrecover](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ecrecover/mod.rs#L796). The tests for other circuits are very similar.
+This page explains unit tests for circuits. Specifically, it goes through a unit test of [ecrecover](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ecrecover/mod.rs#L796). The tests for other circuits are very similar.
 
 Many of the tests for different circuits are nearly identical, for example:
 
