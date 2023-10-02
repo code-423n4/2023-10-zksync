@@ -7,9 +7,9 @@ Pubdata in zkSync can be divided up into 4 different categories:
 3. Smart Contract Bytecodes
 4. Storage writes
 
-Using data corresponding to these 4 facets, across all executed batches, we’re able to reconstruct the full state of L2. With the upgrade to our new proof system, boojum, the way this data is represented will change. At a high level, in the pre-boojum system these are represented as separate fields while for boojum they will be packed into a single bytes array. Once 4844 gets integrated this bytes array will move from being part of the calldata to blob data.
+Using data corresponding to these 4 facets, across all executed batches, we’re able to reconstruct the full state of L2. With the upgrade to our new proof system, Boojum, the way this data is represented will change. At a high level, in the pre-Boojum system these are represented as separate fields while for boojum they will be packed into a single bytes array. Once 4844 gets integrated this bytes array will move from being part of the calldata to blob data.
 
-While the structure of the pubdata changes, the way in which one can go about pulling the information will remain the same. Basically we just need to filter all of the transactions to the L1 zkSync contract for only the `commitBlocks` transactions where the proposed block has been referenced by a corresponding `executeBlocks` call (the reason for this is that a committed or even proven block can be reverted but an executed one cannot). Once we have all the committed blocks that have been executed, we then will pull the transaction input and the relevant fields, applying them in order to reconstruct the current state of L2.
+While the structure of the pubdata changes, the way in which one can go about pulling the information will remain the same. Basically, we just need to filter all of the transactions to the L1 zkSync contract for only the `commitBatches` transactions where the proposed block has been referenced by a corresponding `executeBatches` call (the reason for this is that a committed or even proven block can be reverted but an executed one cannot). Once we have all the committed batches that have been executed, we then will pull the transaction input and the relevant fields, applying them in order to reconstruct the current state of L2.
 
 # L2→L1 communication
 
@@ -19,7 +19,7 @@ While there were quite some changes during Boojum upgrade, most of the scheme re
 
 [L2→L1 communication before Boojum](Handling%20pubdata%20in%20Boojum/L2%E2%86%92L1%20communication%20before%20Boojum.md)
 
-The most important feature that we’ll need to maintain in Boojum for backwards compatibility is to provide a similar Merkle tree of L2→L1 logs with the long L2→L1 messages and priority operations’ status. 
+The most important feature that we’ll need to maintain in Boojum for backward compatibility is to provide a similar Merkle tree of L2→L1 logs with the long L2→L1 messages and priority operations’ status. 
 
 Before Boojum, whenever we sent an L2→L1 long message, a *log* was appended to the Merkle tree of L2→L1 messages on L1 due to necessity. In Boojum we’ll have to maintain this fact. Having the priority operations’ statuses is important to enable [proving](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/contracts/ethereum/contracts/bridge/L1ERC20Bridge.sol#L255) failed deposits for bridges. 
 
@@ -43,7 +43,7 @@ We will now call the logs that are created by users and are Merklized *user* log
 | Emitted by VM via an opcode. | VM knows nothing about them. |
 | Consistency and correctness is enforced by the verifier on L1 (i.e. their hash is part of the block commitment. | Consistency and correctness is enforced by the L1Messenger system contract. The correctness of the behavior of the L1Messenger is enforced implicitly by prover in a sense that it proves the correctness of the execution overall. |
 | We don’t calculate their Merkle root. | We calculate their Merkle root on the L1Messenger system contract. |
-| We have constant small number of those. | We can have as much as possible as long as the commitBlocks function on L1 remains executable (it is the job of the operator to ensure that only such transactions are selected) |
+| We have constant small number of those. | We can have as much as possible as long as the commitBatches function on L1 remains executable (it is the job of the operator to ensure that only such transactions are selected) |
 | In EIP4844 they will remain part of the calldata. | In EIP4844 they will become part of the blobs. |
 
 ### Backwards-compatibility
@@ -279,7 +279,7 @@ Note, that values like `initial_value`, `address` and `key` are not used in the 
 1. During committing the block, the L1 [verifies](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/contracts/ethereum/contracts/zksync/facets/Executor.sol#L139) that the operator has provided the full preimage for the totalPubdata (which includes L2→L1 logs, L2→L1 messages, bytecodes as well as the compressed state diffs).
 2. The block commitment [includes](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/contracts/ethereum/contracts/zksync/facets/Executor.sol#L462) *the hash of the `stateDiffs`. Thus, during ZKP verification will fail if the provided stateDiff hash is not correct.
 
-It is a secure construction because the proof can be verified only if both the execution was correct and the hash of the provided hash of the  `stateDiffs` is correct. This means that the L1Messenger indeed received the array of correct `stateDiffs` and, assuming the L1Messenger is working correctly, double-checked that the compression is of the correct format, while L1 contracts on the commit stage double checked that the operator provided the preimage for the compressed state diffs. 
+It is a secure construction because the proof can be verified only if both the execution was correct and the hash of the provided hash of the `stateDiffs` is correct. This means that the L1Messenger indeed received the array of correct `stateDiffs` and, assuming the L1Messenger is working correctly, double-checked that the compression is of the correct format, while L1 contracts on the commit stage double checked that the operator provided the preimage for the compressed state diffs. 
 
 ## State diff compression format
 
@@ -303,12 +303,12 @@ The `totalPubdata` has the following structure:
 2. Then, the concatenation of packed L2→L1 user logs.
 3. Next, 4 bytes — the number of long L2→L1 messages in the batch.
 4. Then, the concatenation of L2→L1 messages, each in the format of `<4 byte length || actual_message>`.
-5. Next, 4 bytes — the number of uncomressed bytecodes in the batch.
+5. Next, 4 bytes — the number of uncompressed bytecodes in the batch.
 6. Then, the concatenation of uncompressed bytecodes, each in the format of `<4 byte length || actual_bytecode>`.
 7. Next, 4 bytes — the length of the compressed state diffs.
-8. Then, state diffs compressed by the spec [above](#state-diff-compression-format).
+8. Then, state diffs are compressed by the spec [above](#state-diff-compression-format).
 
-With Boojum, the interface for committing blocks is the following one:
+With Boojum, the interface for committing batches is the following one:
 
 ```solidity
 /// @notice Data needed to commit new batch

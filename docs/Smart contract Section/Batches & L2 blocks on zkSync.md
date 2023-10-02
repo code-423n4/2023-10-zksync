@@ -2,7 +2,7 @@
 
 ## Glossary
 
-- Batch - a set of transactions that the bootloader processes (`commitBlocks`, `proveBlocks`, and `executeBatches` work with it). A batch consists of multiple transactions.
+- Batch - a set of transactions that the bootloader processes (`commitBatches`, `proveBatches`, and `executeBatches` work with it). A batch consists of multiple transactions.
 - L2 block - a non-intersecting sub-set of consecutively executed transactions. This is the kind of block you see in the API. This is the one that will *eventually* be used for `block.number`/`block.timestamp`/etc. This will happen *eventually*, since at the time of this writing the virtual block migration is being [run](#migration--virtual-blocks-logic).
 - Virtual block — blocks the data of which will be returned in the contract execution environment during the migration. They are called “virtual”, since they have no trace in our API, i.e. it is not possible to query information about them in any way.
 
