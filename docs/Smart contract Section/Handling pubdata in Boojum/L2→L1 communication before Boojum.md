@@ -2,7 +2,7 @@
 
 # Main instrument: L2→L1 log
 
-The only “provable” part of the communication from L2 to L1 are native L2→L1 logs emitted by VM. These can be emitted by the `to_l1` [opcode](../System%20contracts%20bootloader%20description.md#zksync-specific-opcodes). Each log consists of the following fields:
+The only “provable” part of the communication from L2 to L1 are native L2→L1 logs emitted by VM. These can be emitted by the `to_l1` [opcode](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md). Each log consists of the following fields:
 
 ```solidity
 struct L2Log {
@@ -19,7 +19,7 @@ Where:
 
 - `l2ShardId` is the id of the shard the opcode was called (it is currently always 0).
 - `isService` a boolean flag that is not used right now
-- `txNumberInBatch` the number of the transaction in the batch where the log has happened. This number is taken from the internal counter which is incremented each time the `increment_tx_counter` is [called]((../System%20contracts%20bootloader%20description.md#zksync-specific-opcodes)).
+- `txNumberInBatch` the number of the transaction in the batch where the log has happened. This number is taken from the internal counter which is incremented each time the `increment_tx_counter` is [called](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md).
 - `sender` is the value of `this` in the frame where the L2→L1 log was emitted.
 - `key` and `value` are just two 32-byte values that could be used to carry some data with the log.
 
@@ -27,7 +27,7 @@ The hashed array of these opcodes is then included into the [block commitment](h
 
 ## Important system values
 
-Two `key` and `value` fields are enough for a lot of system-related use-cases, such as sending timestamp of the batch, previous batch hash, etc. They were and are used [used](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/system-contracts/contracts/SystemContext.sol#L438) to verify the correctness of the batch's timestamps and hashes. You can read more about block processing [here](../Batches%20&%20L2%20blocks%20on%20zkSync.md).
+Two `key` and `value` fields are enough for a lot of system-related use-cases, such as sending timestamp of the batch, previous batch hash, etc. They were and are used [used](https://github.com/code-423n4/2023-10-zksync/blob/ef99273a8fdb19f5912ca38ba46d6bd02071363d/code/system-contracts/contracts/SystemContext.sol#L438) to verify the correctness of the batch's timestamps and hashes. You can read more about block processing [here](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Batches%20&%20L2%20blocks%20on%20zkSync.md).
 
 ## Long L2→L1 messages & bytecodes
 
