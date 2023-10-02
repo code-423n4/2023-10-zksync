@@ -95,27 +95,10 @@ with the funds. To withdraw funds user should call `withdraw` function on the `L
 burn the funds on L2, allowing the user to reclaim them through the `finalizeEthWithdrawal` function on the
 `MailboxFacet`.
 
+More about L1->L2 operations can be found [here](./Handling%20L1→L2%20ops%20on%20zkSync.md).
+
 L2 -> L1 communication, in contrast to L1 -> L2 communication, is based only on transferring the information, and not on
-the transaction execution on L1.
-
-From the L2 side, there is a special zkEVM opcode that saves `l2ToL1Log` in the L2 batch. A validator will send all
-`l2ToL1Logs` when sending an L2 batch to the L1 (see `ExecutorFacet`). Later on, users will be able to both read their
-`l2ToL1logs` on L1 and _prove_ that they sent it.
-
-From the L1 side, for each L2 batch, a Merkle root with such logs in leaves is calculated. Thus, a user can provide
-Merkle proof for each `l2ToL1Logs`.
-
-_NOTE_: For each executed L1 -> L2 transaction, the system program necessarily sends an L2 -> L1 log. To verify the
-execution status user may use the `proveL1ToL2TransactionStatus`.
-
-_NOTE_: The `l2ToL1Log` structure consists of fixed-size fields! Because of this, it is inconvenient to send a lot of
-data from L2 and to prove that they were sent on L1 using only `l2ToL1log`. To send a variable-length message we use
-this trick:
-
-- One of the system contracts accepts an arbitrary length message and sends a fixed length message with parameters
-  `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
-- The contract on L1 accepts all sent messages and if the message came from this system contract it requires that the
-  preimage of `value` be provided.
+the transaction execution on L1. The full description of the mechanism for sending information from L2 to L1 can be found [here](./Handling%20pubdata%20in%20Boojum.md).
 
 ### ExecutorFacet
 
@@ -189,7 +172,7 @@ fee-on-transfer tokens or other custom logic for handling user balances.
 The L2 counterpart of the L1 ERC20 bridge.
 
 - `withdraw` - initiate a withdrawal by burning funds on the contract and sending a corresponding message to L1.
-- `finalizeDeposit` - finalize the deposit and mint funds on L2.
+- `finalizeDeposit` - finalize the deposit and mint funds on L2. The function is only callable by L1 bridge. 
 
 ### L1WethBridge
 
@@ -202,12 +185,12 @@ it is wrapped back into WETH and delivered to the L2 recipient.
 
 Thus, the deposit is made in one transaction, and the user receives L2 WETH that can be unwrapped to ETH.
 
+For withdrawals, the contract receives ETH from the L2 WETH bridge contract, wraps it into WETH, and sends the WETH to
+the L1 recipient.
+
 ### L2WethBridge
 
 The L2 counterpart of the L1 WETH bridge.
-
-For withdrawals, the contract receives ETH from the L2 WETH bridge contract, wraps it into WETH, and sends the WETH to
-the L1 recipient.
 
 ## Governance
 
@@ -251,37 +234,6 @@ is allowed to call `executeBatches` to propagate the same calldata to zkSync con
 
 The auxiliary contract controls the permission access list. It is used in bridges and diamond proxies to control which
 addresses can interact with them in the Alpha release. Currently, it is supposed to set all permissions to public.
-
-## L2 specifics
-
-### Deployment
-
-The L2 deployment process is different from Ethereum.
-
-In L1, the deployment always goes through two opcodes `create` and `create2`, each of which provides its address
-derivation. The parameter of these opcodes is the so-called "init bytecode" - a bytecode that returns the bytecode to be
-deployed. This works well in L1 but is suboptimal for L2.
-
-In the case of L2, there are also two ways to deploy contracts - `create` and `create2`. However, the expected input
-parameters for `create` and `create2` are different. It accepts the hash of the bytecode, rather than the full bytecode.
-Therefore, users pay less for contract creation and don't need to send the full contract code by the network upon
-deploys.
-
-A good question could be, _how does the validator know the preimage of the bytecode hashes to execute the code?_ Here
-comes the concept of factory dependencies! Factory dependencies are a list of bytecode hashes whose preimages were shown
-on L1 (data is always available). Such bytecode hashes can be deployed, others - no. Note that they can be added to the
-system by either L2 transaction or L1 -> L2 communication, where you can specify the full bytecode and the system will
-mark it as known and allow you to deploy it.
-
-Besides that, due to the bytecode differences for L1 and L2 contracts, address derivation is different. This applies to
-both `create` and `create2` and means that contracts deployed on the L1 cannot have a collision with contracts deployed
-on the L2. Please note that EOA address derivation is the same as on Ethereum.
-
-Thus:
-
-- L2 contracts are deployed by bytecode hash, not by full bytecode
-- Factory dependencies - list of bytecode hashes that can be deployed on L2
-- Address derivation for `create`/`create2` on L1 and L2 is different
 
 ## Deposit Limitation
 
