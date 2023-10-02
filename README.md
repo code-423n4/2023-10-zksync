@@ -263,7 +263,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [era-zkevm_circuits/src/ecrecover](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/ecrecover) | 1342 | Ecrecover precompile |
 | [era-zkevm_circuits/src/fsm_input_output](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/fsm_input_output) | 352 | Validates the outputs of one circuit match the inputs of the next |
 | [era-zkevm_circuits/src/keccak_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/keccak256_round_function) | 531 | Keccak hash function precompile|
-| [era-zkevm_circuits/src/sha256_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/sha256_round_function) | | SHA256 hash function precompile|
+| [era-zkevm_circuits/src/sha256_round_function](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/sha256_round_function) | 464 | SHA256 hash function precompile|
 | [era-zkevm_circuits/src/linear_hasher](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/linear_hasher) | 224 | Creates commitment using Keccak |
 | [era-zkevm_circuits/src/log_sorter](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/log_sorter) | 798 | Sort and deduplicate logs |
 | [era-zkevm_circuits/src/main_vm](https://github.com/matter-labs/era-zkevm_circuits/tree/main/src/main_vm) | 7673 | Main VM circuit |
