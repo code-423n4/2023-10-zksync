@@ -166,12 +166,16 @@ fee-on-transfer tokens or other custom logic for handling user balances.
 - `claimFailedDeposit` - unlock funds if the deposit was initiated but then failed on L2.
 - `finalizeWithdrawal` - unlock funds for the valid withdrawal request from L2.
 
+The owner of the L1ERC20Bridge is the Governance contract.
+
 ### L2ERC20Bridge
 
 The L2 counterpart of the L1 ERC20 bridge.
 
 - `withdraw` - initiate a withdrawal by burning funds on the contract and sending a corresponding message to L1.
 - `finalizeDeposit` - finalize the deposit and mint funds on L2. The function is only callable by L1 bridge. 
+
+The owner of the L2ERC20Bridge and the contracts related to it is the Governance contract.
 
 ### L1WethBridge
 
@@ -187,9 +191,13 @@ Thus, the deposit is made in one transaction, and the user receives L2 WETH that
 For withdrawals, the contract receives ETH from the L2 WETH bridge contract, wraps it into WETH, and sends the WETH to
 the L1 recipient.
 
+The owner of the L1WethBridge contract is Governance contract.
+
 ### L2WethBridge
 
 The L2 counterpart of the L1 WETH bridge.
+
+The owner of the L2WethBridge contract is Governance contract.
 
 ## Governance
 
@@ -227,12 +235,16 @@ When the validator calls `commitBatches`, the same calldata will be propagated t
 the time these batches are committed by the validator to enforce a delay between committing and execution of batches. Then, the
 validator can prove the already committed batches regardless of the mentioned timestamp, and again the same calldata (related
 to the `proveBatches` function) will be propagated to the zkSync contract. After the `delay` is elapsed, the validator
-is allowed to call `executeBatches` to propagate the same calldata to zkSync contract.
+is allowed to call `executeBatches` to propagate the same calldata to zkSync contract. 
+
+The owner of the ValidatorTimelock contract is the same as the owner of the Governance contract - Matter Labs multisig.
 
 ## Allowlist
 
 The auxiliary contract controls the permission access list. It is used in bridges and diamond proxies to control which
-addresses can interact with them in the Alpha release. Currently, it is supposed to set all permissions to public.
+addresses can interact with them in the Alpha release. Currently, it is supposed to set all permissions to public. 
+
+The owner of the Allowlist contract is Governance contract.
 
 ## Deposit Limitation
 
