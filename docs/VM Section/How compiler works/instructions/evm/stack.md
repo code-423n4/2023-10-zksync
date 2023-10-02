@@ -6,7 +6,7 @@ In Yul, only used to mark unused values, and is not translated to LLVM IR.
 pop(staticcall(gas(), address(), 0, 64, 0, 32))
 ```
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
+For EVMLA, see [EVM Legacy Assembly Translator](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/evmla_translator.md).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L108).
 
@@ -16,7 +16,7 @@ For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
 
 Is not available in Yul.
 
-Ignored in EVMLA. See [EVM Legacy Assembly Translator](../../evmla_translator.md) for more information.
+Ignored in EVMLA. See [EVM Legacy Assembly Translator](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/evmla_translator.md) for more information.
 
 
 
@@ -24,7 +24,7 @@ Ignored in EVMLA. See [EVM Legacy Assembly Translator](../../evmla_translator.md
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
+For EVMLA, see [EVM Legacy Assembly Translator](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/evmla_translator.md).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L10).
 
@@ -34,7 +34,7 @@ For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
+For EVMLA, see [EVM Legacy Assembly Translator](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/evmla_translator.md).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L48).
 
@@ -44,6 +44,6 @@ For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla_translator.md).
+For EVMLA, see [EVM Legacy Assembly Translator](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/evmla_translator.md).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L74).

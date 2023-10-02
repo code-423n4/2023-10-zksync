@@ -39,13 +39,13 @@ This repository contains comprehensive documentation and code related to the Sma
 
 Relevant Documentation:
 
-- **[L1 smart contracts](./docs/Smart%20contract%20Section/L1%20smart%20contracts.md)**
-- **[System Contracts/Bootloader Description](./docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
-- **[zkSync Era Fee Model](./docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
-- **[Handling L1→L2 Ops on zkSync](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
-- **[Batches & L2 Blocks on zkSync](./docs/Smart%20contract%20Section/Batches%20&%20L2%20blocks%20on%20zkSync.md)**
-- **[Elliptic Curve Precompiles](./docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
-- **[Handling Pubdata in Boojum](./docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
+- **[L1 smart contracts](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/L1%20smart%20contracts.md)**
+- **[System Contracts/Bootloader Description](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
+- **[zkSync Era Fee Model]([.](https://github.com/code-423n4/2023-10-zksync/blob/main)/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
+- **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
+- **[Batches & L2 Blocks on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Batches%20&%20L2%20blocks%20on%20zkSync.md)**
+- **[Elliptic Curve Precompiles](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Elliptic%20curve%20precompiles.md)**
+- **[Handling Pubdata in Boojum](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md)**
 
 ### **2. VM Section**
 
@@ -331,7 +331,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 It is important to examine access control and persmissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circuimvent the limitations imposed on them.
 
-Especial scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md#security-considerations) of such an issue, which was detected & resolved by the team before the contest. 
+Especial scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md) of such an issue, which was detected & resolved by the team before the contest. 
 
 ### Data availability issues 
 

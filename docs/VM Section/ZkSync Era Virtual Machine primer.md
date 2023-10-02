@@ -55,7 +55,7 @@ Notice that register `r0` is used to feed constant zero values to instructions; 
 
 Commonly, instructions accept two inputs and one output operands, following the schema:
 
-![arithmetic opcode.png](./zkSync%20Era%20VM%20primer/arithmetic_opcode.png)
+![arithmetic opcode.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/zkSync%20Era%20VM%20primer/arithmetic_opcode.png)
 
 The first operand can be taken from:
 
@@ -110,7 +110,7 @@ The instruction `sub` is implemented so that it sets `EQ` if the result is zero 
 sub! r1, r2, r3 ; r3 <- (r1 - r2); EQ = 1
 ```
 
-You can learn more in the [formal specification](./EraVM%20Formal%20specification.pdf).
+You can learn more in the [formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/EraVM%20Formal%20specification.pdf).
 
 ### Predicates
 
@@ -143,7 +143,7 @@ Here is a full list of available predicates:
 - `if_not_eq`
 - `if_gt_or_eq`
 
-You can learn more in the [formal specification](./EraVM%20Formal%20specification.pdf).
+You can learn more in the [formal specification](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/EraVM%20Formal%20specification.pdf).
 
 ### Swap
 
@@ -463,7 +463,7 @@ System contracts implement contract deployment, extensions such as keccak256, de
 
 Decommitter is a module external to EraVM allowing accessing deployed code by its hash. 
 
-![arch-overview.png](./zkSync%20Era%20VM%20primer/arch-overview.png)
+![arch-overview.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/zkSync%20Era%20VM%20primer/arch-overview.png)
 
 The system contracts at the address $2^{15}+2$  , called Deployer, keeps hashes of code of each contract in its storage. Far calls to a contract with address $C$ perform as follows:
 
@@ -570,7 +570,7 @@ The system contract `MsgValueSimulator` ensures that whenever this context val
 
 The first input of any arithmetic instruction can be a 16-bit constant, a register, a stack location or a location in the code. The second input is always a register. Arithmetic operations output to either a register or a stack location. We’ll discuss stack and code locations in more detail later on.
 
-![arithmetic opcode.png](ZkSync%20Era%20Virtual%20Machine%20primer/arithmetic_opcode.png)
+![arithmetic opcode.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/ZkSync%20Era%20Virtual%20Machine%20primer/arithmetic_opcode.png)
 
 Addition, subtraction, bitwise and, bitwise or, bitwise xor and bitshifts all work as expected. There are also instructions for rotating bits left or right.
 
@@ -592,7 +592,7 @@ In fact, we can do that for *any* instruction! The modifiers for conditionally e
 - if_not_eq
 - if_gt_or_eq
 
-GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the [instruction reference](./EraVM%20Formal%20specification.pdf) for the meaning of the flags for each instruction.
+GT, EQ and LT here relate to three flags in the VM. These flags are stored after arithmetic instructions that are modified with the set_flags modifier. It is abbreviated to `!` . See the [instruction reference](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/EraVM%20Formal%20specification.pdf) for the meaning of the flags for each instruction.
 
 ```nasm
 sub! r1, r2, r0

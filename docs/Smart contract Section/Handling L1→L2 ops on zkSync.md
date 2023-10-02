@@ -7,7 +7,7 @@ The transactions on zkSync can be initiated not only on L2, but also on L1. Ther
 
 ## Prerequisites
 
-Please read the full [article](./System%20contracts%20bootloader%20description.md) on the general system contracts / bootloader structure as well as the pubdata structure with Boojum system to understand [the difference](./Handling%20pubdata%20in%20Boojum.md) between system and user logs.
+Please read the full [article](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md) on the general system contracts / bootloader structure as well as the pubdata structure with Boojum system to understand [the difference](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md) between system and user logs.
 
 # Priority operations
 

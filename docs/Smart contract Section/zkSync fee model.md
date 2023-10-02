@@ -361,7 +361,7 @@ zkSync Era is a statediff-based rollup, i.e. the pubdata is published not for t
 - Depending on the `value` written into a slot, various compression optimizations could be used and so we should reflect that too.
 - Maybe the slot has been already written to in this batch and so we don’t to charge anything for it.
 
-You can read more about how we treat the pubdata [here](./Handling%20pubdata%20in%20Boojum.md).
+You can read more about how we treat the pubdata [here](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md).
 
 The important part here is that while such refunds are inlined (i.e. unlike the refunds for overhead they happen in-place during execution and not after the whole transaction has been processed), they are enforced by the operator. Right now, the operator is the one that decides what refund to provide.
 

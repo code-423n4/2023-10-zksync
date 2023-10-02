@@ -35,19 +35,20 @@ So instead of proving `SRead` we just push a proving request, that will be sent 
 
 For now, we have 13 base layer circuits:
 
-- [MainVM](Circuits/Main%20Vm.md)
-- [CodeDecommittmentsSorter](Circuits/SortDecommitments.md)
-- [CodeDecommitter](Circuits/CodeDecommitter.md)
-- [LogDemuxer](Circuits/DemuxLogQueue.md)
-- [KeccakRoundFunction](Circuits/KeccakRoundFunction.md)
-- [Sha256RoundFunction](Circuits/Sha256RoundFunction.md)
-- [ECRecover](Circuits/Ecrecover.md)
-- [RAMPermutation](Circuits/RAMPermutation.md)
-- [StorageSorter](Circuits/StorageSorter.md)
-- [StorageApplication](Circuits/StorageApplication.md)
-- [EventsSorter](Circuits/LogSorter.md)
-- [L1MessagesSorter](Circuits/LogSorter.md)
-- [L1MessagesHasher](Circuits/L1MessagesHasher.md)
+- [MainVM](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Main%20Vm.md)
+- [CodeDecommittmentsSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/SortDecommitments.md)
+- [CodeDecommitter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/CodeDecommitter.md)
+- [LogDemuxer](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/DemuxLogQueue.md)
+- [KeccakRoundFunction](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/KeccakRoundFunction.md)
+- [Sha256RoundFunction](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Sha256RoundFunction.md)
+- [ECRecover](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Ecrecover.md)
+- [RAMPermutation](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/RAMPermutation.md)
+- [StorageSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/StorageSorter.md)
+- [StorageApplication](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/StorageApplication.md)
+- [EventsSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/LogSorter.md)
+- [L1MessagesSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/LogSorter.md)
+- [L1MessagesHasher](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/L1MessagesHasher.md)
+- 
 
 They mostly communicate by queues (the diagram  of communication is below).
 
@@ -59,7 +60,7 @@ The main challenge for base layer circuits is the ability to prove unlimited amo
 
 All circuits have the following PI structure:
 
-![diagram.png](Circuits/diagram.png)
+![diagram.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/diagram.png)
 
 | start flag | Boolean that shows if this is the first instance of corresponding circuit type |
 | --- | --- |
@@ -68,36 +69,36 @@ All circuits have the following PI structure:
 | Output | Structure that contains all outputs of this type of circuit (the last instance contains the real output, the output field of the others is empty) |
 | FSM Input and FSM Output | The field has the same structure. It represents the inner state of circuit execution (the first fsm_input is empty, the second fsm_input equals the first fsm_output and so on…) |
 
-![image.png](Circuits/image.png)
+![image.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/image.png)
 
 The equality of corresponding parts in different circuits is done during aggregating base layer circuits. Aggregating is done by recursion level circuits that also verify base layer proofs. For now this is out of our scope, so we will focus only on base layer.
 
 ## How do all of the base layer circuits fit together?
 
-![flowchart.png](Circuits/flowchart.png)
+![flowchart.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/flowchart.png)
 
 ## All base layer circuits
 
-[Main Vm](Circuits/Main%20Vm.md)
+[Main Vm](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Main%20Vm.md)
 
-[SortDecommitments](Circuits/SortDecommitments.md)
+[SortDecommitments](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/SortDecommitments.md)
 
-[CodeDecommitter](Circuits/CodeDecommitter.md)
+[CodeDecommitter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/CodeDecommitter.md)
 
-[DemuxLogQueue](Circuits/DemuxLogQueue.md)
+[DemuxLogQueue](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/DemuxLogQueue.md)
 
-[KeccakRoundFunction](Circuits/KeccakRoundFunction.md)
+[KeccakRoundFunction](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/KeccakRoundFunction.md)
 
-[Sha256RoundFunction](Circuits/Sha256RoundFunction.md)
+[Sha256RoundFunction](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Sha256RoundFunction.md)
 
-[Ecrecover](Circuits/Ecrecover.md)
+[Ecrecover](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Ecrecover.md)
 
-[RAMPermutation](Circuits/RAMPermutation.md)
+[RAMPermutation](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/RAMPermutation.md)
 
-[StorageSorter](Circuits/StorageSorter.md)
+[StorageSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/StorageSorter.md)
 
-[StorageApplication](Circuits/StorageApplication.md)
+[StorageApplication](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/StorageApplication.md)
 
-[LogSorter](Circuits/LogSorter.md)
+[LogSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/LogSorter.md)
 
-[L1MessagesHasher](Circuits/L1MessagesHasher.md)
+[L1MessagesHasher](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/L1MessagesHasher.md)
