@@ -10,7 +10,7 @@ cargo +nightly install --git https://github.com/matter-labs/era-test-node.git --
 
 yarn
 yarn build
-yarn compile-yul
+yarn preprocess && yarn compile-yul
 era_test_node run > /dev/null 2>&1 & export TEST_NODE_PID=$!
 yarn test
 kill $TEST_NODE_PID
