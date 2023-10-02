@@ -29,19 +29,19 @@ contract ExecutingTest is GovernanceTest {
     function test_ScheduleShadowAndExecute() public {
         IGovernance.Operation memory op = operationWithOneCallZeroSaltAndPredecessor(address(eventOnFallback), 0, "");
         bytes32 opId = governance.hashOperation(op);
-        vm.startPrank(owner);
+        vm.prank(owner);
         governance.scheduleShadow(opId, 100000);
         vm.warp(block.timestamp + 100000);
-        vm.startPrank(securityCouncil);
+        vm.prank(securityCouncil);
         executeOpAndCheck(op);
     }
 
     function test_ScheduleShadowAndExecuteInstant() public {
         IGovernance.Operation memory op = operationWithOneCallZeroSaltAndPredecessor(address(eventOnFallback), 0, "");
         bytes32 opId = governance.hashOperation(op);
-        vm.startPrank(owner);
+        vm.prank(owner);
         governance.scheduleShadow(opId, 100000);
-        vm.startPrank(securityCouncil);
+        vm.prank(securityCouncil);
         executeInstantOpAndCheck(op);
     }
 
