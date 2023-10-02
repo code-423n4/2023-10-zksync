@@ -42,7 +42,6 @@ pub struct StorageDeduplicatorFSMInputOutput<F: SmallField> {
 ```
 
 ## Main circuit logic
-## Main circuit logic
 
 The main logic of this circuit is sorting and deduplicating storage requests from `unsorted_log_queue_state`. The result storage requests are pushed to `final_sorted_queue_state`.
 
