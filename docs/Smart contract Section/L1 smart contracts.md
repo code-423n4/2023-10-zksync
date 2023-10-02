@@ -3,7 +3,7 @@
 
 This document presumes familiarity with Rollup. For a better understanding, consider reading the Rollup introduction [here](https://era.zksync.io/docs/reference/concepts/rollups.html).
 
-Unlike Ethereum, zkSync Era doesn't need to have its separate consensus to achieve a high level of decentralization. Instead, it inherits security guarantees from Ethereum, on which it stores information about changes in the blockchain, providing validity proofs for state transition, implementing a communication mechanism, etc. In practice, all this is achieved by Smart Contracts built on top of Ethereum. his document details the architecture of zkSync contracts on Ethereum Layer 1.
+Unlike Ethereum, zkSync Era doesn't need to have its separate consensus to achieve a high level of decentralization. Instead, it inherits security guarantees from Ethereum, on which it stores information about changes in the blockchain, providing validity proofs for state transition, implementing a communication mechanism, etc. In practice, all this is achieved by Smart Contracts built on top of Ethereum. This document details the architecture of zkSync contracts on Ethereum Layer 1.
 
 ## Diamond
 
