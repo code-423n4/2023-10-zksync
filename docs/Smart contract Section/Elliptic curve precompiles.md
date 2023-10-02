@@ -1,4 +1,4 @@
-## Elliptic curve precompiles
+# Elliptic curve precompiles
 
 Precompiled contracts for elliptic curve operations are required in order to perform zkSNARK verification.
 
