@@ -39,6 +39,7 @@ This repository contains comprehensive documentation and code related to the Sma
 
 Relevant Documentation:
 
+- **[L1 smart contracts](./docs/Smart%20contract%20Section/L1%20smart%20contracts.md)**
 - **[System Contracts/Bootloader Description](./docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
 - **[zkSync Era Fee Model](./docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
 - **[Handling L1→L2 Ops on zkSync](./docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
