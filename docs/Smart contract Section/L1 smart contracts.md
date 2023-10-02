@@ -191,13 +191,13 @@ Thus, the deposit is made in one transaction, and the user receives L2 WETH that
 For withdrawals, the contract receives ETH from the L2 WETH bridge contract, wraps it into WETH, and sends the WETH to
 the L1 recipient.
 
-The owner of the L1WethBridge contract is Governance contract.
+The owner of the L1WethBridge contract is the Governance contract.
 
 ### L2WethBridge
 
 The L2 counterpart of the L1 WETH bridge.
 
-The owner of the L2WethBridge contract is Governance contract.
+The owner of the L2WethBridge and L2Weth contracts is the Governance contract.
 
 ## Governance
 
@@ -244,7 +244,7 @@ The owner of the ValidatorTimelock contract is the same as the owner of the Gove
 The auxiliary contract controls the permission access list. It is used in bridges and diamond proxies to control which
 addresses can interact with them in the Alpha release. Currently, it is supposed to set all permissions to public. 
 
-The owner of the Allowlist contract is Governance contract.
+The owner of the Allowlist contract is the Governance contract.
 
 ## Deposit Limitation
 
