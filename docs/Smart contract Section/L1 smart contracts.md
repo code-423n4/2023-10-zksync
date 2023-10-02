@@ -263,3 +263,4 @@ struct Deposit {
 
 Currently, the limit is used only for blocking deposits of the specific token (turning on the limitation and setting the
 limit to zero). And on the near future, this functionality will be completely removed.
+
