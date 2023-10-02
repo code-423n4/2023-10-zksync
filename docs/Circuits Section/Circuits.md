@@ -16,7 +16,7 @@ if opcode == SRead {
 ...
 ```
 
-You may notice that `Add` instruction is much simpler than the `SRead` one. And when you work with circuits you still need to execute every opcode. 
+You may notice that `Add` instruction is much simpler than the `SRead` one. When you work with circuits you still need to execute every opcode. 
 
 That’s why we can use the following approach:
 
@@ -66,18 +66,22 @@ All circuits have the following PI structure:
 | --- | --- |
 | finished flag | Boolean that shows if this is the last instance of corresponding circuit type |
 | Input | Structure that contains all inputs to this type of circuit (every instance of one circuit type has the same input) |
-| Output | Structure that contains all outputs of this type of circuit (the last instance contains the real output, the output field of the others is empty) |
 | FSM Input and FSM Output | The field has the same structure. It represents the inner state of circuit execution (the first fsm_input is empty, the second fsm_input equals the first fsm_output and so on…) |
+| Output | Structure that contains all outputs of this type of circuit (the last instance contains the real output, the output field of the others is empty) |
+
+The code implementation can be found [here](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/fsm_input_output/mod.rs#L32).
+
+In terms of Arithmetization we don’t allocate all these fields like public input variables. A more efficient approach would be computing commitment of type `[Num<F>; 4]` with poseidon2 and then allocating these 4 variables as public inputs.
 
 ![image.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/image.png)
 
 The equality of corresponding parts in different circuits is done during aggregating base layer circuits. Aggregating is done by recursion level circuits that also verify base layer proofs. For now this is out of our scope, so we will focus only on base layer.
 
-## How do all of the base layer circuits fit together?
+## How do all the base layer circuits fit together?
 
 ![flowchart.png](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/flowchart.png)
 
-## All base layer circuits
+## All base layer circuits inner parts
 
 [Main Vm](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Main%20Vm.md)
 
@@ -102,3 +106,6 @@ The equality of corresponding parts in different circuits is done during aggrega
 [LogSorter](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/LogSorter.md)
 
 [L1MessagesHasher](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/L1MessagesHasher.md)
+
+There are a couple of circuits that do queue sorting. Here is the page that describes the algorithm: [Sorting](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits/Sorting.md)
+

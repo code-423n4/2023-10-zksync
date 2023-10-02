@@ -48,9 +48,71 @@ pub struct VmLocalState<F: SmallField> {
 
 ## Main circuit logic
 
-Main_vm – is instruction handler. The VM runs in cycles. For each cycle, 
+Main_vm – is instruction handler. VM circuit only accumulated memory queries using WITNESS provided by (presumably honest) prover. In this sense VM is “local” - it doesn’t have access to full memory space, but only to values of particular queries that it encountered during the execution. RAM circuit sorts all accumulated queries from VM and ENFORCES the general RAM validity as described above. Those two actions together guarantee RAM validity, so for all the descriptions below when we will talk about particular opcodes in VM we will use a language like “Operand number 0 is read from the stack at the offset X” that means that even though such “memory read” technically means using a witness provided by the prover, in practice we can assume that such witness is correct and we can view it as just normal RAM access as one would expect to happen on the standard machine.
 
-1. Start in a prestate - perform all common operations for every opcode, namely deal with exceptions, resources, edge cases like end of execution, select operands, compute common values. Within the zkEVM framework, numerous entities identified as "opcodes" in the EVM paradigm are elegantly manifested as mere function calls. This modification is rooted in the succinct observation that, from the perspective of an external caller, an inlined function (analogous to an opcode) is inherently indistinguishable from an internal function call.
+We start with the allocation witnesses: 
+
+```rust
+let VmCircuitWitness {
+        closed_form_input,
+        witness_oracle,
+    } = witness;
+
+    let mut structured_input =
+        VmCircuitInputOutput::alloc_ignoring_outputs(cs, closed_form_input.clone());
+
+    let start_flag = structured_input.start_flag;
+    let observable_input = structured_input.observable_input.clone();
+    let hidden_fsm_input = structured_input.hidden_fsm_input.clone();
+
+    let VmInputData {
+        rollback_queue_tail_for_block,
+        memory_queue_initial_state,
+        decommitment_queue_initial_state,
+        per_block_context,
+    } = observable_input;
+```
+
+We also need to create the state that reflects the "initial" state for boot process:
+
+```rust
+let bootloader_state = initial_bootloader_state(
+        cs,
+        memory_queue_initial_state.length,
+        memory_queue_initial_state.tail,
+        decommitment_queue_initial_state.length,
+        decommitment_queue_initial_state.tail,
+        rollback_queue_tail_for_block,
+        round_function,
+    );
+```
+
+but depending from `start_flag` we should select between states:
+
+```rust
+let mut state =
+      VmLocalState::conditionally_select(cs, start_flag, &bootloader_state, &hidden_fsm_input);
+
+let synchronized_oracle = SynchronizedWitnessOracle::new(witness_oracle);
+```
+
+Here we run the `vm_cycle` :
+
+```rust
+for _cycle_idx in 0..limit {
+        state = vm_cycle(
+            cs,
+            state,
+            &synchronized_oracle,
+            &per_block_context,
+            round_function,
+        );
+    }
+```
+
+The VM runs in cycles. For each cycle, 
+
+1. Start in a prestate - perform all common operations for every opcode, namely deal with exceptions, resources, edge cases like end of execution, select opcods, compute common values. Within the zkEVM framework, numerous entities identified as "opcodes" in the EVM paradigm are elegantly manifested as mere function calls. This modification is rooted in the succinct observation that, from the perspective of an external caller, an inlined function (analogous to an opcode) is inherently indistinguishable from an internal function call.
 
 ```rust
 let (draft_next_state, common_opcode_state, opcode_carry_parts) =
@@ -160,7 +222,104 @@ pub struct StateDiffsAccumulator<F: SmallField> {
 }
 ```
 
-1. Update the memory
-2. Update the registers
-3. Apply changes to the VM State
-    1. Including pushing data to queues for other circuits
+There will be no implementation details here because the code is commented step by step and is understandable. Short description:
+
+Apply opcodes, for DST0 it's possible to have opcode-constrainted updates only into registers, apply `StateDiffsAccumulator`, update the memory, update the registers, apply changes to VM state, such as ergs left, etc. push data to queues for other circuits. If an event has rollback then create the same event data but with `rollback` flag, enforce sponges. There are only 2 outcomes:
+
+- we have dst0 write (and may be src0 read), that we taken care above
+- opcode itself modified memory queue, based on outcome of src0 read in parallel opcodes either
+- do not use sponges and only rely on src0/dst0
+- can not have src0/dst0 in memory, but use sponges (UMA, near_call, far call, ret)
+
+No longer in the cyclical part `VM` we set up different queues:
+
+  
+
+1. Memory:
+
+```rust
+let memory_queue_current_tail = QueueTailState {
+        tail: final_state.memory_queue_state,
+        length: final_state.memory_queue_length,
+  };
+let memory_queue_final_tail = QueueTailState::conditionally_select(
+    cs,
+    structured_input.completion_flag,
+    &memory_queue_current_tail,
+    &full_empty_state_large.tail,
+);
+```
+
+1. Code decommit:
+
+```rust
+let decommitment_queue_current_tail = QueueTailState {
+        tail: final_state.code_decommittment_queue_state,
+        length: final_state.code_decommittment_queue_length,
+  };
+let decommitment_queue_final_tail = QueueTailState::conditionally_select(
+    cs,
+    structured_input.completion_flag,
+    &decommitment_queue_current_tail,
+    &full_empty_state_large.tail,
+);
+```
+
+1. Log:
+
+```rust
+let final_log_state_tail = final_state.callstack.current_context.log_queue_forward_tail;
+    let final_log_state_length = final_state
+        .callstack
+        .current_context
+      .log_queue_forward_part_length;
+
+// but we CAN still check that it's potentially mergeable, basically to check that witness generation is good
+for (a, b) in final_log_state_tail.iter().zip(
+    final_state
+        .callstack
+        .current_context
+        .saved_context
+        .reverted_queue_head
+        .iter(),
+) {
+    Num::conditionally_enforce_equal(cs, structured_input.completion_flag, a, b);
+}
+let full_empty_state_small = QueueState::<F, QUEUE_STATE_WIDTH>::empty(cs);
+
+let log_queue_current_tail = QueueTailState {
+    tail: final_log_state_tail,
+    length: final_log_state_length,
+};
+let log_queue_final_tail = QueueTailState::conditionally_select(
+    cs,
+    structured_input.completion_flag,
+    &log_queue_current_tail,
+    &full_empty_state_small.tail,
+);
+```
+
+Wrap them: 
+
+```rust
+observable_output.log_queue_final_state.tail = log_queue_final_tail;
+observable_output.memory_queue_final_state.tail = memory_queue_final_tail;
+observable_output.decommitment_queue_final_state.tail = decommitment_queue_final_tail;
+
+structured_input.observable_output = observable_output;
+structured_input.hidden_fsm_output = final_state;
+```
+
+Finally, we compute a commitment to PublicInput and allocate it as witness variables.
+
+```rust
+let compact_form =
+      ClosedFormInputCompactForm::from_full_form(cs, &structured_input, round_function);
+
+let input_commitment: [_; INPUT_OUTPUT_COMMITMENT_LENGTH] =
+    commit_variable_length_encodable_item(cs, &compact_form, round_function);
+for el in input_commitment.iter() {
+    let gate = PublicInputGate::new(el.get_variable());
+    gate.add_to_cs(cs);
+}
+```

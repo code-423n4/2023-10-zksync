@@ -11,6 +11,7 @@ Our ZK code is spread across three repositories:
 To get started,  run the basic_test from the era-zkevm_test_harness:
 
 ```bash
+rustup default nightly-2023-08-23
 cargo update
 cargo test basic_test  --release -- --nocapture
 

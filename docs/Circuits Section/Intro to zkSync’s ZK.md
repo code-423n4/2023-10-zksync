@@ -1,15 +1,13 @@
 # Intro to zkSync’s ZK
+This page is specific to our cryptography. For a general introduction, please read: [https://docs.zksync.io/userdocs/intro/#introduction](https://docs.zksync.io/userdocs/intro/#introduction)
 
 As a ZK rollup, we want everything to be verified by cryptography and secured by Ethereum. The power of ZK allows for transaction compression, reducing fees for users while inheriting the same security.
-
-Link: [https://docs.zksync.io/userdocs/intro/#introduction](https://docs.zksync.io/userdocs/intro/#introduction)
 
 ZK Proofs allow a verifier to easily check whether a prover has done a computation correctly. For zkSync, the prover will prove the correct execution of zkSync’s EVM, and a smart contract on Ethereum will verify the proof is correct. 
 
 In more detail, there are several steps.
 
-- Witness generation: New transactions are proved in batches. These batches will be processed and sent to the circuits.
-    - Link: [https://docs.zksync.io/dev/payments/sending_transactions/#sending-transaction-batches](https://docs.zksync.io/dev/payments/sending_transactions/#sending-transaction-batches)
+- Witness generation: witness generation can be perceived as part of the process where the user (prover) generates proof of transaction validity. For instance, when a user initiates a transaction, a corresponding witness is generated, which serves as proof that the transaction is valid and adheres to the network's consensus rules. The zero-knowledge aspect ensures that the witness reveals no information about the transaction's specifics, maintaining user privacy and data security. New transactions are proved in batches. These batches will be processed and sent to the circuits.
 - Circuits: Our virtual machine needs to prove that the execution was completed correctly to generate proofs correctly. This is accomplished using circuits. In order for proofs to work, normal code logic must be transformed into a format readable by the proof system. The virtual machine reads the code that will be executed and sorts the parts into various circuits. These circuits then break down the parts of code, which can then be sent to the proof system.
 - Proof system: We need a proof system to process the ZK circuit. Our proving system is called Boojum.
 
