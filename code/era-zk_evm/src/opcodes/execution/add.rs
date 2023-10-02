@@ -3,15 +3,15 @@ use super::*;
 impl<const N: usize, E: VmEncodingMode<N>> DecodedOpcode<N, E> {
     pub fn add_opcode_apply<
         'a,
-        S: crate::abstractions::Storage,
-        M: crate::abstractions::Memory,
-        EV: crate::abstractions::EventSink,
-        PP: crate::abstractions::PrecompilesProcessor,
-        DP: crate::abstractions::DecommittmentProcessor,
+        S: zk_evm_abstractions::vm::Storage,
+        M: zk_evm_abstractions::vm::Memory,
+        EV: zk_evm_abstractions::vm::EventSink,
+        PP: zk_evm_abstractions::vm::PrecompilesProcessor,
+        DP: zk_evm_abstractions::vm::DecommittmentProcessor,
         WT: crate::witness_trace::VmWitnessTracer<N, E>,
     >(
         &self,
-        vm_state: &mut VmState<'a, S, M, EV, PP, DP, WT, N, E>,
+        vm_state: &mut VmState<S, M, EV, PP, DP, WT, N, E>,
         prestate: PreState<N, E>,
     ) {
         let PreState {
@@ -30,6 +30,7 @@ impl<const N: usize, E: VmEncodingMode<N>> DecodedOpcode<N, E> {
             is_pointer: _,
         } = src1;
 
+        use zkevm_opcode_defs::SET_FLAGS_FLAG_IDX;
         let set_flags = self.variant.flags[SET_FLAGS_FLAG_IDX];
         vm_state.local_state.callstack.get_current_stack_mut().pc = new_pc;
         let (result, of) = src0.overflowing_add(src1);

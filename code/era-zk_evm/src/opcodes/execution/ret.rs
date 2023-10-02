@@ -1,5 +1,6 @@
 use super::*;
 
+use zk_evm_abstractions::aux::Timestamp;
 use zkevm_opcode_defs::definitions::ret::*;
 use zkevm_opcode_defs::FatPointerValidationException;
 use zkevm_opcode_defs::{FatPointer, Opcode, RetABI, RetForwardPageType, RetOpcode};
@@ -7,15 +8,15 @@ use zkevm_opcode_defs::{FatPointer, Opcode, RetABI, RetForwardPageType, RetOpcod
 impl<const N: usize, E: VmEncodingMode<N>> DecodedOpcode<N, E> {
     pub fn ret_opcode_apply<
         'a,
-        S: crate::abstractions::Storage,
-        M: crate::abstractions::Memory,
-        EV: crate::abstractions::EventSink,
-        PP: crate::abstractions::PrecompilesProcessor,
-        DP: crate::abstractions::DecommittmentProcessor,
+        S: zk_evm_abstractions::vm::Storage,
+        M: zk_evm_abstractions::vm::Memory,
+        EV: zk_evm_abstractions::vm::EventSink,
+        PP: zk_evm_abstractions::vm::PrecompilesProcessor,
+        DP: zk_evm_abstractions::vm::DecommittmentProcessor,
         WT: crate::witness_trace::VmWitnessTracer<N, E>,
     >(
         &self,
-        vm_state: &mut VmState<'a, S, M, EV, PP, DP, WT, N, E>,
+        vm_state: &mut VmState<S, M, EV, PP, DP, WT, N, E>,
         prestate: PreState<N, E>,
     ) {
         let PreState { src0, .. } = prestate;
@@ -34,13 +35,6 @@ impl<const N: usize, E: VmEncodingMode<N>> DecodedOpcode<N, E> {
         let ret_abi = RetABI::from_u256(src0);
 
         // we want to mark with one that was will become a new current (taken from stack)
-        vm_state.witness_tracer.add_sponge_marker(
-            vm_state.local_state.monotonic_cycle_counter,
-            SpongeExecutionMarker::CallstackPop,
-            1..4,
-            false,
-        );
-
         let RetABI {
             mut memory_quasi_fat_pointer,
             page_forwarding_mode,
@@ -206,7 +200,6 @@ impl<const N: usize, E: VmEncodingMode<N>> DecodedOpcode<N, E> {
                 Timestamp(vm_state.local_state.timestamp),
             );
 
-            vm_state.local_state.did_call_or_ret_recently = true;
             vm_state.local_state.registers[RET_IMPLICIT_RETURNDATA_PARAMS_REGISTER as usize] =
                 PrimitiveValue {
                     value: returndata_fat_pointer.to_u256(),

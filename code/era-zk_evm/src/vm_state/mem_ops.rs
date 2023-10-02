@@ -1,6 +1,7 @@
 use super::*;
-use crate::abstractions::MemoryType;
-use crate::aux_structures::{MemoryIndex, MemoryLocation};
+use zk_evm_abstractions::aux::{MemoryIndex, MemoryLocation};
+use zk_evm_abstractions::vm::MemoryType;
+
 use zkevm_opcode_defs::{ImmMemHandlerFlags, RegOrImmFlags};
 
 pub struct MemOpsProcessor<const N: usize = 8, E: VmEncodingMode<N> = EncodingModeProduction> {
@@ -12,15 +13,15 @@ use zkevm_opcode_defs::Operand;
 impl<const N: usize, E: VmEncodingMode<N>> MemOpsProcessor<N, E> {
     pub fn compute_addresses_and_select_operands<
         'a,
-        S: crate::abstractions::Storage,
-        M: crate::abstractions::Memory,
-        EV: crate::abstractions::EventSink,
-        PP: crate::abstractions::PrecompilesProcessor,
-        DP: crate::abstractions::DecommittmentProcessor,
+        S: zk_evm_abstractions::vm::Storage,
+        M: zk_evm_abstractions::vm::Memory,
+        EV: zk_evm_abstractions::vm::EventSink,
+        PP: zk_evm_abstractions::vm::PrecompilesProcessor,
+        DP: zk_evm_abstractions::vm::DecommittmentProcessor,
         WT: crate::witness_trace::VmWitnessTracer<N, E>,
     >(
         &mut self,
-        vm_state: &VmState<'a, S, M, EV, PP, DP, WT, N, E>,
+        vm_state: &VmState<S, M, EV, PP, DP, WT, N, E>,
         register_index_encoding: u8,
         imm: E::PcOrImm,
         mem_imm: Operand,

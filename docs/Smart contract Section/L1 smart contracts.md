@@ -1,4 +1,3 @@
-
 # L1 Smart contracts
 
 This document presumes familiarity with Rollup. For a better understanding, consider reading the Rollup introduction [here](https://era.zksync.io/docs/reference/concepts/rollups.html).
