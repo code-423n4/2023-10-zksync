@@ -1,7 +1,7 @@
 # System Contracts
 
 Many EVM instructions require special handling by the [System Contracts](https://era.zksync.io/docs/reference/architecture/system-contracts.html). Among them are:
-`ORIGIN`, `CALLVALUE`, `BALANCE`, `CREATE`, `SHA3`, and others. To see the full detailed list of instructions requiring special handling, see [the EVM instructions reference](./instructions/evm/).
+`ORIGIN`, `CALLVALUE`, `BALANCE`, `CREATE`, `SHA3`, and others. To see the full detailed list of instructions requiring special handling, see [the EVM instructions reference](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/evm).
 
 There are several types of System Contracts from the perspective of how they are handled by the zkSync Era compilers:
 
@@ -28,7 +28,7 @@ Steps to handle such instructions:
 1. Store the calldata for the System Contract call on the auxiliary heap.
 2. Call the System Contract with a static call.
 3. Check the return status code of the call.
-4. [Revert or throw](exception_handling.md) if the status code is zero.
+4. [Revert or throw](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/exception_handling.md) if the status code is zero.
 5. Read the ABI data and extract the result. All such System Contracts return a single 256-bit value.
 6. Return the value as the result of the original instruction.
 
@@ -60,7 +60,7 @@ EraVM does not support passing Ether natively, so this is handled by a special S
 
 An external call is redirected through the simulator if the following conditions are met:
 
-1. The [call](./instructions/evm/call.md#call) has the Ether value parameter.
+1. The [call](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/instructions/evm/call.md) has the Ether value parameter.
 2. The Ether value is non-zero.
 
 The call to the simulator requires extra data passed via ABI using registers:
@@ -83,7 +83,7 @@ For reference, see LLVM IR codegen for [instructions for immutables](https://git
 
 ### Event Handler
 
-Event payloads are sent to a special System Contract called [EventWriter](../../../code/system-contracts/contracts/EventWriter.yul). Like on EVM, the payload consists of topics and data:
+Event payloads are sent to a special System Contract called [EventWriter](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/EventWriter.yul). Like on EVM, the payload consists of topics and data:
 
 1. The topics with a length-prefix are passed via ABI using registers.
 2. The data is passed via the default heap, like on EVM.
