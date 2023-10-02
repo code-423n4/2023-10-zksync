@@ -73,10 +73,6 @@ Circuit Documentation:
    - [Circuits](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits.md)
    - [Boojum function: check_if_satisfied](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Boojum%20function%20check_if_satisfied.md)
 
-## **🚨 Audit & Code Freeze**
-
-Be advised that a code freeze will be in effect for the duration of the audit to ensure a level playing field. All participants are required to review and adhere to the final versions of contracts and documentation added in this repository at least 48 business hours prior to the audit start time.
-
 ## **🚀 Getting Started for Auditors**
 
 - Ensure to go through each section and related documents thoroughly.
