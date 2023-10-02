@@ -390,3 +390,9 @@ rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10
 ```
 rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10-zksync.git && cd 2023-10-zksync/code/system-contracts/scripts && yarn --ignore-engines && bash quick-setup.sh
 ```
+
+## (Hardhat) L2 contracts one liner
+
+```
+rm -Rf 2023-10-zksync || true && git clone https://github.com/code-423n4/2023-10-zksync.git && cd 2023-10-zksync/code/contracts/zksync/scripts && yarn --ignore-engines && bash quick-setup.sh
+```

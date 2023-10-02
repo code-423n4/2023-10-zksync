@@ -11,6 +11,7 @@ import {VerifierParams} from "../../../../../cache/solpp-generated-contracts/zks
 import {AdminFacet} from "../../../../../cache/solpp-generated-contracts/zksync/facets/Admin.sol";
 import {GettersFacet} from "../../../../../cache/solpp-generated-contracts/zksync/facets/Getters.sol";
 import {Diamond} from "../../../../../cache/solpp-generated-contracts/zksync/libraries/Diamond.sol";
+import {Utils} from "../Utils/Utils.sol";
 
 // solhint-enable max-line-length
 
@@ -58,7 +59,7 @@ contract UpgradeLogicTest is DiamondCutTest {
             facet: address(gettersFacet),
             action: Diamond.Action.Add,
             isFreezable: true,
-            selectors: getGettersSelectors()
+            selectors: Utils.getGettersSelectors()
         });
 
         VerifierParams memory dummyVerifierParams = VerifierParams({
@@ -123,7 +124,7 @@ contract UpgradeLogicTest is DiamondCutTest {
             facet: address(gettersFacet),
             action: Diamond.Action.Replace,
             isFreezable: true,
-            selectors: getGettersSelectors()
+            selectors: Utils.getGettersSelectors()
         });
 
         Diamond.DiamondCutData memory diamondCutData = Diamond.DiamondCutData({
@@ -136,7 +137,7 @@ contract UpgradeLogicTest is DiamondCutTest {
 
         proxyAsAdmin.executeUpgrade(diamondCutData);
 
-        bytes4[] memory gettersFacetSelectors = getGettersSelectors();
+        bytes4[] memory gettersFacetSelectors = Utils.getGettersSelectors();
         for (uint256 i = 0; i < gettersFacetSelectors.length; i++) {
             bytes4 selector = gettersFacetSelectors[i];
 
@@ -154,7 +155,7 @@ contract UpgradeLogicTest is DiamondCutTest {
             facet: address(gettersFacet),
             action: Diamond.Action.Replace,
             isFreezable: true,
-            selectors: getGettersSelectors()
+            selectors: Utils.getGettersSelectors()
         });
 
         Diamond.DiamondCutData memory diamondCutData = Diamond.DiamondCutData({
