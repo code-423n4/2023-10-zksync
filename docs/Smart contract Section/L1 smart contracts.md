@@ -28,7 +28,7 @@ parameter that indicates if it is possible to freeze access to the facet. Privil
 unfreezes the diamond. Note that it is a very dangerous thing since the diamond proxy can freeze the upgrade system and then
 the diamond will be frozen forever.
 
-The diamond proxy pattern is very flexible and extendable. For now, it allows splitting implementation contracts by their logical meaning, removes the limit of bytecode size per contract and implements security features such as freezing. In future, it can also be viewed as [EIP-6900](https://eips.ethereum.org/EIPS/eip-6900) for [zkStack](https://blog.matter-labs.io/introducing-the-zk-stack-c24240c2532a), where each hyperchain can implement a sub-set of allowed implementation contracts.
+The diamond proxy pattern is very flexible and extendable. For now, it allows splitting implementation contracts by their logical meaning, removes the limit of bytecode size per contract and implements security features such as freezing. In the future, it can also be viewed as [EIP-6900](https://eips.ethereum.org/EIPS/eip-6900) for [zkStack](https://blog.matter-labs.io/introducing-the-zk-stack-c24240c2532a), where each hyperchain can implement a sub-set of allowed implementation contracts.
 
 ### GettersFacet
 
@@ -43,8 +43,8 @@ bootloader bytecode hash, verifier address, verifier parameters, etc), and it al
 upgrades in the diamond proxy.
 
 The admin facet is controlled by two entities:
-- Governance - Separate smart contract that can perform critical changes to the system as protocol upgrades. This contract controlled by two multisigs, one managed by Matter Labs team and another will be multisig with well-respected contributors in the crypto space. Only together they can perform instant upgrade, the Matter Labs team can only schedule an upgrade with delay.
-- Admin - Multisig smart contract managed by Matter Labs that can perform non-critical changes to the system as granting validator permissions. Note, that the Admin is the same multisig as the owner of the governance.
+- Governance - Separate smart contract that can perform critical changes to the system as protocol upgrades. This contract controlled by two multisigs, one managed by Matter Labs team and another will be multisig with well-respected contributors in the crypto space. Only together they can perform an instant upgrade, the Matter Labs team can only schedule an upgrade with delay.
+- Admin - Multisig smart contract managed by Matter Labs that can perform non-critical changes to the system such as granting validator permissions. Note, that the Admin is the same multisig as the owner of the governance.
 
 ### MailboxFacet
 
@@ -59,7 +59,7 @@ The Mailbox performs three functions:
 
 L1 -> L2 communication is implemented as requesting an L2 transaction on L1 and executing it on L2. This means a user
 can call the function on the L1 contract to save the data about the transaction in some queue. Later on, a validator can
-process it on L2 and mark them as processed on the L1 priority queue. Currently, it is used for sending information from
+process it on L2 and mark it as processed on the L1 priority queue. Currently, it is used for sending information from
 L1 to L2 or implementing multi-layer protocols.
 
 _NOTE_: While user requests the transaction from L1, the initiated transaction on L2 will have such a `msg.sender`:
@@ -248,7 +248,6 @@ struct Deposit {
   bool depositLimitation;
   uint256 depositCap;
 }
-
 ```
 
 Currently, the limit is used only for blocking deposits of the specific token (turning on the limitation and setting the
