@@ -4,7 +4,7 @@
 
 ## LogSorter PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/log_sorter/input.rs#L57)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/log_sorter/input.rs#L57)
 
 ```rust
 pub struct EventsDeduplicatorInputData<F: SmallField> {
@@ -13,7 +13,7 @@ pub struct EventsDeduplicatorInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/log_sorter/input.rs#L74)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/log_sorter/input.rs#L74)
 
 ```rust
 pub struct EventsDeduplicatorOutputData<F: SmallField> {
@@ -21,7 +21,7 @@ pub struct EventsDeduplicatorOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/log_sorter/input.rs#L28)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/log_sorter/input.rs#L28)
 
 ```rust
 pub struct EventsDeduplicatorFSMInputOutput<F: SmallField> {

@@ -2,7 +2,7 @@
 
 ## RAMPermutation PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/input.rs#L27)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/input.rs#L27)
 
 ```rust
 pub struct RamPermutationInputData<F: SmallField> {
@@ -18,7 +18,7 @@ pub struct RamPermutationInputData<F: SmallField> {
 ()
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/input.rs#L52)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/input.rs#L52)
 
 ```rust
 pub struct RamPermutationFSMInputOutput<F: SmallField> {
@@ -36,9 +36,9 @@ pub struct RamPermutationFSMInputOutput<F: SmallField> {
 
 ## Main circuit logic
 
-The circuit starts [here](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/mod.rs#L30). This function allocate PI inputs that call the inner function, where all the main logic is implemented. In the end, it forms the fsm output and compute PI commitment. The main purpose of this circuit is enforcing that memory queries are executed correctly.
+The circuit starts [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L30). This function allocate PI inputs that call the inner function, where all the main logic is implemented. In the end, it forms the fsm output and compute PI commitment. The main purpose of this circuit is enforcing that memory queries are executed correctly.
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/mod.rs#L43)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L43)
 
 We start, as usually, with allocating input fields from PI.
 
@@ -99,7 +99,7 @@ let mut rhs = <[Num<F>; DEFAULT_NUM_PERMUTATION_ARGUMENT_REPETITIONS]>::conditio
 );
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/mod.rs#L211)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L211)
 
 We call the inner function, where the main logic is implemented.
 
@@ -148,9 +148,9 @@ let value_equal = UInt256::equals(cs, &sorted_item.value, &previous_element_valu
 let value_is_zero = UInt256::equals(cs, &sorted_item.value, &uint256_zero);
 ```
 
-In the end, we compute permutation argument contributions to accumulators. The code is [here](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/mod.rs#L363). The detailed explanation can be found [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+In the end, we compute permutation argument contributions to accumulators. The code is [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L363). The detailed explanation can be found [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/ram_permutation/mod.rs#L159)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L159)
 
 If the queues are empty now, that means that this instance should be the last one.
 

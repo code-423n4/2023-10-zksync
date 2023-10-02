@@ -69,7 +69,7 @@ All circuits have the following PI structure:
 | FSM Input and FSM Output | The field has the same structure. It represents the inner state of circuit execution (the first fsm_input is empty, the second fsm_input equals the first fsm_output and so on…) |
 | Output | Structure that contains all outputs of this type of circuit (the last instance contains the real output, the output field of the others is empty) |
 
-The code implementation can be found [here](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/fsm_input_output/mod.rs#L32).
+The code implementation can be found [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/fsm_input_output/mod.rs#L32).
 
 In terms of Arithmetization we don’t allocate all these fields like public input variables. A more efficient approach would be computing commitment of type `[Num<F>; 4]` with poseidon2 and then allocating these 4 variables as public inputs.
 

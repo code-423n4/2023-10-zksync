@@ -2,7 +2,7 @@
 
 ## DemuxLogQueue PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/demux_log_queue/input.rs#L49)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/demux_log_queue/input.rs#L49)
 
 ```rust
 pub struct LogDemuxerInputData<F: SmallField> {
@@ -10,7 +10,7 @@ pub struct LogDemuxerInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/fsm_input_output/circuit_inputs/main_vm.rs#L33)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/fsm_input_output/circuit_inputs/main_vm.rs#L33)
 
 ```rust
 pub struct LogDemuxerOutputData<F: SmallField> {
@@ -23,7 +23,7 @@ pub struct LogDemuxerOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/demux_log_queue/input.rs#L22)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/demux_log_queue/input.rs#L22)
 
 ```rust
 pub struct LogDemuxerFSMInputOutput<F: SmallField> {

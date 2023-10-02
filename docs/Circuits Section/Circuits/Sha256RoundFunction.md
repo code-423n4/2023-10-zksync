@@ -2,7 +2,7 @@
 
 ## Sha256RoundFunction PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/fsm_input_output/circuit_inputs/main_vm.rs#L9)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/fsm_input_output/circuit_inputs/main_vm.rs#L9)
 
 ```rust
 pub struct PrecompileFunctionInputData<F: SmallField> {
@@ -11,7 +11,7 @@ pub struct PrecompileFunctionInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/base_structures/precompile_input_outputs/mod.rs#L42)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/base_structures/precompile_input_outputs/mod.rs#L42)
 
 ```rust
 pub struct PrecompileFunctionOutputData<F: SmallField> {
@@ -19,7 +19,7 @@ pub struct PrecompileFunctionOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/keccak256_round_function/input.rs#L59)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/keccak256_round_function/input.rs#L59)
 
 ```rust
 pub struct Sha256RoundFunctionFSMInputOutput<F: SmallField> {

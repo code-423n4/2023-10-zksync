@@ -2,7 +2,7 @@
 
 ## StorageApplication PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/input.rs#L56)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/input.rs#L56)
 
 ```rust
 pub struct StorageApplicationInputData<F: SmallField> {
@@ -13,7 +13,7 @@ pub struct StorageApplicationInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/input.rs#L77)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/input.rs#L77)
 
 ```rust
 pub struct StorageApplicationOutputData<F: SmallField> {
@@ -23,7 +23,7 @@ pub struct StorageApplicationOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/input.rs#L29)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/input.rs#L29)
 
 ```rust
 pub struct StorageApplicationFSMInputOutput<F: SmallField> {
@@ -39,7 +39,7 @@ pub struct StorageApplicationFSMInputOutput<F: SmallField> {
 
 This circuit takes storage requests from `storage_application_log_state`. Then for each query, it verifies the read value and updates the `root_hash` is needed. Also, it outputs the hash of storage diffs. Shard_id if enforces to be 0 for now, because we have only one shard.
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/mod.rs#L281)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/mod.rs#L281)
 
 The circuit begins with allocating input part of the PI.
 
@@ -75,7 +75,7 @@ let storage_accesses_queue_state = QueueState::conditionally_select(
 ...
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/mod.rs#L393)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/mod.rs#L393)
 
 Here’s the part, where all the main logic is implemented. Firstly, we take a new storage request if needed.
 
@@ -185,7 +185,7 @@ for block in
 }
 ```
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_application/mod.rs#L643)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_application/mod.rs#L643)
 
 We need to run padding and one more permutation for final output.
 

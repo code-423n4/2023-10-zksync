@@ -169,7 +169,7 @@ Very important is making the `final_check` that basically checks the equality of
 
 For now, we use poseidon2 hash. Here is the link to queue implementations:
 
-- [CircuitQueue](https://github.com/matter-labs/era-boojum/blob/2771569baab9a59690d88cee6ba9b295c8a1e4c4/src/gadgets/queue/mod.rs#L29)
-- [FullStateCircuitQueue](https://github.com/matter-labs/era-boojum/blob/2771569baab9a59690d88cee6ba9b295c8a1e4c4/src/gadgets/queue/full_state_queue.rs#L20C12-L20C33)
+- [CircuitQueue](https://github.com/matter-labs/era-boojum/blob/main/src/gadgets/queue/mod.rs#L29)
+- [FullStateCircuitQueue](https://github.com/matter-labs/era-boojum/blob/main/src/gadgets/queue/full_state_queue.rs#L20C12-L20C33)
 
 The difference is that we actually compute and store a hash inside CircuitQueue during `push` and `pop` operations. But in FullStateCircuitQueue our `head` and `tail` are just states of sponges. So instead of computing a full hash, we just absorb a pushed (popped) element.

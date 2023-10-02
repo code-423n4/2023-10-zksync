@@ -2,7 +2,7 @@
 
 ## L1MessagesHasher PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/input.rs#L27)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/input.rs#L27)
 
 ```rust
 pub struct LinearHasherInputData<F: SmallField> {
@@ -10,7 +10,7 @@ pub struct LinearHasherInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/input.rs#L42)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/input.rs#L42)
 
 ```rust
 pub struct LinearHasherOutputData<F: SmallField> {
@@ -28,11 +28,11 @@ pub struct LinearHasherOutputData<F: SmallField> {
 
 It takes a queue of L1 messages and hash everything with keccak.
 
-The main logic is implemented in `linear_hasher_entry_point` function [here](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/mod.rs#L35).
+The main logic is implemented in `linear_hasher_entry_point` function [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/mod.rs#L35).
 
 It can be spited into 3 parts: 
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/mod.rs#L54)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/mod.rs#L54)
 
 Firstly, we allocate the “input” part of PI (`start flag`, `Input` and `FSM Input`):
 
@@ -58,7 +58,7 @@ let mut keccak_accumulator_state =
     keccak_accumulator_state.map(|el| el.map(|el| el.map(|el| el.get_variable())));
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/mod.rs#L105)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/mod.rs#L105)
 
 This part is the main one. We run a loop with some limit, where on each iteration we try to pop the next element from the queue, if it’s not empty.
 
@@ -111,7 +111,7 @@ keccak256_conditionally_absorb_and_run_permutation(
 );
 ```
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/linear_hasher/mod.rs#L169)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/linear_hasher/mod.rs#L169)
 
 Firstly, we verify that the queue is empty now.
 

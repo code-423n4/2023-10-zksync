@@ -2,7 +2,7 @@
 
 ## KeccakRoundFunction PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/fsm_input_output/circuit_inputs/main_vm.rs#L9)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/fsm_input_output/circuit_inputs/main_vm.rs#L9)
 
 ```rust
 pub struct PrecompileFunctionInputData<F: SmallField> {
@@ -11,7 +11,7 @@ pub struct PrecompileFunctionInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/base_structures/precompile_input_outputs/mod.rs#L42)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/base_structures/precompile_input_outputs/mod.rs#L42)
 
 ```rust
 pub struct PrecompileFunctionOutputData<F: SmallField> {
@@ -19,7 +19,7 @@ pub struct PrecompileFunctionOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/keccak256_round_function/input.rs#L59)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/keccak256_round_function/input.rs#L59)
 
 ```rust
 pub struct Keccak256RoundFunctionFSMInputOutput<F: SmallField> {
@@ -49,7 +49,7 @@ Next, the circuit will take data from another queue, which contains memory queri
 
 Learn more about Keccak here: https://keccak.team/keccak.html.
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/keccak256_round_function/mod.rs#L423)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/keccak256_round_function/mod.rs#L423)
 
 The circuit begins with allocating input part of the PI.
 
@@ -95,7 +95,7 @@ let initial_state = Keccak256RoundFunctionFSM::conditionally_select(
 );
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/keccak256_round_function/mod.rs#L114)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/keccak256_round_function/mod.rs#L114)
 
 Our main cycle starts with getting a new precompile request from the queue.
 
@@ -183,7 +183,7 @@ let write_query = MemoryQuery {
 memory_queue.push(cs, write_query, write_result);
 ```
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/keccak256_round_function/mod.rs#L495)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/keccak256_round_function/mod.rs#L495)
 
 Now we update PI output parts and compute a commitment. Then we allocate it as public variables.
 

@@ -2,7 +2,7 @@
 
 Note: Please read our other documentation and tests first before reading this page.
 
-Our circuits (and tests) depend on a function from Boojum called [check_if_satisfied](https://github.com/matter-labs/era-boojum/blob/2771569baab9a59690d88cee6ba9b295c8a1e4c4/src/cs/implementations/satisfiability_test.rs#L11). You don’t need to understand it to run circuit tests, but it can be informative to learn more about Boojum and our proof system.
+Our circuits (and tests) depend on a function from Boojum called [check_if_satisfied](https://github.com/matter-labs/era-boojum/blob/main/src/cs/implementations/satisfiability_test.rs#L11). You don’t need to understand it to run circuit tests, but it can be informative to learn more about Boojum and our proof system.
 
 First we prepare the constants, variables, and witness. As a reminder, the constants are just constant numbers, the variables circuit columns that are under PLONK copy-permutation constraints (so they are close in semantics to variables in programming languages), and the witness ephemeral values that can be used to prove certain constraints, for example by providing an inverse if the variable must be non-zero.
 

@@ -2,7 +2,7 @@
 
 ## StorageSorter PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/input.rs#L84C57-L84C57)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/input.rs#L84C57-L84C57)
 
 ```rust
 pub struct StorageDeduplicatorInputData<F: SmallField> {
@@ -12,7 +12,7 @@ pub struct StorageDeduplicatorInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/input.rs#L103)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/input.rs#L103)
 
 ```rust
 pub struct StorageDeduplicatorOutputData<F: SmallField> {
@@ -20,7 +20,7 @@ pub struct StorageDeduplicatorOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/input.rs#L37)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/input.rs#L37)
 
 ```rust
 pub struct StorageDeduplicatorFSMInputOutput<F: SmallField> {
@@ -46,7 +46,7 @@ pub struct StorageDeduplicatorFSMInputOutput<F: SmallField> {
 
 The main logic of this circuit is sorting and deduplicating storage requests from `unsorted_log_queue_state`. The result storage requests are pushed to `final_sorted_queue_state`.
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/mod.rs#L177)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/mod.rs#L177)
 
 We start, as usually, with allocating input fields from PI.
 
@@ -130,7 +130,7 @@ let initial_rhs =
     );
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/mod.rs#L558)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/mod.rs#L558)
 
 Here we implement the main logic of the circuit. We run a cycle where on each iteration we try to pop a new element.
 
@@ -257,7 +257,7 @@ let query = LogQuery {
 sorted_queue.push(cs, query, should_push);
 ```
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/storage_validity_by_grand_product/mod.rs#L424)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/storage_validity_by_grand_product/mod.rs#L424)
 
 If the queues are empty, we check the permutation argument accumulators equality.
 

@@ -2,7 +2,7 @@
 
 ## CodeDecommitter PI
 
-### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/input.rs#L80)
+### [Input](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/input.rs#L80)
 
 ```rust
 pub struct CodeDecommitterInputData<F: SmallField> {
@@ -11,7 +11,7 @@ pub struct CodeDecommitterInputData<F: SmallField> {
 }
 ```
 
-### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/input.rs#L100)
+### [Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/input.rs#L100)
 
 ```rust
 pub struct CodeDecommitterOutputData<F: SmallField> {
@@ -19,7 +19,7 @@ pub struct CodeDecommitterOutputData<F: SmallField> {
 }
 ```
 
-### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/input.rs#L61)
+### [FSM Input and FSM Output](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/input.rs#L61)
 
 ```rust
 pub struct CodeDecommitterFSMInputOutput<F: SmallField> {
@@ -46,7 +46,7 @@ pub struct CodeDecommittmentFSM<F: SmallField> {
 
 This circuit takes a queue of decommit requests for DecommitSorter circuit. For each decommit request, it checks that the linear hash of all opcodes will be equal to this hash that is stored in the decommit request. Also, it writes code to the corresponding memory page. Briefly, it unpacks the queue from the opcode and updates the memory queue and check correctness.
 
-### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/mod.rs#L48)
+### [First part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/mod.rs#L48)
 
 The circuit begins with allocating input part of the PI.
 
@@ -94,7 +94,7 @@ let initial_state = CodeDecommittmentFSM::conditionally_select(
 );
 ```
 
-### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/mod.rs#L168)
+### [Main part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/mod.rs#L168)
 
 Here’s the part, where all the main logic is implemented. Firstly, we take a new decommit request if the queue is not empty yet.
 
@@ -188,7 +188,7 @@ for (part_of_first, part_of_second) in hash
 }
 ```
 
-### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/4fba537ccecc238e2da9c80844dc8c185e42466f/src/code_unpacker_sha256/mod.rs#L111)
+### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/code_unpacker_sha256/mod.rs#L111)
 
 Now we update PI output parts and compute a commitment. Then we allocate it as public variables.
 
