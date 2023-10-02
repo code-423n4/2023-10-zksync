@@ -23,7 +23,7 @@ Where:
 - `sender` is the value of `this` in the frame where the L2→L1 log was emitted.
 - `key` and `value` are just two 32-byte values that could be used to carry some data with the log.
 
-The hashed array of these opcodes is then included into the [block commitment](https://github.com/matter-labs/era-contracts/blob/f06a58360a2b8e7129f64413998767ac169d1efd/ethereum/contracts/zksync/facets/Executor.sol#L493). Because of that we know that if the proof verifies, then the L2→L1 logs provided by the operator were correct, so we can use that fact to produce more complex structures. Before Boojum such logs were also Merklized within the circuits and so the Merkle tree’s root hash was included into the block commitment also.
+The hashed array of these opcodes is then included into the [batch commitment](https://github.com/matter-labs/era-contracts/blob/f06a58360a2b8e7129f64413998767ac169d1efd/ethereum/contracts/zksync/facets/Executor.sol#L493). Because of that we know that if the proof verifies, then the L2→L1 logs provided by the operator were correct, so we can use that fact to produce more complex structures. Before Boojum such logs were also Merklized within the circuits and so the Merkle tree’s root hash was included into the batch commitment also.
 
 ## Important system values
 
@@ -36,7 +36,7 @@ However, sometimes users want to send long messages beyond 64 bytes which `key` 
 Let’s add an `sendToL1` method in L1Messenger, where the main idea is the following:
 
 - Let’s submit an L2→L1 log with `key = msg.sender` (the actual sender of the long message) and `value = keccak256(message)`.
-- Now, during block commitment the operator will have to provide an array of such long L2→L1 messages and it will be checked on L1 that indeed for each such log the correct preimage was provided.
+- Now, during batch commitment the operator will have to provide an array of such long L2→L1 messages and it will be checked on L1 that indeed for each such log the correct preimage was provided.
 
 A very similar idea is used to publish uncompressed bytecodes on L1 (the compressed bytecodes were sent via the long L1→L2 messages mechanism as explained above). 
 

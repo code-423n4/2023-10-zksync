@@ -39,6 +39,7 @@ This repository contains comprehensive documentation and code related to the Sma
 
 Relevant Documentation:
 
+- **[L1 smart contracts](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/L1%20smart%20contracts.md)**
 - **[System Contracts/Bootloader Description](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/System%20contracts%20bootloader%20description.md)**
 - **[zkSync Era Fee Model]([.](https://github.com/code-423n4/2023-10-zksync/blob/main)/docs/Smart%20contract%20Section/zkSync%20fee%20model.md)**
 - **[Handling L1→L2 Ops on zkSync](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md)**
@@ -71,10 +72,6 @@ Circuit Documentation:
    - [Boojum gadgets](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Boojum%20gadgets.md)
    - [Circuits](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Circuits.md)
    - [Boojum function: check_if_satisfied](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Circuits%20Section/Boojum%20function%20check_if_satisfied.md)
-
-## **🚨 Audit & Code Freeze**
-
-Be advised that a code freeze will be in effect for the duration of the audit to ensure a level playing field. All participants are required to review and adhere to the final versions of contracts and documentation added in this repository at least 48 business hours prior to the audit start time.
 
 ## **🚀 Getting Started for Auditors**
 
