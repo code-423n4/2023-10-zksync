@@ -253,7 +253,3 @@ struct Deposit {
 
 Currently, the limit is used only for blocking deposits of the specific token (turning on the limitation and setting the
 limit to zero). And on the near future, this functionality will be completely removed.
-
-See the
-[documentation](https://era.zksync.io/docs/dev/building-on-zksync/contracts/contract-development.html#solidity-vyper-support)
-to read more!
