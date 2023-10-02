@@ -94,10 +94,10 @@ with the funds. To withdraw funds user should call `withdraw` function on the `L
 burn the funds on L2, allowing the user to reclaim them through the `finalizeEthWithdrawal` function on the
 `MailboxFacet`.
 
-More about L1->L2 operations can be found [here](./Handling%20L1→L2%20ops%20on%20zkSync.md).
+More about L1->L2 operations can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1→L2%20ops%20on%20zkSync.md).
 
 L2 -> L1 communication, in contrast to L1 -> L2 communication, is based only on transferring the information, and not on
-the transaction execution on L1. The full description of the mechanism for sending information from L2 to L1 can be found [here](./Handling%20pubdata%20in%20Boojum.md).
+the transaction execution on L1. The full description of the mechanism for sending information from L2 to L1 can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum.md).
 
 ### ExecutorFacet
 
