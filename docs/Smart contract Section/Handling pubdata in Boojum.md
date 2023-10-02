@@ -17,7 +17,7 @@ While the structure of the pubdata changes, the way in which one can go about pu
 
 While there were quite some changes during Boojum upgrade, most of the scheme remains the same and so explaining how it worked before gives some background on why certain decisions are made and kept for backward compatibility.
 
-[L2→L1 communication before Boojum](Handling%20pubdata%20in%20Boojum/L2%E2%86%92L1%20communication%20before%20Boojum.md)
+[L2→L1 communication before Boojum](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum/L2%E2%86%92L1%20communication%20before%20Boojum.md)
 
 The most important feature that we’ll need to maintain in Boojum for backwards compatibility is to provide a similar Merkle tree of L2→L1 logs with the long L2→L1 messages and priority operations’ status. 
 
@@ -285,7 +285,7 @@ It is a secure construction because the proof can be verified only if both the e
 
 The following algorithm is used for the state diff compression:
 
-[State diff compression v1 spec](Handling%20pubdata%20in%20Boojum/State%20diff%20compression%20v1%20spec.md)
+[State diff compression v1 spec](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20pubdata%20in%20Boojum/State%20diff%20compression%20v1%20spec.md)
 
 # General pubdata format
 
