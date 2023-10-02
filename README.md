@@ -329,9 +329,9 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 
 ### Access control and permissions
 
-It is important to examine access control and persmissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circuimvent the limitations imposed on them.
+It is important to examine access control and permissions for any contract that contains potentially dangerous logic (including upgrades). While the assumption is that either governance or security council are not malicious, neither governance, nor the security council should be able to circumvent the limitations imposed on them.
 
-Especial scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md) of such an issue, which was detected & resolved by the team before the contest. 
+Special scrutiny should be paid to the powers of the operator. While currently the operator is controlled by Matter Labs and is also partially trusted (for instance, it is responsible for supplying the correct L1 gas price), it should never be able to directly steal users' funds or conduct malicious upgrades. An [example](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/Smart%20contract%20Section/Handling%20L1%E2%86%92L2%20ops%20on%20zkSync.md) of such an issue, which was detected and resolved by the team before the contest. 
 
 ### Data availability issues 
 
@@ -351,7 +351,6 @@ Make sure that access to any dangerous logic is well-constrained. For instance:
 - Using innocent Solidity code without zkSync-specific features should not lead to unexpected behaviour. An [example](https://code4rena.com/reports/2023-03-zksync#h-01-the-call-to-msgvaluesimulator-with-non-zero-msgvalue-will-call-to-sender-itself-which-will-bypass-the-onlyself-check) of a relevant finding.
 
 ## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
 - If you have a public code repo, please share it here:  N/A
