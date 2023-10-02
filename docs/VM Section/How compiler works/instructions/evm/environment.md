@@ -12,9 +12,9 @@ This value is fetched with a native EraVM instruction.
 
 ### System Contract
 
-This information is requested a System Contract called [L2EthToken](../../../../../code/system-contracts/contracts/L2EthToken.sol).
+This information is requested a System Contract called [L2EthToken](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/L2EthToken.sol).
 
-On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
+On how the System Contract is called, see [this section](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/system_contracts.md).
 
 ### LLVM IR
 
@@ -28,9 +28,9 @@ The request to the System Contract is done via the [SystemRequest](https://githu
 
 ### System Contract
 
-This information is requested a System Contract called [SystemContext](../../../../../code/system-contracts/contracts/SystemContext.sol).
+This information is requested a System Contract called [SystemContext](https://github.com/code-423n4/2023-10-zksync/blob/main/code/system-contracts/contracts/SystemContext.sol).
 
-On how the System Contract is called, see [this section](../../system_contracts.md#environmental-data-storage).
+On how the System Contract is called, see [this section](https://github.com/code-423n4/2023-10-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/system_contracts.md).
 
 ### LLVM IR
 
