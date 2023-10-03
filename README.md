@@ -139,7 +139,7 @@ For any clarifications, doubts, or discussion, please contact Code4rena staff, a
 | [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 204 | |
 | [ethereum/contracts/bridge/L1WethBridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/L1WethBridge.sol) | 175 | |
 | [ethereum/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL1Bridge.sol) | 39 | |
-| [ethereum/contracts/bridge/libraries/BridgeInitializationHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/contracts/bridge/libraries/BridgeInitializationHelper.sol) | 37 | |
+| [ethereum/contracts/bridge/libraries/BridgeInitializationHelper.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/libraries/BridgeInitializationHelper.sol) | 37 | |
 | [ethereum/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2Bridge.sol) | 18 | |
 | [ethereum/contracts/bridge/interfaces/IL1BridgeLegacy.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL1BridgeLegacy.sol) | 10 | |
 | [ethereum/contracts/bridge/interfaces/IL2ERC20Bridge.sol](https://github.com/code-423n4/2023-10-zksync/blob/main/code/contracts/ethereum/contracts/bridge/interfaces/IL2ERC20Bridge.sol) | 8 | |
