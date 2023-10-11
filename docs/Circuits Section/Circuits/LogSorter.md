@@ -83,7 +83,7 @@ let mut unsorted_queue = StorageLogQueue::<F, R>::from_state(cs, state);
 
 For `sorted_queue`, it is the same procedure.
 
-We generate challenges and accumulators for the permutation argument. A detailed explanation can be found [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+We generate challenges and accumulators for the permutation argument. A detailed explanation can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/c3ff020df5d11fe91209bd99d7fb0ec1272dc387/docs/Circuits%20Section/Circuits/Sorting.md).
 
 ```rust
 let challenges = crate::utils::produce_fs_challenges::<
@@ -215,7 +215,7 @@ let (_, original_encoding) = unsorted_queue.pop_front(cs, should_pop);
 let (sorted_item, sorted_encoding) = intermediate_sorted_queue.pop_front(cs, should_pop);
 ```
 
-The next block of code is sorting. You can find the main idea [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+The next block of code is sorting. You can find the main idea [here](https://github.com/code-423n4/2023-10-zksync/blob/c3ff020df5d11fe91209bd99d7fb0ec1272dc387/docs/Circuits%20Section/Circuits/Sorting.md).
 
 Check if keys are equal and check a value. We compare timestamps and then resolve logic over rollbacks, so the only way when keys are equal can be when we do a rollback. Ensure sorting for uniqueness timestamp and rollback flag. We know that timestamps are unique across logs, and are also the same between write and rollback. Keys are always ordered no matter what, and are never equal unless it's padding:
 

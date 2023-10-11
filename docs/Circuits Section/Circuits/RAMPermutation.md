@@ -75,7 +75,7 @@ let sorted_queue_state = QueueState::conditionally_select(
 );
 ```
 
-Also, we generate challenges and accumulators for permutation argument. The detailed explanation can be found [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+Also, we generate challenges and accumulators for permutation argument. The detailed explanation can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/c3ff020df5d11fe91209bd99d7fb0ec1272dc387/docs/Circuits%20Section/Circuits/Sorting.md).
 
 ```rust
 let fs_challenges = crate::utils::produce_fs_challenges(
@@ -148,7 +148,7 @@ let value_equal = UInt256::equals(cs, &sorted_item.value, &previous_element_valu
 let value_is_zero = UInt256::equals(cs, &sorted_item.value, &uint256_zero);
 ```
 
-In the end, we compute permutation argument contributions to accumulators. The code is [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L363). The detailed explanation can be found [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+In the end, we compute permutation argument contributions to accumulators. The code is [here](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L363). The detailed explanation can be found [here](https://github.com/code-423n4/2023-10-zksync/blob/c3ff020df5d11fe91209bd99d7fb0ec1272dc387/docs/Circuits%20Section/Circuits/Sorting.md).
 
 ### [Final part](https://github.com/matter-labs/era-zkevm_circuits/blob/main/src/ram_permutation/mod.rs#L159)
 

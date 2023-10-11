@@ -138,7 +138,7 @@ let (_, original_encoding) = original_queue.pop_front(cs, should_pop);
 let (sorted_item, sorted_encoding) = intermediate_sorted_queue.pop_front(cs, should_pop);
 ```
 
-Then we accumulate encodings for permutation argument. You can read more about it [here](https://www.notion.so/Sorting-68cc6e7170ef4d44aa1b1c33ff037d32?pvs=21).
+Then we accumulate encodings for permutation argument. You can read more about it [here](https://github.com/code-423n4/2023-10-zksync/blob/c3ff020df5d11fe91209bd99d7fb0ec1272dc387/docs/Circuits%20Section/Circuits/Sorting.md).
 
 ```rust
 for (((lhs_dst, rhs_dst), challenges), additive_part) in lhs
