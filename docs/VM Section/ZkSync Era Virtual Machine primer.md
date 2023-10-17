@@ -84,7 +84,7 @@ Every contract may have at most $2^{16}$ instructions.
 Besides `add`, EraVM implements `sub` for subtraction, `and`/ `or` / `xor`  for bitwise logics, `shl`/ `shr` for logical shifts,  `rol`/ `ror` for circular shifts. These instructions follow the same format, e.g.:
 
 ```nasm
-shl r1, r4, r3 ; right shift r1 by value of r4, store result in r3
+shl r1, r4, r3 ; shift left r1 by value of r4, store result in r3
 ```
 
 Instructions `mul` and `div` are particular: they have two output operands:
